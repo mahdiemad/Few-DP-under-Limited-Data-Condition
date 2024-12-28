@@ -1,0 +1,9 @@
+<Output device="EMTDC" version="2010" date="2024/10/28" time="13:29:37.000000">
+  <Domain name="Time" unit="s" mult="0.0" skew="0.0">
+    <Sample rate="4000.0" end="8000" />
+  </Domain>
+  <List classid="Analog">
+    <Analog name="Main(0):Ia" index="1" gindex="100663297" id="1272246407:0" label="" dim="3" unit="kA" min="-5" max="5" />
+  </List>
+  <List classid="Digital" />
+</Output>

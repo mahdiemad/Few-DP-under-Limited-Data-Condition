@@ -1,0 +1,1436 @@
+<project name="SixWindingCoil_3Ph" Version="4.3.0" Target="Library">
+  <paramlist name="Settings">
+    <param name="creator" value="dharshana, 1144873949" />
+    <param name="time_duration" value="0.5" />
+    <param name="time_step" value="50" />
+    <param name="sample_step" value="250" />
+    <param name="chatter_threshold" value="0.001" />
+    <param name="branch_threshold" value="0.0005" />
+    <param name="latency_count" value="100" />
+    <param name="StartType" value="0" />
+    <param name="PlotType" value="0" />
+    <param name="output_filename" value="noname.out" />
+    <param name="SnapType" value="0" />
+    <param name="SnapTime" value="0.3" />
+    <param name="snapshot_filename" value="noname.snp" />
+    <param name="MrunType" value="0" />
+    <param name="Mruns" value="10" />
+    <param name="multirun_filename" value="mrun" />
+    <param name="Scenario" value="" />
+    <param name="Advanced" value="4607" />
+    <param name="Options" value="32" />
+    <param name="Build" value="18" />
+    <param name="Warn" value="1" />
+    <param name="Check" value="15" />
+    <param name="description" value="" />
+    <param name="revisor" value="jcgzipa, 1232571500" />
+    <param name="architecture" value="windows" />
+    <param name="Libs" value="" />
+    <param name="Source" value="" />
+    <param name="Debug" value="0" />
+    <param name="startup_filename" value="" />
+  </paramlist>
+  <paramlist name="GlobalConsts" />
+  <hierarchy>
+    <call name="Station" link="1462086190" z="-1" instance="-1" view="false">
+      <call name="Main" link="7125246" z="-1" view="false" instance="-1" />
+    </call>
+  </hierarchy>
+  <definitions>
+    <Definition classid="UserCmpDefn" name="TRF_4ot6_Wdg_3Ph_Mod" build="" crc="34563847" view="true" instances="0" date="0">
+      <paramlist>
+        <param name="Description" value="Multiple winding transformer" />
+      </paramlist>
+      <form>
+        <category name="Configuration 1">
+          <cond />
+          <parameter type="Real" name="f" desc="System Frequency [Hz]" content_type="Literal" min="" max="" unit="Hz">
+            <value><![CDATA[50.0]]></value>
+            <cond />
+          </parameter>
+          <parameter type="Real" name="MVA" desc="Transformer MVA" content_type="Literal" min="" max="" unit="MVA">
+            <value><![CDATA[100]]></value>
+            <cond />
+          </parameter>
+          <parameter type="Choice" name="NoW" desc="Number of windings">
+            <value><![CDATA[3]]></value>
+            <choice><![CDATA[3 = 3]]></choice>
+            <choice><![CDATA[4 = 4]]></choice>
+            <choice><![CDATA[5 = 5]]></choice>
+            <choice><![CDATA[6 = 6]]></choice>
+            <cond />
+          </parameter>
+          <parameter type="Real" name="Im1" desc="Magnetizing current [%]" content_type="Literal" min="" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond />
+          </parameter>
+        </category>
+        <category name="Configuration 2">
+          <cond />
+          <parameter type="Text" name="W6name" desc="Winding F name">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NoW>5]]></cond>
+          </parameter>
+          <parameter type="Text" name="W5name" desc="Winding E name">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NoW>4]]></cond>
+          </parameter>
+          <parameter type="Text" name="W4name" desc="Winding D name">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NoW>3]]></cond>
+          </parameter>
+          <parameter type="Text" name="W3name" desc="Winding C name">
+            <value><![CDATA[]]></value>
+            <cond />
+          </parameter>
+          <parameter type="Text" name="W2name" desc="Winding B name">
+            <value><![CDATA[]]></value>
+            <cond />
+          </parameter>
+          <parameter type="Text" name="W1name" desc="Winding A name">
+            <value><![CDATA[]]></value>
+            <cond />
+          </parameter>
+          <parameter type="Real" name="V6" desc="Nominal Voltage Winding F" content_type="Literal" min="" max="" unit="kV">
+            <value><![CDATA[132.79]]></value>
+            <cond><![CDATA[NoW>5]]></cond>
+          </parameter>
+          <parameter type="Real" name="V5" desc="Nominal Voltage Winding E" content_type="Literal" min="" max="" unit="kV">
+            <value><![CDATA[132.79]]></value>
+            <cond><![CDATA[NoW>4]]></cond>
+          </parameter>
+          <parameter type="Real" name="V4" desc="Nominal Voltage Winding D" content_type="Literal" min="" max="" unit="kV">
+            <value><![CDATA[132.79]]></value>
+            <cond><![CDATA[NoW>3]]></cond>
+          </parameter>
+          <parameter type="Real" name="V3" desc="Nominal Voltage Winding C" content_type="Literal" min="" max="" unit="kV">
+            <value><![CDATA[132.79]]></value>
+            <cond />
+          </parameter>
+          <parameter type="Real" name="V2" desc="Nominal Voltage Winding B" content_type="Literal" min="" max="" unit="kV">
+            <value><![CDATA[132.79]]></value>
+            <cond />
+          </parameter>
+          <parameter type="Real" name="V1" desc="Nominal Voltage Winding A" content_type="Literal" min="" max="" unit="kV">
+            <value><![CDATA[132.79]]></value>
+            <cond />
+          </parameter>
+        </category>
+        <category name="Impedance voltages">
+          <cond />
+          <parameter type="Real" name="IX56" desc="Leakage reactance 5 - 6 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>5]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX46" desc="Leakage reactance 4 - 6 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>5]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX45" desc="Leakage reactance 4 - 5 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>4]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX36" desc="Leakage reactance 3 - 6 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>5]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX35" desc="Leakage reactance 3 - 5 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>4]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX34" desc="Leakage reactance 3 - 4 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>3]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX26" desc="Leakage reactance 2 - 6 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>5]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX25" desc="Leakage reactance 2 - 5 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>4]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX24" desc="Leakage reactance 2 - 4 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>3]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX23" desc="Leakage reactance 2 - 3 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond />
+          </parameter>
+          <parameter type="Real" name="IX16" desc="Leakage reactance 1 - 6 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>5]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX15" desc="Leakage reactance 1 - 5 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>4]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX14" desc="Leakage reactance 1 - 4 [pu]" content_type="Literal" min="0" max="" unit="pu">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>3]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX13" desc="Leakage reactance 1 - 3 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond />
+          </parameter>
+          <parameter type="Real" name="IX12" desc="Leakage reactance 1 - 2 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond />
+          </parameter>
+        </category>
+        <category name="Configuration 3">
+          <cond />
+          <parameter type="Choice" name="OF2" desc="Breakout terminal F2?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond><![CDATA[NoW>5]]></cond>
+          </parameter>
+          <parameter type="Choice" name="OF1" desc="Breakout terminal F1?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond><![CDATA[NoW>5]]></cond>
+          </parameter>
+          <parameter type="Choice" name="OE2" desc="Breakout terminal E2?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond><![CDATA[NoW>4]]></cond>
+          </parameter>
+          <parameter type="Choice" name="OE1" desc="Breakout terminal E1?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond><![CDATA[NoW>4]]></cond>
+          </parameter>
+          <parameter type="Choice" name="OD2" desc="Breakout terminal D2?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond><![CDATA[NoW>3]]></cond>
+          </parameter>
+          <parameter type="Choice" name="OD1" desc="Breakout terminal D1?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond><![CDATA[NoW>3]]></cond>
+          </parameter>
+          <parameter type="Choice" name="OC2" desc="Breakout terminal C2?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond />
+          </parameter>
+          <parameter type="Choice" name="OC1" desc="Breakout terminal C1?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond />
+          </parameter>
+          <parameter type="Choice" name="OB2" desc="Breakout terminal B2?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond />
+          </parameter>
+          <parameter type="Choice" name="OB1" desc="Breakout terminal B1?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond />
+          </parameter>
+          <parameter type="Choice" name="OA2" desc="Breakout terminal A2?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond />
+          </parameter>
+          <parameter type="Choice" name="OA1" desc="Breakout terminal A1?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond />
+          </parameter>
+        </category>
+      </form>
+      <svg viewBox="-200 -200 200 200" scrolly="1315">
+        <port model="Natural" name="C1" x="72" y="-54" dim="3" mode="" type="NonRemovable"><![CDATA[OC1==0]]></port>
+        <port model="Natural" name="D1" x="72" y="36" dim="3" mode="" type="NonRemovable"><![CDATA[OD1==0 && NoW>3]]></port>
+        <port model="Natural" name="B1" x="-36" y="36" dim="3" mode="" type="NonRemovable"><![CDATA[OB1==0]]></port>
+        <port model="Natural" name="A1" x="-36" y="-54" dim="3" mode="" type="NonRemovable"><![CDATA[OA1==0]]></port>
+        <port model="Natural" name="E1" x="0" y="-126" dim="3" mode="" type="NonRemovable"><![CDATA[OE1==0 && NoW>4]]></port>
+        <port model="Natural" name="C2" x="72" y="-18" dim="3" mode="" type="NonRemovable"><![CDATA[OC2==0]]></port>
+        <port model="Natural" name="D2" x="72" y="72" dim="3" mode="" type="NonRemovable"><![CDATA[OD2==0 && NoW>3]]></port>
+        <port model="Natural" name="B2" x="-36" y="72" dim="3" mode="" type="NonRemovable"><![CDATA[OB2==0]]></port>
+        <port model="Natural" name="A2" x="-36" y="-18" dim="3" mode="" type="NonRemovable"><![CDATA[OA2==0]]></port>
+        <port model="Natural" name="E2" x="36" y="-126" dim="3" mode="" type="NonRemovable"><![CDATA[OE2==0 && NoW>4]]></port>
+        <port model="Natural" name="A11" x="-90" y="-126" dim="1" mode="" type="NonRemovable"><![CDATA[OA1==1]]></port>
+        <port model="Natural" name="A12" x="-90" y="-108" dim="1" mode="" type="NonRemovable"><![CDATA[OA1==1]]></port>
+        <port model="Natural" name="A13" x="-90" y="-90" dim="1" mode="" type="NonRemovable"><![CDATA[OA1==1]]></port>
+        <port model="Natural" name="A21" x="-90" y="-54" dim="1" mode="" type="NonRemovable"><![CDATA[OA2==1]]></port>
+        <port model="Natural" name="A22" x="-90" y="-36" dim="1" mode="" type="NonRemovable"><![CDATA[OA2==1]]></port>
+        <port model="Natural" name="A23" x="-90" y="-18" dim="1" mode="" type="NonRemovable"><![CDATA[OA2==1]]></port>
+        <port model="Natural" name="B11" x="-90" y="36" dim="1" mode="" type="NonRemovable"><![CDATA[OB1==1]]></port>
+        <port model="Natural" name="B12" x="-90" y="54" dim="1" mode="" type="NonRemovable"><![CDATA[OB1==1]]></port>
+        <port model="Natural" name="B13" x="-90" y="72" dim="1" mode="" type="NonRemovable"><![CDATA[OB1==1]]></port>
+        <port model="Natural" name="B21" x="-90" y="108" dim="1" mode="" type="NonRemovable"><![CDATA[OB2==1]]></port>
+        <port model="Natural" name="B22" x="-90" y="126" dim="1" mode="" type="NonRemovable"><![CDATA[OB2==1]]></port>
+        <port model="Natural" name="B23" x="-90" y="144" dim="1" mode="" type="NonRemovable"><![CDATA[OB2==1]]></port>
+        <port model="Natural" name="D11" x="126" y="36" dim="1" mode="" type="NonRemovable"><![CDATA[OD1==1 && NoW>3]]></port>
+        <port model="Natural" name="D12" x="126" y="54" dim="1" mode="" type="NonRemovable"><![CDATA[OD1==1 && NoW>3]]></port>
+        <port model="Natural" name="D13" x="126" y="72" dim="1" mode="" type="NonRemovable"><![CDATA[OD1==1 && NoW>3]]></port>
+        <port model="Natural" name="D21" x="126" y="108" dim="1" mode="" type="NonRemovable"><![CDATA[OD2==1 && NoW>3]]></port>
+        <port model="Natural" name="D22" x="126" y="126" dim="1" mode="" type="NonRemovable"><![CDATA[OD2==1 && NoW>3]]></port>
+        <port model="Natural" name="D23" x="126" y="144" dim="1" mode="" type="NonRemovable"><![CDATA[OD2==1 && NoW>3]]></port>
+        <port model="Natural" name="E11" x="-36" y="-180" dim="1" mode="" type="NonRemovable"><![CDATA[OE1==1 && NoW>4]]></port>
+        <port model="Natural" name="E12" x="-18" y="-180" dim="1" mode="" type="NonRemovable"><![CDATA[OE1==1 && NoW>4]]></port>
+        <port model="Natural" name="E13" x="0" y="-180" dim="1" mode="" type="NonRemovable"><![CDATA[OE1==1 && NoW>4]]></port>
+        <port model="Natural" name="E21" x="36" y="-180" dim="1" mode="" type="NonRemovable"><![CDATA[OE2==1 && NoW>4]]></port>
+        <port model="Natural" name="E22" x="54" y="-180" dim="1" mode="" type="NonRemovable"><![CDATA[OE2==1 && NoW>4]]></port>
+        <port model="Natural" name="E23" x="72" y="-180" dim="1" mode="" type="NonRemovable"><![CDATA[OE2==1 && NoW>4]]></port>
+        <port model="Natural" name="C11" x="126" y="-126" dim="1" mode="" type="NonRemovable"><![CDATA[OC1==1]]></port>
+        <port model="Natural" name="C12" x="126" y="-108" dim="1" mode="" type="NonRemovable"><![CDATA[OC1==1]]></port>
+        <port model="Natural" name="C13" x="126" y="-90" dim="1" mode="" type="NonRemovable"><![CDATA[OC1==1]]></port>
+        <port model="Natural" name="C21" x="126" y="-54" dim="1" mode="" type="NonRemovable"><![CDATA[OC2==1]]></port>
+        <port model="Natural" name="C22" x="126" y="-36" dim="1" mode="" type="Switched"><![CDATA[OC2==1]]></port>
+        <port model="Natural" name="C23" x="126" y="-18" dim="1" mode="" type="NonRemovable"><![CDATA[OC2==1]]></port>
+        <port model="Natural" name="F1" x="0" y="144" dim="3" mode="" type="NonRemovable"><![CDATA[OF1==0 && NoW>5]]></port>
+        <port model="Natural" name="F2" x="36" y="144" dim="3" mode="" type="NonRemovable"><![CDATA[OF2==0 && NoW>5]]></port>
+        <port model="Natural" name="F11" x="-36" y="198" dim="1" mode="" type="NonRemovable"><![CDATA[OF1==1 && NoW>5]]></port>
+        <port model="Natural" name="F12" x="-18" y="198" dim="1" mode="" type="NonRemovable"><![CDATA[OF1==1 && NoW>5]]></port>
+        <port model="Natural" name="F13" x="0" y="198" dim="1" mode="" type="NonRemovable"><![CDATA[OF1==1 && NoW>5]]></port>
+        <port model="Natural" name="F21" x="36" y="198" dim="1" mode="" type="NonRemovable"><![CDATA[OF2==1 && NoW>5]]></port>
+        <port model="Natural" name="F22" x="54" y="198" dim="1" mode="" type="NonRemovable"><![CDATA[OF2==1 && NoW>5]]></port>
+        <port model="Natural" name="F23" x="72" y="198" dim="1" mode="" type="NonRemovable"><![CDATA[OF2==1 && NoW>5]]></port>
+        <line x1="-18" y1="36" x2="-36" y2="36" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <rect x="-17" y="-58" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <line x1="-18" y1="-54" x2="-36" y2="-54" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[NoW>4]]></cond>
+        <line x1="0" y1="-126" x2="0" y2="-71" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[NoW>3]]></cond>
+        <line x1="72" y1="72" x2="54" y2="72" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[true]]></cond>
+        <line x1="-36" y1="72" x2="-18" y2="72" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <rect x="-17" y="31" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <line x1="-36" y1="-18" x2="-17" y2="-18" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[NoW>4]]></cond>
+        <line x1="36" y1="-71" x2="36" y2="-126" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[NoW>3]]></cond>
+        <line x1="54" y1="36" x2="72" y2="36" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[true]]></cond>
+        <rect x="-18" y="-71" width="72" height="160" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Aqua" fill-bg="" />
+        <cond><![CDATA[NoW>3]]></cond>
+        <rect x="50" y="31" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[NoW>4]]></cond>
+        <rect x="-5" y="-70" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OA1==1]]></cond>
+        <line x1="-53" y1="-108" x2="-36" y2="-108" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="-72" y1="-126" x2="-58" y2="-112" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-71" y1="-90" x2="-58" y2="-103" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-36" y1="-108" x2="-36" y2="-54" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="-90" y1="-108" x2="-60" y2="-108" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="-126" x2="-72" y2="-126" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="-90" x2="-71" y2="-90" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="-53" cy="-108" rx="6" ry="7" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OA2==1]]></cond>
+        <line x1="-53" y1="-36" x2="-36" y2="-36" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="-72" y1="-54" x2="-58" y2="-40" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-71" y1="-18" x2="-58" y2="-31" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="-36" x2="-60" y2="-36" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="-54" x2="-72" y2="-54" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="-18" x2="-71" y2="-18" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="-53" cy="-36" rx="6" ry="7" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OB1==1]]></cond>
+        <line x1="-53" y1="54" x2="-36" y2="54" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="-72" y1="36" x2="-58" y2="50" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-71" y1="72" x2="-58" y2="59" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="54" x2="-60" y2="54" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="36" x2="-72" y2="36" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="72" x2="-71" y2="72" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="-53" cy="54" rx="6" ry="7" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OB2==1]]></cond>
+        <line x1="-53" y1="126" x2="-36" y2="126" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="-72" y1="108" x2="-58" y2="122" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-71" y1="144" x2="-58" y2="131" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="126" x2="-60" y2="126" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="108" x2="-72" y2="108" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="144" x2="-71" y2="144" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="-53" cy="126" rx="6" ry="7" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OA2==1]]></cond>
+        <line x1="-36" y1="-36" x2="-36" y2="-18" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[OB1==1]]></cond>
+        <line x1="-36" y1="36" x2="-36" y2="53" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[OB2==1]]></cond>
+        <line x1="-36" y1="72" x2="-36" y2="125" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[OD1==1 && NoW>3]]></cond>
+        <line x1="89" y1="54" x2="72" y2="54" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="108" y1="72" x2="94" y2="58" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="107" y1="36" x2="94" y2="49" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="72" y1="54" x2="72" y2="36" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="126" y1="54" x2="96" y2="54" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="72" x2="108" y2="72" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="36" x2="107" y2="36" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="89" cy="54" rx="6" ry="7" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OD2==1 && NoW>3]]></cond>
+        <line x1="89" y1="126" x2="72" y2="126" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="108" y1="144" x2="94" y2="130" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="107" y1="108" x2="94" y2="121" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="126" x2="96" y2="126" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="144" x2="108" y2="144" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="108" x2="107" y2="108" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="89" cy="126" rx="6" ry="7" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <line x1="72" y1="126" x2="72" y2="72" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[OE1==1 && NoW>4]]></cond>
+        <line x1="-18" y1="-143" x2="-18" y2="-126" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="-36" y1="-162" x2="-22" y2="-148" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="0" y1="-161" x2="-13" y2="-148" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-18" y1="-180" x2="-18" y2="-150" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-36" y1="-180" x2="-36" y2="-162" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="0" y1="-180" x2="0" y2="-161" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="-18" cy="-143" rx="7" ry="6" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <line x1="-17" y1="-126" x2="0" y2="-126" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[OE2==1 && NoW>4]]></cond>
+        <line x1="54" y1="-143" x2="54" y2="-126" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="36" y1="-162" x2="50" y2="-148" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="72" y1="-161" x2="59" y2="-148" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="54" y1="-180" x2="54" y2="-150" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="36" y1="-180" x2="36" y2="-162" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="72" y1="-180" x2="72" y2="-161" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="54" cy="-143" rx="7" ry="6" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <line x1="36" y1="-126" x2="54" y2="-126" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[OC1==1]]></cond>
+        <line x1="89" y1="-108" x2="72" y2="-108" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="108" y1="-90" x2="94" y2="-104" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="107" y1="-126" x2="94" y2="-113" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="-108" x2="96" y2="-108" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="-90" x2="108" y2="-90" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="-126" x2="107" y2="-126" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="89" cy="-108" rx="6" ry="7" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OC2==1]]></cond>
+        <line x1="89" y1="-36" x2="72" y2="-36" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="108" y1="-18" x2="94" y2="-32" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="107" y1="-54" x2="94" y2="-41" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="-36" x2="96" y2="-36" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="-18" x2="108" y2="-18" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="-54" x2="107" y2="-54" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="89" cy="-36" rx="6" ry="7" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OC1==1]]></cond>
+        <line x1="72" y1="-107" x2="72" y2="-54" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[OC2==1]]></cond>
+        <line x1="72" y1="-36" x2="72" y2="-19" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[true]]></cond>
+        <line x1="72" y1="-18" x2="54" y2="-18" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="72" y1="-54" x2="54" y2="-54" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[OA1==1]]></cond>
+        <rect x="-77" y="-125" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OC1==1]]></cond>
+        <rect x="107" y="-125" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OC2==1]]></cond>
+        <rect x="107" y="-53" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OA2==1]]></cond>
+        <rect x="-76" y="-53" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OB1==1]]></cond>
+        <rect x="-77" y="37" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OB2==1]]></cond>
+        <rect x="-76" y="109" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OD1==1 && NoW>3]]></cond>
+        <rect x="108" y="37" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OD2==1 && NoW>3]]></cond>
+        <rect x="108" y="109" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OE1==1 && NoW>4]]></cond>
+        <rect x="-35" y="-167" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OE2==1 && NoW>4]]></cond>
+        <rect x="37" y="-167" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[NoW==5]]></cond>
+        <text x="18" y="1" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[5 Wdg Trf]]></text>
+        <cond><![CDATA[true]]></cond>
+        <text x="-28" y="-42" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[A1]]></text>
+        <text x="-27" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[A2]]></text>
+        <text x="-27" y="84" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[B2]]></text>
+        <text x="-28" y="48" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[B1]]></text>
+        <text x="62" y="-7" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[C2]]></text>
+        <text x="63" y="-43" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[C1]]></text>
+        <cond><![CDATA[NoW>3]]></cond>
+        <text x="62" y="85" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[D2]]></text>
+        <text x="63" y="49" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[D1]]></text>
+        <cond><![CDATA[NoW>4]]></cond>
+        <text x="44" y="-83" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[E2]]></text>
+        <text x="-8" y="-83" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[E1]]></text>
+        <cond><![CDATA[true]]></cond>
+        <text x="18" y="18" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[3 Phase]]></text>
+        <text x="41" y="-31" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[%W3name]]></text>
+        <text x="-3" y="-32" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[%W1name]]></text>
+        <cond><![CDATA[NoW>3]]></cond>
+        <text x="39" y="61" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[%W4name]]></text>
+        <cond><![CDATA[true]]></cond>
+        <text x="-2" y="61" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[%W2name]]></text>
+        <cond><![CDATA[NoW>4]]></cond>
+        <text x="18" y="-58" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[%W5name]]></text>
+        <cond><![CDATA[NoW==4]]></cond>
+        <text x="17" y="1" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[4 Wdg Trf]]></text>
+        <cond><![CDATA[NoW>5]]></cond>
+        <text x="18" y="1" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[6 Wdg Trf]]></text>
+        <line x1="0" y1="144" x2="0" y2="89" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="36" y1="89" x2="36" y2="144" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <rect x="-5" y="85" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OF1==1 && NoW>5]]></cond>
+        <line x1="-18" y1="161" x2="-18" y2="144" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="-36" y1="180" x2="-22" y2="166" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="0" y1="179" x2="-13" y2="166" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-18" y1="198" x2="-18" y2="168" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-36" y1="198" x2="-36" y2="180" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="0" y1="198" x2="0" y2="179" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="-18" cy="161" rx="7" ry="6" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <line x1="-17" y1="144" x2="0" y2="144" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[OF2==1 && NoW>5]]></cond>
+        <line x1="54" y1="161" x2="54" y2="144" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="36" y1="180" x2="50" y2="166" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="72" y1="179" x2="59" y2="166" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="54" y1="198" x2="54" y2="168" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="36" y1="198" x2="36" y2="180" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="72" y1="198" x2="72" y2="179" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="54" cy="161" rx="7" ry="6" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <line x1="36" y1="144" x2="54" y2="144" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[OF1==1 && NoW>5]]></cond>
+        <rect x="-35" y="182" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OF2==1 && NoW>5]]></cond>
+        <rect x="37" y="182" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[NoW>5]]></cond>
+        <text x="44" y="101" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[F2]]></text>
+        <text x="-8" y="101" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[F1]]></text>
+        <text x="18" y="83" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[%W6name]]></text>
+        <cond><![CDATA[NoW==3]]></cond>
+        <text x="17" y="1" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[3 Wdg Trf]]></text>
+        <cond><![CDATA[true]]></cond>
+        <rect x="50" y="-57" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+      </svg>
+      <script>
+        <segment name="Transformers"><![CDATA[#TRANSFORMERS 3
+
+#IF NoW==3
+-3 -1/ Number of windings...
+#WINDINGS 3
+#ELSEIF NoW==4
+-4 -1/ Number of windings...
+#WINDINGS 4
+#ELSEIF NoW==5
+-5 -1/ Number of windings...
+#WINDINGS 5
+#ELSEIF NoW==6
+-6 -1/ Number of windings...
+#WINDINGS 6
+#ENDIF
+!
+#CASE OA1 {$A1(1) ~}  {$A11 ~}
+#CASE OA2 {~$A2(1) ~} {~$A21 ~}
+~ 0.0 $Y1 /
+#CASE OB1 {$B1(1) ~}  {$B11 ~}
+#CASE OB2 {~$B2(1) ~} {~$B21 ~}    
+~ 0.0 $Y21   0.0 $Y2 /
+#CASE OC1 {$C1(1) ~}  {$C11 ~}
+#CASE OC2 {~$C2(1) ~} {~$C21 ~}    
+~ 0.0 $Y31   0.0 $Y32   0.0 $Y3 /
+#IF NoW>3
+#CASE OD1 {$D1(1) ~}  {$D11 ~}
+#CASE OD2 {~$D2(1) ~} {~$D21 ~}    
+~ 0.0 $Y41   0.0 $Y42   0.0 $Y43   0.0 $Y4 /
+#IF NoW>4
+#CASE OE1 {$E1(1) ~}  {$E11 ~}
+#CASE OE2 {~$E2(1) ~} {~$E21 ~}    
+~ 0.0 $Y51   0.0 $Y52   0.0 $Y53   0.0 $Y54   0.0 $Y5 /
+#IF NoW>5
+#CASE OF1 {$F1(1) ~}  {$F11 ~}
+#CASE OF2 {~$F2(1) ~} {~$F21 ~}    
+~ 0.0 $Y61   0.0 $Y62   0.0 $Y63   0.0 $Y64   0.0 $Y65   0.0 $Y6 /
+#ENDIF
+#ENDIF
+#ENDIF
+!
+888/
+!
+#CASE OA1 { $A1(2) ~} { $A12 ~}
+#CASE OA2 {~$A2(2) ~} {~$A22 }
+#CASE OB1 { $B1(2) ~} { $B12 ~}
+#CASE OB2 {~$B2(2) ~} {~$B22 }
+#CASE OC1 { $C1(2) ~} { $C12 ~}
+#CASE OC2 {~$C2(2) ~} {~$C22 }
+#IF NoW>3
+#CASE OD1 { $D1(2) ~} { $D12 ~}
+#CASE OD2 {~$D2(2) ~} {~$D22 }
+#IF NoW>4
+#CASE OE1 { $E1(2) ~} { $E12 ~}
+#CASE OE2 {~$E2(2) ~} {~$E22 }
+#IF NoW>5
+#CASE OF1 { $F1(2) ~} { $F12 ~}
+#CASE OF2 {~$F2(2) ~} {~$F22 }
+#ENDIF
+#ENDIF
+#ENDIF
+!
+888/
+!
+#CASE OA1 {$A1(3) ~}  {$A13 ~}
+#CASE OA2 {~$A2(3) ~} {~$A23 }
+#CASE OB1 { $B1(3) ~} { $B13 ~}
+#CASE OB2 {~$B2(3) ~} {~$B23 }
+#CASE OC1 { $C1(3) ~} { $C13 ~}
+#CASE OC2 {~$C2(3) ~} {~$C23 }
+#IF NoW>3
+#CASE OD1 { $D1(3) ~} { $D13 ~}
+#CASE OD2 {~$D2(3) ~} {~$D23 }
+#IF NoW>4
+#CASE OE1 { $E1(3) ~} { $E13 ~}
+#CASE OE2 {~$E2(3) ~} {~$E23 }
+#IF NoW>5
+#CASE OF1 { $F1(3) ~} { $F13 ~}
+#CASE OF2 {~$F2(3) ~} {~$F23 }
+#ENDIF
+#ENDIF
+#ENDIF
+!
+]]></segment>
+        <segment name="Computations"><![CDATA[
+!
+! Self Admitances
+!
+REAL    Y1  = 1.0
+REAL    Y2  = 1.0
+REAL    Y3  = 1.0
+REAL    Y4  = 1.0
+REAL    Y5  = 1.0
+REAL    Y6  = 1.0
+
+
+
+! Mutual Inductances
+!
+REAL    Y21 = -0.1
+REAL    Y31 = -0.1
+REAL    Y41 = -0.1
+REAL    Y51 = -0.1
+REAL    Y61 = -0.1
+
+REAL    Y32 = -0.1
+REAL    Y42 = -0.1
+REAL    Y52 = -0.1
+REAL    Y62 = -0.1
+
+REAL    Y43 = -0.1
+REAL    Y53 = -0.1
+REAL    Y63 = -0.1
+
+REAL    Y54 = -0.1
+REAL    Y64 = -0.1
+
+REAL    Y65 = -0.1
+]]></segment>
+        <segment name="Dsdyn"><![CDATA[      
+      IF(TIMEZERO) THEN
+      #LOCAL REAL IX_vect(15)
+      #LOCAL REAL VoltRat(6)
+
+      
+
+      IX_vect = 0.0
+      VoltRat = 0.0
+
+      IX_vect(1) = $IX12
+      IX_vect(2) = $IX13
+      IX_vect(3) = $IX23
+
+      VoltRat(1) = $V1
+      VoltRat(2) = $V2
+      VoltRat(3) = $V3
+
+      #IF $NoW>3
+      IX_vect(4) = $IX14
+      IX_vect(5) = $IX24
+      IX_vect(6) = $IX34
+
+      VoltRat(4) = $V4
+      #ENDIF
+
+      #IF $NoW>4
+      IX_vect(7) = $IX15
+      IX_vect(8) = $IX25
+      IX_vect(9) = $IX35
+      IX_vect(10) = $IX45    
+
+      VoltRat(5) = $V5
+      #ENDIF  
+
+      #IF $NoW>5
+      IX_vect(11) = $IX16
+      IX_vect(12) = $IX26
+      IX_vect(13) = $IX36
+      IX_vect(14) = $IX46
+      IX_vect(15) = $IX56
+
+      VoltRat(6) = $V6
+      #ENDIF
+
+      CALL HybridTRF($#[1],IX_vect,$NoW,$f,$MVA/3.0,VoltRat)
+      ! CALL HybridTRF($#[2],IX_mat,NoW,f,MVA/3.0,VoltRat)
+      ! CALL HybridTRF($#[3],IX_mat,NoW,f,MVA/3.0,VoltRat)
+
+
+      ENDIF
+
+
+]]></segment>
+      </script>
+    </Definition>
+    <Definition classid="StationDefn" name="Station" version="" build="" crc="109562683" instances="1" view="false">
+      <paramlist name="">
+        <param name="Description" value="" />
+      </paramlist>
+      <schematic classid="StationCanvas" size="A/A4" grid="false">
+        <Wire classid="WireBranch" name="Main" id="7125246" x="180" y="180" w="80" h="62" orient="0" I="0" J="0" K="0">
+          <paramlist>
+            <param name="Name" value="" />
+            <param name="Date" value="-1" />
+          </paramlist>
+          <User classid="UserCmp" name="Main" id="7125246" x="0" y="0" w="0" h="0" z="-1" orient="0" link="7125246">
+            <paramlist link="-1" name="" />
+          </User>
+          <vertex x="0" y="0" />
+          <vertex x="18" y="0" />
+          <vertex x="54" y="54" />
+          <vertex x="72" y="54" />
+        </Wire>
+      </schematic>
+    </Definition>
+    <Definition classid="UserCmpDefn" name="TRF_4ot6_Wdg_3Ph" build="" crc="95961419" view="false" instances="0" date="0">
+      <paramlist>
+        <param name="Description" value="Multiple winding transformer" />
+      </paramlist>
+      <form>
+        <category name="Configuration 1">
+          <cond />
+          <parameter type="Real" name="f" desc="System Frequency [Hz]" content_type="Literal" min="" max="" unit="Hz">
+            <value><![CDATA[50.0]]></value>
+            <cond />
+          </parameter>
+          <parameter type="Real" name="MVA" desc="Transformer MVA" content_type="Literal" min="" max="" unit="MVA">
+            <value><![CDATA[100]]></value>
+            <cond />
+          </parameter>
+          <parameter type="Choice" name="NoW" desc="Number of windings">
+            <value><![CDATA[3]]></value>
+            <choice><![CDATA[3 = 3]]></choice>
+            <choice><![CDATA[4 = 4]]></choice>
+            <choice><![CDATA[5 = 5]]></choice>
+            <choice><![CDATA[6 = 6]]></choice>
+            <cond />
+          </parameter>
+          <parameter type="Real" name="Im1" desc="Magnetizing current [%]" content_type="Literal" min="" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond />
+          </parameter>
+        </category>
+        <category name="Configuration 2">
+          <cond />
+          <parameter type="Text" name="W6name" desc="Winding F name">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NoW>5]]></cond>
+          </parameter>
+          <parameter type="Text" name="W5name" desc="Winding E name">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NoW>4]]></cond>
+          </parameter>
+          <parameter type="Text" name="W4name" desc="Winding D name">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NoW>3]]></cond>
+          </parameter>
+          <parameter type="Text" name="W3name" desc="Winding C name">
+            <value><![CDATA[]]></value>
+            <cond />
+          </parameter>
+          <parameter type="Text" name="W2name" desc="Winding B name">
+            <value><![CDATA[]]></value>
+            <cond />
+          </parameter>
+          <parameter type="Text" name="W1name" desc="Winding A name">
+            <value><![CDATA[]]></value>
+            <cond />
+          </parameter>
+          <parameter type="Real" name="V6" desc="Nominal Voltage Winding F" content_type="Literal" min="" max="" unit="kV">
+            <value><![CDATA[132.79]]></value>
+            <cond><![CDATA[NoW>5]]></cond>
+          </parameter>
+          <parameter type="Real" name="V5" desc="Nominal Voltage Winding E" content_type="Literal" min="" max="" unit="kV">
+            <value><![CDATA[132.79]]></value>
+            <cond><![CDATA[NoW>4]]></cond>
+          </parameter>
+          <parameter type="Real" name="V4" desc="Nominal Voltage Winding D" content_type="Literal" min="" max="" unit="kV">
+            <value><![CDATA[132.79]]></value>
+            <cond><![CDATA[NoW>3]]></cond>
+          </parameter>
+          <parameter type="Real" name="V3" desc="Nominal Voltage Winding C" content_type="Literal" min="" max="" unit="kV">
+            <value><![CDATA[132.79]]></value>
+            <cond />
+          </parameter>
+          <parameter type="Real" name="V2" desc="Nominal Voltage Winding B" content_type="Literal" min="" max="" unit="kV">
+            <value><![CDATA[132.79]]></value>
+            <cond />
+          </parameter>
+          <parameter type="Real" name="V1" desc="Nominal Voltage Winding A" content_type="Literal" min="" max="" unit="kV">
+            <value><![CDATA[132.79]]></value>
+            <cond />
+          </parameter>
+        </category>
+        <category name="Impedance voltages">
+          <cond />
+          <parameter type="Real" name="IX56" desc="Leakage reactance 5 - 6 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>5]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX46" desc="Leakage reactance 4 - 6 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>5]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX45" desc="Leakage reactance 4 - 5 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>4]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX36" desc="Leakage reactance 3 - 6 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>5]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX35" desc="Leakage reactance 3 - 5 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>4]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX34" desc="Leakage reactance 3 - 4 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>3]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX26" desc="Leakage reactance 2 - 6 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>5]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX25" desc="Leakage reactance 2 - 5 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>4]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX24" desc="Leakage reactance 2 - 4 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>3]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX23" desc="Leakage reactance 2 - 3 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond />
+          </parameter>
+          <parameter type="Real" name="IX16" desc="Leakage reactance 1 - 6 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>5]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX15" desc="Leakage reactance 1 - 5 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>4]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX14" desc="Leakage reactance 1 - 4 [pu]" content_type="Literal" min="0" max="" unit="pu">
+            <value><![CDATA[0.1]]></value>
+            <cond><![CDATA[NoW>3]]></cond>
+          </parameter>
+          <parameter type="Real" name="IX13" desc="Leakage reactance 1 - 3 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond />
+          </parameter>
+          <parameter type="Real" name="IX12" desc="Leakage reactance 1 - 2 [pu]" content_type="Literal" min="0" max="" unit="">
+            <value><![CDATA[0.1]]></value>
+            <cond />
+          </parameter>
+        </category>
+        <category name="Configuration 3">
+          <cond />
+          <parameter type="Choice" name="OF2" desc="Breakout terminal F2?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond><![CDATA[NoW>5]]></cond>
+          </parameter>
+          <parameter type="Choice" name="OF1" desc="Breakout terminal F1?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond><![CDATA[NoW>5]]></cond>
+          </parameter>
+          <parameter type="Choice" name="OE2" desc="Breakout terminal E2?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond><![CDATA[NoW>4]]></cond>
+          </parameter>
+          <parameter type="Choice" name="OE1" desc="Breakout terminal E1?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond><![CDATA[NoW>4]]></cond>
+          </parameter>
+          <parameter type="Choice" name="OD2" desc="Breakout terminal D2?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond><![CDATA[NoW>3]]></cond>
+          </parameter>
+          <parameter type="Choice" name="OD1" desc="Breakout terminal D1?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond><![CDATA[NoW>3]]></cond>
+          </parameter>
+          <parameter type="Choice" name="OC2" desc="Breakout terminal C2?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond />
+          </parameter>
+          <parameter type="Choice" name="OC1" desc="Breakout terminal C1?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond />
+          </parameter>
+          <parameter type="Choice" name="OB2" desc="Breakout terminal B2?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond />
+          </parameter>
+          <parameter type="Choice" name="OB1" desc="Breakout terminal B1?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond />
+          </parameter>
+          <parameter type="Choice" name="OA2" desc="Breakout terminal A2?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond />
+          </parameter>
+          <parameter type="Choice" name="OA1" desc="Breakout terminal A1?">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <cond />
+          </parameter>
+        </category>
+      </form>
+      <svg viewBox="-200 -200 200 200" scrolly="1206">
+        <port model="Natural" name="C1" x="72" y="-54" dim="3" mode="" type="NonRemovable"><![CDATA[OC1==0]]></port>
+        <port model="Natural" name="D1" x="72" y="36" dim="3" mode="" type="NonRemovable"><![CDATA[OD1==0 && NoW>3]]></port>
+        <port model="Natural" name="B1" x="-36" y="36" dim="3" mode="" type="NonRemovable"><![CDATA[OB1==0]]></port>
+        <port model="Natural" name="A1" x="-36" y="-54" dim="3" mode="" type="NonRemovable"><![CDATA[OA1==0]]></port>
+        <port model="Natural" name="E1" x="0" y="-126" dim="3" mode="" type="NonRemovable"><![CDATA[OE1==0 && NoW>4]]></port>
+        <port model="Natural" name="C2" x="72" y="-18" dim="3" mode="" type="NonRemovable"><![CDATA[OC2==0]]></port>
+        <port model="Natural" name="D2" x="72" y="72" dim="3" mode="" type="NonRemovable"><![CDATA[OD2==0 && NoW>3]]></port>
+        <port model="Natural" name="B2" x="-36" y="72" dim="3" mode="" type="NonRemovable"><![CDATA[OB2==0]]></port>
+        <port model="Natural" name="A2" x="-36" y="-18" dim="3" mode="" type="NonRemovable"><![CDATA[OA2==0]]></port>
+        <port model="Natural" name="E2" x="36" y="-126" dim="3" mode="" type="NonRemovable"><![CDATA[OE2==0 && NoW>4]]></port>
+        <port model="Natural" name="A11" x="-90" y="-126" dim="1" mode="" type="NonRemovable"><![CDATA[OA1==1]]></port>
+        <port model="Natural" name="A12" x="-90" y="-108" dim="1" mode="" type="NonRemovable"><![CDATA[OA1==1]]></port>
+        <port model="Natural" name="A13" x="-90" y="-90" dim="1" mode="" type="NonRemovable"><![CDATA[OA1==1]]></port>
+        <port model="Natural" name="A21" x="-90" y="-54" dim="1" mode="" type="NonRemovable"><![CDATA[OA2==1]]></port>
+        <port model="Natural" name="A22" x="-90" y="-36" dim="1" mode="" type="NonRemovable"><![CDATA[OA2==1]]></port>
+        <port model="Natural" name="A23" x="-90" y="-18" dim="1" mode="" type="NonRemovable"><![CDATA[OA2==1]]></port>
+        <port model="Natural" name="B11" x="-90" y="36" dim="1" mode="" type="NonRemovable"><![CDATA[OB1==1]]></port>
+        <port model="Natural" name="B12" x="-90" y="54" dim="1" mode="" type="NonRemovable"><![CDATA[OB1==1]]></port>
+        <port model="Natural" name="B13" x="-90" y="72" dim="1" mode="" type="NonRemovable"><![CDATA[OB1==1]]></port>
+        <port model="Natural" name="B21" x="-90" y="108" dim="1" mode="" type="NonRemovable"><![CDATA[OB2==1]]></port>
+        <port model="Natural" name="B22" x="-90" y="126" dim="1" mode="" type="NonRemovable"><![CDATA[OB2==1]]></port>
+        <port model="Natural" name="B23" x="-90" y="144" dim="1" mode="" type="NonRemovable"><![CDATA[OB2==1]]></port>
+        <port model="Natural" name="D11" x="126" y="36" dim="1" mode="" type="NonRemovable"><![CDATA[OD1==1 && NoW>3]]></port>
+        <port model="Natural" name="D12" x="126" y="54" dim="1" mode="" type="NonRemovable"><![CDATA[OD1==1 && NoW>3]]></port>
+        <port model="Natural" name="D13" x="126" y="72" dim="1" mode="" type="NonRemovable"><![CDATA[OD1==1 && NoW>3]]></port>
+        <port model="Natural" name="D21" x="126" y="108" dim="1" mode="" type="NonRemovable"><![CDATA[OD2==1 && NoW>3]]></port>
+        <port model="Natural" name="D22" x="126" y="126" dim="1" mode="" type="NonRemovable"><![CDATA[OD2==1 && NoW>3]]></port>
+        <port model="Natural" name="D23" x="126" y="144" dim="1" mode="" type="NonRemovable"><![CDATA[OD2==1 && NoW>3]]></port>
+        <port model="Natural" name="E11" x="-36" y="-180" dim="1" mode="" type="NonRemovable"><![CDATA[OE1==1 && NoW>4]]></port>
+        <port model="Natural" name="E12" x="-18" y="-180" dim="1" mode="" type="NonRemovable"><![CDATA[OE1==1 && NoW>4]]></port>
+        <port model="Natural" name="E13" x="0" y="-180" dim="1" mode="" type="NonRemovable"><![CDATA[OE1==1 && NoW>4]]></port>
+        <port model="Natural" name="E21" x="36" y="-180" dim="1" mode="" type="NonRemovable"><![CDATA[OE2==1 && NoW>4]]></port>
+        <port model="Natural" name="E22" x="54" y="-180" dim="1" mode="" type="NonRemovable"><![CDATA[OE2==1 && NoW>4]]></port>
+        <port model="Natural" name="E23" x="72" y="-180" dim="1" mode="" type="NonRemovable"><![CDATA[OE2==1 && NoW>4]]></port>
+        <port model="Natural" name="C11" x="126" y="-126" dim="1" mode="" type="NonRemovable"><![CDATA[OC1==1]]></port>
+        <port model="Natural" name="C12" x="126" y="-108" dim="1" mode="" type="NonRemovable"><![CDATA[OC1==1]]></port>
+        <port model="Natural" name="C13" x="126" y="-90" dim="1" mode="" type="NonRemovable"><![CDATA[OC1==1]]></port>
+        <port model="Natural" name="C21" x="126" y="-54" dim="1" mode="" type="NonRemovable"><![CDATA[OC2==1]]></port>
+        <port model="Natural" name="C22" x="126" y="-36" dim="1" mode="" type="Switched"><![CDATA[OC2==1]]></port>
+        <port model="Natural" name="C23" x="126" y="-18" dim="1" mode="" type="NonRemovable"><![CDATA[OC2==1]]></port>
+        <port model="Natural" name="F1" x="0" y="144" dim="3" mode="" type="NonRemovable"><![CDATA[OF1==0 && NoW>5]]></port>
+        <port model="Natural" name="F2" x="36" y="144" dim="3" mode="" type="NonRemovable"><![CDATA[OF2==0 && NoW>5]]></port>
+        <port model="Natural" name="F11" x="-36" y="198" dim="1" mode="" type="NonRemovable"><![CDATA[OF1==1 && NoW>5]]></port>
+        <port model="Natural" name="F12" x="-18" y="198" dim="1" mode="" type="NonRemovable"><![CDATA[OF1==1 && NoW>5]]></port>
+        <port model="Natural" name="F13" x="0" y="198" dim="1" mode="" type="NonRemovable"><![CDATA[OF1==1 && NoW>5]]></port>
+        <port model="Natural" name="F21" x="36" y="198" dim="1" mode="" type="NonRemovable"><![CDATA[OF2==1 && NoW>5]]></port>
+        <port model="Natural" name="F22" x="54" y="198" dim="1" mode="" type="NonRemovable"><![CDATA[OF2==1 && NoW>5]]></port>
+        <port model="Natural" name="F23" x="72" y="198" dim="1" mode="" type="NonRemovable"><![CDATA[OF2==1 && NoW>5]]></port>
+        <line x1="-18" y1="36" x2="-36" y2="36" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <rect x="-17" y="-58" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <line x1="-18" y1="-54" x2="-36" y2="-54" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[NoW>4]]></cond>
+        <line x1="0" y1="-126" x2="0" y2="-71" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[NoW>3]]></cond>
+        <line x1="72" y1="72" x2="54" y2="72" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[true]]></cond>
+        <line x1="-36" y1="72" x2="-18" y2="72" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <rect x="-17" y="31" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <line x1="-36" y1="-18" x2="-17" y2="-18" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[NoW>4]]></cond>
+        <line x1="36" y1="-71" x2="36" y2="-126" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[NoW>3]]></cond>
+        <line x1="54" y1="36" x2="72" y2="36" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[true]]></cond>
+        <rect x="-18" y="-71" width="72" height="160" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[NoW>3]]></cond>
+        <rect x="50" y="31" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[NoW>4]]></cond>
+        <rect x="-5" y="-70" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OA1==1]]></cond>
+        <line x1="-53" y1="-108" x2="-36" y2="-108" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="-72" y1="-126" x2="-58" y2="-112" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-71" y1="-90" x2="-58" y2="-103" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-36" y1="-108" x2="-36" y2="-54" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="-90" y1="-108" x2="-60" y2="-108" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="-126" x2="-72" y2="-126" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="-90" x2="-71" y2="-90" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="-53" cy="-108" rx="6" ry="7" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OA2==1]]></cond>
+        <line x1="-53" y1="-36" x2="-36" y2="-36" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="-72" y1="-54" x2="-58" y2="-40" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-71" y1="-18" x2="-58" y2="-31" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="-36" x2="-60" y2="-36" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="-54" x2="-72" y2="-54" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="-18" x2="-71" y2="-18" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="-53" cy="-36" rx="6" ry="7" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OB1==1]]></cond>
+        <line x1="-53" y1="54" x2="-36" y2="54" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="-72" y1="36" x2="-58" y2="50" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-71" y1="72" x2="-58" y2="59" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="54" x2="-60" y2="54" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="36" x2="-72" y2="36" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="72" x2="-71" y2="72" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="-53" cy="54" rx="6" ry="7" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OB2==1]]></cond>
+        <line x1="-53" y1="126" x2="-36" y2="126" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="-72" y1="108" x2="-58" y2="122" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-71" y1="144" x2="-58" y2="131" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="126" x2="-60" y2="126" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="108" x2="-72" y2="108" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-90" y1="144" x2="-71" y2="144" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="-53" cy="126" rx="6" ry="7" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OA2==1]]></cond>
+        <line x1="-36" y1="-36" x2="-36" y2="-18" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[OB1==1]]></cond>
+        <line x1="-36" y1="36" x2="-36" y2="53" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[OB2==1]]></cond>
+        <line x1="-36" y1="72" x2="-36" y2="125" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[OD1==1 && NoW>3]]></cond>
+        <line x1="89" y1="54" x2="72" y2="54" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="108" y1="72" x2="94" y2="58" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="107" y1="36" x2="94" y2="49" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="72" y1="54" x2="72" y2="36" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="126" y1="54" x2="96" y2="54" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="72" x2="108" y2="72" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="36" x2="107" y2="36" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="89" cy="54" rx="6" ry="7" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OD2==1 && NoW>3]]></cond>
+        <line x1="89" y1="126" x2="72" y2="126" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="108" y1="144" x2="94" y2="130" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="107" y1="108" x2="94" y2="121" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="126" x2="96" y2="126" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="144" x2="108" y2="144" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="108" x2="107" y2="108" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="89" cy="126" rx="6" ry="7" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <line x1="72" y1="126" x2="72" y2="72" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[OE1==1 && NoW>4]]></cond>
+        <line x1="-18" y1="-143" x2="-18" y2="-126" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="-36" y1="-162" x2="-22" y2="-148" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="0" y1="-161" x2="-13" y2="-148" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-18" y1="-180" x2="-18" y2="-150" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-36" y1="-180" x2="-36" y2="-162" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="0" y1="-180" x2="0" y2="-161" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="-18" cy="-143" rx="7" ry="6" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <line x1="-17" y1="-126" x2="0" y2="-126" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[OE2==1 && NoW>4]]></cond>
+        <line x1="54" y1="-143" x2="54" y2="-126" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="36" y1="-162" x2="50" y2="-148" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="72" y1="-161" x2="59" y2="-148" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="54" y1="-180" x2="54" y2="-150" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="36" y1="-180" x2="36" y2="-162" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="72" y1="-180" x2="72" y2="-161" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="54" cy="-143" rx="7" ry="6" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <line x1="36" y1="-126" x2="54" y2="-126" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[OC1==1]]></cond>
+        <line x1="89" y1="-108" x2="72" y2="-108" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="108" y1="-90" x2="94" y2="-104" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="107" y1="-126" x2="94" y2="-113" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="-108" x2="96" y2="-108" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="-90" x2="108" y2="-90" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="-126" x2="107" y2="-126" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="89" cy="-108" rx="6" ry="7" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OC2==1]]></cond>
+        <line x1="89" y1="-36" x2="72" y2="-36" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="108" y1="-18" x2="94" y2="-32" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="107" y1="-54" x2="94" y2="-41" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="-36" x2="96" y2="-36" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="-18" x2="108" y2="-18" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="126" y1="-54" x2="107" y2="-54" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="89" cy="-36" rx="6" ry="7" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OC1==1]]></cond>
+        <line x1="72" y1="-107" x2="72" y2="-54" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[OC2==1]]></cond>
+        <line x1="72" y1="-36" x2="72" y2="-19" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[true]]></cond>
+        <line x1="72" y1="-18" x2="54" y2="-18" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="72" y1="-54" x2="54" y2="-54" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[OA1==1]]></cond>
+        <rect x="-77" y="-125" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OC1==1]]></cond>
+        <rect x="107" y="-125" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OC2==1]]></cond>
+        <rect x="107" y="-53" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OA2==1]]></cond>
+        <rect x="-76" y="-53" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OB1==1]]></cond>
+        <rect x="-77" y="37" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OB2==1]]></cond>
+        <rect x="-76" y="109" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OD1==1 && NoW>3]]></cond>
+        <rect x="108" y="37" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OD2==1 && NoW>3]]></cond>
+        <rect x="108" y="109" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OE1==1 && NoW>4]]></cond>
+        <rect x="-35" y="-167" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OE2==1 && NoW>4]]></cond>
+        <rect x="37" y="-167" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[NoW==5]]></cond>
+        <text x="18" y="1" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[5 Wdg Trf]]></text>
+        <cond><![CDATA[true]]></cond>
+        <text x="-28" y="-42" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[A1]]></text>
+        <text x="-27" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[A2]]></text>
+        <text x="-27" y="84" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[B2]]></text>
+        <text x="-28" y="48" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[B1]]></text>
+        <text x="62" y="-7" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[C2]]></text>
+        <text x="63" y="-43" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[C1]]></text>
+        <cond><![CDATA[NoW>3]]></cond>
+        <text x="62" y="85" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[D2]]></text>
+        <text x="63" y="49" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[D1]]></text>
+        <cond><![CDATA[NoW>4]]></cond>
+        <text x="44" y="-83" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[E2]]></text>
+        <text x="-8" y="-83" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[E1]]></text>
+        <cond><![CDATA[true]]></cond>
+        <text x="18" y="18" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[3 Phase]]></text>
+        <text x="41" y="-31" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[%W3name]]></text>
+        <text x="-3" y="-32" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[%W1name]]></text>
+        <cond><![CDATA[NoW>3]]></cond>
+        <text x="39" y="61" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[%W4name]]></text>
+        <cond><![CDATA[true]]></cond>
+        <text x="-2" y="61" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[%W2name]]></text>
+        <cond><![CDATA[NoW>4]]></cond>
+        <text x="18" y="-58" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[%W5name]]></text>
+        <cond><![CDATA[NoW==4]]></cond>
+        <text x="17" y="1" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[4 Wdg Trf]]></text>
+        <cond><![CDATA[NoW>5]]></cond>
+        <text x="18" y="1" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[6 Wdg Trf]]></text>
+        <line x1="0" y1="144" x2="0" y2="89" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="36" y1="89" x2="36" y2="144" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <rect x="-5" y="85" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OF1==1 && NoW>5]]></cond>
+        <line x1="-18" y1="161" x2="-18" y2="144" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="-36" y1="180" x2="-22" y2="166" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="0" y1="179" x2="-13" y2="166" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-18" y1="198" x2="-18" y2="168" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="-36" y1="198" x2="-36" y2="180" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="0" y1="198" x2="0" y2="179" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="-18" cy="161" rx="7" ry="6" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <line x1="-17" y1="144" x2="0" y2="144" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[OF2==1 && NoW>5]]></cond>
+        <line x1="54" y1="161" x2="54" y2="144" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <line x1="36" y1="180" x2="50" y2="166" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="72" y1="179" x2="59" y2="166" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="54" y1="198" x2="54" y2="168" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="36" y1="198" x2="36" y2="180" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <line x1="72" y1="198" x2="72" y2="179" stroke="Black" stroke-dasharray="none" stroke-width="0.2" />
+        <ellipse cx="54" cy="161" rx="7" ry="6" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Navy" fill-bg="" />
+        <line x1="36" y1="144" x2="54" y2="144" stroke="Black" stroke-dasharray="none" stroke-width="0.6" />
+        <cond><![CDATA[OF1==1 && NoW>5]]></cond>
+        <rect x="-35" y="182" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[OF2==1 && NoW>5]]></cond>
+        <rect x="37" y="182" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+        <cond><![CDATA[NoW>5]]></cond>
+        <text x="44" y="101" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[F2]]></text>
+        <text x="-8" y="101" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[F1]]></text>
+        <text x="18" y="83" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[%W6name]]></text>
+        <cond><![CDATA[NoW==3]]></cond>
+        <text x="17" y="1" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[3 Wdg Trf]]></text>
+        <cond><![CDATA[true]]></cond>
+        <rect x="50" y="-57" width="3" height="3" stroke="Blue" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Navy" fill-bg="" />
+      </svg>
+      <script>
+        <segment name="Transformers"><![CDATA[#TRANSFORMERS 3
+
+#IF NoW==3
+3 / Number of windings...
+#WINDINGS 3
+#ELSEIF NoW==4
+4 / Number of windings...
+#WINDINGS 4
+#ELSEIF NoW==5
+5 / Number of windings...
+#WINDINGS 5
+#ELSEIF NoW==6
+6 / Number of windings...
+#WINDINGS 6
+#ENDIF
+!
+#CASE OA1 {$A1(1) ~}  {$A11 ~}
+#CASE OA2 {~$A2(1) ~} {~$A21 ~}
+~ 0.0 $L1 /
+#CASE OB1 {$B1(1) ~}  {$B11 ~}
+#CASE OB2 {~$B2(1) ~} {~$B21 ~}    
+~ 0.0 $L21   0.0 $L2 /
+#CASE OC1 {$C1(1) ~}  {$C11 ~}
+#CASE OC2 {~$C2(1) ~} {~$C21 ~}    
+~ 0.0 $L31   0.0 $L32   0.0 $L3 /
+#IF NoW>3
+#CASE OD1 {$D1(1) ~}  {$D11 ~}
+#CASE OD2 {~$D2(1) ~} {~$D21 ~}    
+~ 0.0 $L41   0.0 $L42   0.0 $L43   0.0 $L4 /
+#IF NoW>4
+#CASE OE1 {$E1(1) ~}  {$E11 ~}
+#CASE OE2 {~$E2(1) ~} {~$E21 ~}    
+~ 0.0 $L51   0.0 $L52   0.0 $L53   0.0 $L54   0.0 $L5 /
+#IF NoW>5
+#CASE OF1 {$F1(1) ~}  {$F11 ~}
+#CASE OF2 {~$F2(1) ~} {~$F21 ~}    
+~ 0.0 $L61   0.0 $L62   0.0 $L63   0.0 $L64   0.0 $L65   0.0 $L6 /
+#ENDIF
+#ENDIF
+#ENDIF
+!
+888/
+!
+#CASE OA1 { $A1(2) ~} { $A12 ~}
+#CASE OA2 {~$A2(2) ~} {~$A22 }
+#CASE OB1 { $B1(2) ~} { $B12 ~}
+#CASE OB2 {~$B2(2) ~} {~$B22 }
+#CASE OC1 { $C1(2) ~} { $C12 ~}
+#CASE OC2 {~$C2(2) ~} {~$C22 }
+#IF NoW>3
+#CASE OD1 { $D1(2) ~} { $D12 ~}
+#CASE OD2 {~$D2(2) ~} {~$D22 }
+#IF NoW>4
+#CASE OE1 { $E1(2) ~} { $E12 ~}
+#CASE OE2 {~$E2(2) ~} {~$E22 }
+#IF NoW>5
+#CASE OF1 { $F1(2) ~} { $F12 ~}
+#CASE OF2 {~$F2(2) ~} {~$F22 }
+#ENDIF
+#ENDIF
+#ENDIF
+!
+888/
+!
+#CASE OA1 {$A1(3) ~}  {$A13 ~}
+#CASE OA2 {~$A2(3) ~} {~$A23 }
+#CASE OB1 { $B1(3) ~} { $B13 ~}
+#CASE OB2 {~$B2(3) ~} {~$B23 }
+#CASE OC1 { $C1(3) ~} { $C13 ~}
+#CASE OC2 {~$C2(3) ~} {~$C23 }
+#IF NoW>3
+#CASE OD1 { $D1(3) ~} { $D13 ~}
+#CASE OD2 {~$D2(3) ~} {~$D23 }
+#IF NoW>4
+#CASE OE1 { $E1(3) ~} { $E13 ~}
+#CASE OE2 {~$E2(3) ~} {~$E23 }
+#IF NoW>5
+#CASE OF1 { $F1(3) ~} { $F13 ~}
+#CASE OF2 {~$F2(3) ~} {~$F23 }
+#ENDIF
+#ENDIF
+#ENDIF
+!
+]]></segment>
+        <segment name="Computations"><![CDATA[REAL w   = 2*pi*f
+
+REAL    I_m1= Im1*0.01
+REAL    I_m2= I_m1
+REAL    I_m3= I_m1
+REAL    I_m4= I_m1
+REAL    I_m5= I_m1
+REAL    I_m6= I_m1
+
+REAL    Zb1 = 3.0*V1*V1/MVA
+REAL    Zb2 = 3.0*V2*V2/MVA
+REAL    Zb3 = 3.0*V3*V3/MVA
+REAL    Zb4 = 3.0*V4*V4/MVA
+REAL    Zb5 = 3.0*V5*V5/MVA
+REAL    Zb6 = 3.0*V6*V6/MVA
+
+!
+! Self Inducatnces
+!
+REAL    L1  = Zb1/(w*I_m1)
+REAL    L2  = Zb2/(w*I_m2)
+REAL    L3  = Zb3/(w*I_m3)
+REAL    L4  = Zb4/(w*I_m4)
+REAL    L5  = Zb5/(w*I_m5)
+REAL    L6  = Zb6/(w*I_m6)
+
+
+
+! Mutual Inductances
+!
+REAL    L21 = (1-IX12*Zb1/(2*w*L1))*sqrt(L1*L2)
+REAL    L31 = (1-IX13*Zb1/(2*w*L1))*sqrt(L1*L3)
+REAL    L41 = (1-IX14*Zb1/(2*w*L1))*sqrt(L1*L4)
+REAL    L51 = (1-IX15*Zb1/(2*w*L1))*sqrt(L1*L5)
+REAL    L61 = (1-IX16*Zb1/(2*w*L1))*sqrt(L1*L6)
+
+REAL    L32 = (1-IX23*Zb2/(2*w*L2))*sqrt(L2*L3)
+REAL    L42 = (1-IX24*Zb2/(2*w*L2))*sqrt(L2*L4)
+REAL    L52 = (1-IX25*Zb2/(2*w*L2))*sqrt(L2*L5)
+REAL    L62 = (1-IX26*Zb2/(2*w*L2))*sqrt(L2*L6)
+
+REAL    L43 = (1-IX34*Zb3/(2*w*L3))*sqrt(L3*L4)
+REAL    L53 = (1-IX35*Zb3/(2*w*L3))*sqrt(L3*L5)
+REAL    L63 = (1-IX36*Zb3/(2*w*L3))*sqrt(L3*L6)
+
+REAL    L54 = (1-IX45*Zb4/(2*w*L4))*sqrt(L4*L5)
+REAL    L64 = (1-IX46*Zb4/(2*w*L4))*sqrt(L4*L6)
+
+REAL    L65 = (1-IX56*Zb5/(2*w*L5))*sqrt(L5*L6)
+]]></segment>
+      </script>
+    </Definition>
+    <Definition classid="UserCmpDefn" name="Main" build="" crc="16225695" view="false" instances="1" date="0">
+      <paramlist>
+        <param name="Description" value="" />
+      </paramlist>
+      <form />
+      <svg viewBox="-200 -200 200 200">
+        <rect x="-18" y="-18" width="36" height="36" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Black" fill-bg="" />
+      </svg>
+      <script />
+      <schematic classid="UserCanvas" size="A/A4" orientation="Landscape" margins="false" grid="false" virtuals="false" signals="false" sequence="false" autoseq="true" monitor="false" zoomlevel="6" scrollx="0" scrolly="60">
+        <User classid="UserCmp" name="TRF_4ot6_Wdg_3Ph" id="401928433" x="198" y="360" w="164" h="272" z="-1" orient="0" link="-1">
+          <paramlist link="-1" name="">
+            <param name="f" value="50.0 [Hz]" />
+            <param name="MVA" value="100" />
+            <param name="NoW" value="6" />
+            <param name="Im1" value="0.1" />
+            <param name="W6name" value="" />
+            <param name="W5name" value="" />
+            <param name="W4name" value="4" />
+            <param name="W3name" value="3" />
+            <param name="W2name" value="2" />
+            <param name="W1name" value="1" />
+            <param name="V6" value="132.79 [kV]" />
+            <param name="V5" value="132.79" />
+            <param name="V4" value="132.79" />
+            <param name="V3" value="132.79" />
+            <param name="V2" value="132.79" />
+            <param name="V1" value="132.79" />
+            <param name="IX56" value="0.1" />
+            <param name="IX46" value="0.1" />
+            <param name="IX45" value="0.1" />
+            <param name="IX36" value="0.1 [ohm]" />
+            <param name="IX35" value="0.1" />
+            <param name="IX34" value="0.1" />
+            <param name="IX26" value="0.1" />
+            <param name="IX25" value="0.1" />
+            <param name="IX24" value="0.1" />
+            <param name="IX23" value="0.1" />
+            <param name="IX16" value="0.1" />
+            <param name="IX15" value="0.1" />
+            <param name="IX14" value="0.1" />
+            <param name="IX13" value="0.1" />
+            <param name="IX12" value="0.1" />
+            <param name="OF2" value="0" />
+            <param name="OF1" value="0" />
+            <param name="OE2" value="0" />
+            <param name="OE1" value="0" />
+            <param name="OD2" value="1" />
+            <param name="OD1" value="1" />
+            <param name="OC2" value="0" />
+            <param name="OC1" value="0" />
+            <param name="OB2" value="0" />
+            <param name="OB1" value="0" />
+            <param name="OA2" value="0" />
+            <param name="OA1" value="0" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="TRF_4ot6_Wdg_3Ph_Mod" id="140237474" x="432" y="360" w="110" h="162" z="-1" orient="0" link="-1">
+          <paramlist link="-1" name="">
+            <param name="f" value="50.0" />
+            <param name="MVA" value="100" />
+            <param name="NoW" value="3" />
+            <param name="Im1" value="0.1" />
+            <param name="W6name" value="" />
+            <param name="W5name" value="" />
+            <param name="W4name" value="" />
+            <param name="W3name" value="" />
+            <param name="W2name" value="" />
+            <param name="W1name" value="" />
+            <param name="V6" value="132.79" />
+            <param name="V5" value="132.79" />
+            <param name="V4" value="132.79" />
+            <param name="V3" value="132.79" />
+            <param name="V2" value="132.79" />
+            <param name="V1" value="132.79" />
+            <param name="IX56" value="0.1" />
+            <param name="IX46" value="0.1" />
+            <param name="IX45" value="0.1" />
+            <param name="IX36" value="0.1" />
+            <param name="IX35" value="0.1" />
+            <param name="IX34" value="0.1" />
+            <param name="IX26" value="0.1" />
+            <param name="IX25" value="0.1" />
+            <param name="IX24" value="0.1" />
+            <param name="IX23" value="0.1" />
+            <param name="IX16" value="0.1" />
+            <param name="IX15" value="0.1" />
+            <param name="IX14" value="0.1" />
+            <param name="IX13" value="0.1" />
+            <param name="IX12" value="0.1" />
+            <param name="OF2" value="0" />
+            <param name="OF1" value="0" />
+            <param name="OE2" value="0" />
+            <param name="OE1" value="0" />
+            <param name="OD2" value="0" />
+            <param name="OD1" value="0" />
+            <param name="OC2" value="0" />
+            <param name="OC1" value="0" />
+            <param name="OB2" value="0" />
+            <param name="OB1" value="0" />
+            <param name="OA2" value="0" />
+            <param name="OA1" value="0" />
+          </paramlist>
+        </User>
+        <Sticky classid="Sticky" x="144" y="144" w="144" h="36" font="1" align="0" style="1" arrows="0" colors="10526880, 15792890">
+          <paramlist>
+            <param name="font" value="1" />
+            <param name="align" value="0" />
+            <param name="style" value="1" />
+            <param name="fg_color" value="0" />
+            <param name="bg_color" value="15792890" />
+            <param name="arrows" value="2" />
+          </paramlist><![CDATA[This model includes the magnetizing inductances]]></Sticky>
+        <Sticky classid="Sticky" x="360" y="162" w="180" h="72" font="1" align="0" style="1" arrows="0" colors="10526880, 15792890">
+          <paramlist>
+            <param name="font" value="1" />
+            <param name="align" value="0" />
+            <param name="style" value="1" />
+            <param name="fg_color" value="0" />
+            <param name="bg_color" value="15792890" />
+            <param name="arrows" value="2" />
+          </paramlist><![CDATA[This Model does NOT include magnetizing inductances. Only the short circuit impedances information]]></Sticky>
+      </schematic>
+    </Definition>
+  </definitions>
+</project>

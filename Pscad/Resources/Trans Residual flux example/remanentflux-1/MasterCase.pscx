@@ -1,0 +1,1290 @@
+<project name="MasterCase" version="4.6.2" schema="" Target="EMTDC">
+  <constants>
+    <paramlist name="" />
+  </constants>
+  <paramlist name="Settings">
+    <param name="creator" value="gole, 951967224" />
+    <param name="time_duration" value="0.0005" />
+    <param name="time_step" value="500" />
+    <param name="sample_step" value="500" />
+    <param name="chatter_threshold" value="0.001" />
+    <param name="branch_threshold" value="0.0005" />
+    <param name="StartType" value="0" />
+    <param name="PlotType" value="0" />
+    <param name="output_filename" value="channel.out" />
+    <param name="SnapType" value="0" />
+    <param name="SnapTime" value="0.5" />
+    <param name="snapshot_filename" value="chopper.snp" />
+    <param name="MrunType" value="1" />
+    <param name="Mruns" value="1" />
+    <param name="Scenario" value="" />
+    <param name="Advanced" value="1023" />
+    <param name="Options" value="0" />
+    <param name="Build" value="16" />
+    <param name="Warn" value="0" />
+    <param name="Check" value="0" />
+    <param name="description" value="" />
+    <param name="revisor" value="agoharrizi, 1494961530" />
+    <param name="architecture" value="windows" />
+    <param name="Source" value="" />
+    <param name="latency_count" value="100" />
+    <param name="Debug" value="0" />
+    <param name="startup_filename" value="chopper.snp" />
+    <param name="labels" value="" />
+    <param name="Layers" value="Disabled" />
+    <param name="DisabledLayers" value="Disabled" />
+    <param name="Preprocessor" value="" />
+  </paramlist>
+  <definitions>
+    <Definition classid="StationDefn" name="Station" group="" url="" version="" build="" crc="27197492" instances="1" key="" view="false" date="1494950767" id="926615043">
+      <paramlist name="">
+        <param name="Description" value="" />
+      </paramlist>
+      <schematic classid="StationCanvas">
+        <paramlist>
+          <param name="show_grid" value="0" />
+          <param name="size" value="0" />
+          <param name="orient" value="1" />
+          <param name="show_border" value="0" />
+          <param name="bus_expand_x" value="8" />
+          <param name="bus_expand_y" value="8" />
+          <param name="bus_length" value="4" />
+        </paramlist>
+        <Wire classid="WireBranch" name="STUB" x="180" y="180" w="68" h="82" orient="0" defn="(null):STUB" id="1307510944" recv="-1" send="-1" back="-1" layer="">
+          <vertex x="0" y="0" />
+          <vertex x="0" y="18" />
+          <vertex x="54" y="54" />
+          <vertex x="54" y="72" />
+          <User classid="UserCmp" name="MasterCase:Main" id="1307510944" x="0" y="0" w="0" h="0" z="-1" orient="0" defn="MasterCase:Main" link="1307510944" q="4">
+            <paramlist link="-1" name="" crc="21933320" />
+            <paramlist link="70709954" name="">
+              <param name="ymin" value="-1" />
+              <param name="ymax" value="1" />
+            </paramlist>
+            <paramlist link="40210222" name="">
+              <param name="ymin" value="-1" />
+              <param name="ymax" value="1" />
+            </paramlist>
+            <paramlist link="1725320212" name="">
+              <param name="ymin" value="-1" />
+              <param name="ymax" value="1" />
+            </paramlist>
+            <paramlist link="46921808" name="">
+              <param name="xmin" value="0" />
+              <param name="xmax" value="0.0005" />
+            </paramlist>
+            <paramlist link="429673772" name="">
+              <param name="ymin" value="0" />
+              <param name="ymax" value="300" />
+            </paramlist>
+            <paramlist link="257246003" name="">
+              <param name="ymin" value="0" />
+              <param name="ymax" value="160" />
+            </paramlist>
+            <paramlist link="1644946136" name="">
+              <param name="ymin" value="0" />
+              <param name="ymax" value="12000" />
+            </paramlist>
+            <paramlist link="2007018272" name="">
+              <param name="xmin" value="0" />
+              <param name="xmax" value="0.0005" />
+            </paramlist>
+            <paramlist link="1064325250" name="">
+              <param name="ymin" value="0" />
+              <param name="ymax" value="1800" />
+            </paramlist>
+            <paramlist link="363817730" name="">
+              <param name="ymin" value="0.01" />
+              <param name="ymax" value="0.08" />
+            </paramlist>
+            <paramlist link="237214471" name="">
+              <param name="ymin" value="0" />
+              <param name="ymax" value="250" />
+            </paramlist>
+            <paramlist link="660420027" name="">
+              <param name="ymin" value="2" />
+              <param name="ymax" value="11" />
+            </paramlist>
+            <paramlist link="635081062" name="">
+              <param name="xmin" value="0" />
+              <param name="xmax" value="0.0005" />
+            </paramlist>
+            <paramlist link="1687217863" name="">
+              <param name="ymin" value="100" />
+              <param name="ymax" value="800" />
+            </paramlist>
+            <paramlist link="92468882" name="">
+              <param name="ymin" value="3" />
+              <param name="ymax" value="11" />
+            </paramlist>
+          </User>
+        </Wire>
+      </schematic>
+    </Definition>
+    <Definition classid="UserCmpDefn" name="optim" group="" url="" version="" build="" crc="54676557" instances="0" key="" view="false" date="0" id="894099947">
+      <paramlist>
+        <param name="Description" value="" />
+      </paramlist>
+      <form name="" w="320" h="400" splitter="60">
+        <category name="Main">
+          <parameter type="Choice" name="VIS" desc="Name Visible" group="" helpmode="Append">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <regex />
+            <error_msg />
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Choice" name="NDIM" desc="Number of Dimensions" group="" helpmode="Append">
+            <value><![CDATA[1]]></value>
+            <choice><![CDATA[1 = 1]]></choice>
+            <choice><![CDATA[2 = 2]]></choice>
+            <choice><![CDATA[3 = 3]]></choice>
+            <choice><![CDATA[4 = 4]]></choice>
+            <choice><![CDATA[5 = 5]]></choice>
+            <choice><![CDATA[6 = 6]]></choice>
+            <choice><![CDATA[7 = 7]]></choice>
+            <choice><![CDATA[8 = 8]]></choice>
+            <choice><![CDATA[9 = 9]]></choice>
+            <choice><![CDATA[10 = 10]]></choice>
+            <choice><![CDATA[11 = 11]]></choice>
+            <choice><![CDATA[12 = 12]]></choice>
+            <choice><![CDATA[13 = 13]]></choice>
+            <choice><![CDATA[14 = 14]]></choice>
+            <choice><![CDATA[15 = 15]]></choice>
+            <choice><![CDATA[16 = 16]]></choice>
+            <choice><![CDATA[17 = 17]]></choice>
+            <choice><![CDATA[18 = 18]]></choice>
+            <choice><![CDATA[19 = 19]]></choice>
+            <choice><![CDATA[20 = 20]]></choice>
+            <regex />
+            <error_msg />
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="FTOL" desc="Relative Tolerance" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[1e-3]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_A" desc="Initial Node Distance" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[1.0]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Choice" name="ShowDim" desc="Show Output Dimension" group="" helpmode="Append">
+            <value><![CDATA[1]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <regex />
+            <error_msg />
+            <help><![CDATA[]]></help>
+          </parameter>
+        </category>
+        <category name="Initial Conditions">
+          <parameter type="Real" name="U_IC1" desc="IC for Variable 1" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 1]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC11" desc="IC for Variable 11" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 11]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC2" desc="IC for Variable 2" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 2]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC12" desc="IC for Variable 12" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 12]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC3" desc="IC for Variable 3" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 3]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC13" desc="IC for Variable 13" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 13]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC4" desc="IC for Variable 4" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 4]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC14" desc="IC for Variable 14" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 14]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC5" desc="IC for Variable 5" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 5]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC15" desc="IC for Variable 15" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 15]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC6" desc="IC for Variable 6" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 6]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC16" desc="IC for Variable 16" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 16]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC7" desc="IC for Variable 7" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 7]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC17" desc="IC for Variable 17" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 17]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC8" desc="IC for Variable 8" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 8]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC18" desc="IC for Variable 18" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 18]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC9" desc="IC for Variable 9" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >=9]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC19" desc="IC for Variable 19" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 19]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC10" desc="IC for Variable 10" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 10]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC20" desc="IC for Variable 20" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM = 20]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+        </category>
+      </form>
+      <svg viewBox="-200 -200 200 200">
+        <port model="Transfer" name="U_IN" x="-54" y="0" dim="1" mode="Input" type="Real" internal=""><![CDATA[true]]></port>
+        <port model="Transfer" name="U_X" x="54" y="0" dim="20" mode="Output" type="Real" internal=""><![CDATA[true]]></port>
+        <rect x="-29" y="-29" width="58" height="58" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Black" fill-bg="" port="" />
+        <line x1="-54" y1="0" x2="-29" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="U_IN" />
+        <line x1="-29" y1="0" x2="-35" y2="6" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="U_IN" />
+        <line x1="-29" y1="0" x2="-35" y2="-6" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="U_IN" />
+        <line x1="54" y1="0" x2="29" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="U_X" />
+        <cond><![CDATA[VIS == 1]]></cond>
+        <text x="0" y="4" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[SIMPLEX]]></text>
+        <cond><![CDATA[NDIM ==1]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[1]]></text>
+        <cond><![CDATA[NDIM == 2]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[2]]></text>
+        <cond><![CDATA[NDIM == 3]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[3]]></text>
+        <cond><![CDATA[NDIM ==4]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[4]]></text>
+        <cond><![CDATA[NDIM == 5]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[5]]></text>
+        <cond><![CDATA[NDIM == 6]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[6]]></text>
+        <cond><![CDATA[NDIM == 7]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[7]]></text>
+        <cond><![CDATA[NDIM == 8]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[8]]></text>
+        <cond><![CDATA[NDIM == 9]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[9]]></text>
+        <cond><![CDATA[NDIM == 10]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[10]]></text>
+        <cond><![CDATA[NDIM == 11]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[11]]></text>
+        <cond><![CDATA[NDIM == 12]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[12]]></text>
+        <cond><![CDATA[NDIM ==13]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[13]]></text>
+        <cond><![CDATA[NDIM ==14]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[14]]></text>
+        <cond><![CDATA[NDIM ==15]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[15]]></text>
+        <cond><![CDATA[NDIM == 16]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[16]]></text>
+        <cond><![CDATA[NDIM ==17]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[17]]></text>
+        <cond><![CDATA[NDIM == 18]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[18]]></text>
+        <cond><![CDATA[NDIM == 19]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[19]]></text>
+        <cond><![CDATA[NDIM == 20]]></cond>
+        <text x="42" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[20]]></text>
+        <cond><![CDATA[ShowDim == 1]]></cond>
+        <line x1="36" y1="3" x2="42" y2="-3" stroke="Black" stroke-dasharray="none" stroke-width="0.2" port="" />
+      </svg>
+      <script>
+        <segment name="Fortran"><![CDATA[	#SUBROUTINE MY_SIMPLEX
+	
+	#INCLUDE "fnames.h"
+	#INCLUDE "s1.h"
+
+	#FUNCTION INTEGER EMTDC_RUN
+	
+	#LOCAL INTEGER U_RN !Current Run Number
+	#LOCAL REAL US_X0(20)
+		
+	U_RN = EMTDC_RUN()
+
+	IF ((U_RN .EQ. 1) .AND. TIMEZERO) THEN
+		US_X0( 1) = $U_IC1
+		US_X0( 2) = $U_IC2
+		US_X0( 3) = $U_IC3
+		US_X0( 4) = $U_IC4
+		US_X0( 5) = $U_IC5
+		US_X0( 6) = $U_IC6
+		US_X0( 7) = $U_IC7
+		US_X0( 8) = $U_IC8
+		US_X0( 9) = $U_IC9
+		US_X0( 10) = $U_IC10
+		US_X0( 11) = $U_IC11
+		US_X0( 12) = $U_IC12
+		US_X0( 13) = $U_IC13
+		US_X0( 14) = $U_IC14
+		US_X0( 15) = $U_IC15
+		US_X0( 16) = $U_IC16
+		US_X0( 17) = $U_IC17
+		US_X0( 18) = $U_IC18
+		US_X0( 19) = $U_IC19
+		US_X0( 20) = $U_IC20
+	ENDIF
+	CALL MY_SIMPLEX( $FTOL, $NDIM, US_X0, $U_A, $U_IN, $U_X, U_RN)]]></segment>
+        <segment name="Branch"><![CDATA[]]></segment>
+        <segment name="Computations"><![CDATA[]]></segment>
+      </script>
+    </Definition>
+    <Definition classid="UserCmpDefn" name="RT" group="" url="" version="" build="" crc="62521245" instances="0" key="" view="false" date="0" id="840177274">
+      <paramlist>
+        <param name="Description" value="" />
+      </paramlist>
+      <form name="" w="320" h="400" splitter="60" />
+      <svg viewBox="-200 -200 200 200">
+        <rect x="-100" y="-29" width="205" height="84" stroke="Olive" stroke-dasharray="none" stroke-width="1.4" fill-style="Hollow" fill-fg="Black" fill-bg="" port="" />
+        <text x="0" y="15" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[Runtime (Control Slider for D,]]></text>
+        <text x="-1" y="-10" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[Click on this Block for]]></text>
+        <text x="3" y="37" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[Plots and Meters)]]></text>
+      </svg>
+      <script />
+      <schematic classid="UserCanvas" zoomlevel="6" scrollx="0" scrolly="0">
+        <paramlist>
+          <param name="show_grid" value="0" />
+          <param name="size" value="0" />
+          <param name="orient" value="1" />
+          <param name="show_border" value="0" />
+          <param name="monitor_bus_voltage" value="0" />
+          <param name="show_signal" value="0" />
+          <param name="show_virtual" value="0" />
+          <param name="show_sequence" value="0" />
+          <param name="auto_sequence" value="1" />
+        </paramlist>
+        <Frame classid="GraphFrame" name="frame" x="18" y="90" w="522" h="486" id="686508740" link="-1">
+          <paramlist link="-1" name="">
+            <param name="Icon" value="-1,-1" />
+            <param name="state" value="1" />
+            <param name="title" value="Untitled" />
+            <param name="XLabel" value="x" />
+            <param name="Pan" value="false,75" />
+            <param name="markers" value="false" />
+            <param name="glyphs" value="false" />
+            <param name="ticks" value="false" />
+            <param name="grid" value="false" />
+            <param name="yinter" value="false" />
+            <param name="xinter" value="false" />
+            <param name="snapaperture" value="false" />
+            <param name="dynaperture" value="true" />
+            <param name="minorgrids" value="false" />
+            <param name="lockmarkers" value="false" />
+            <param name="deltareadout" value="false" />
+            <param name="xmarker" value="0" />
+            <param name="omarker" value="0" />
+          </paramlist>
+          <paramlist link="686508740" name="">
+            <param name="xmin" value="0.0" />
+            <param name="xmax" value="1.0" />
+          </paramlist>
+          <Graph classid="OverlayGraph" id="457221214" link="-1">
+            <paramlist link="-1" name="">
+              <param name="title" value="y" />
+              <param name="units" value="" />
+              <param name="gridvalue" value="0.100000" />
+              <param name="yintervalue" value="0.000000" />
+              <param name="grid" value="true" />
+              <param name="ticks" value="false" />
+              <param name="glyphs" value="false" />
+              <param name="yinter" value="true" />
+              <param name="xinter" value="true" />
+              <param name="marker" value="false" />
+              <param name="trigger" value="false" />
+              <param name="autocolor" value="false" />
+              <param name="invertcolor" value="false" />
+              <param name="crosshair" value="false" />
+              <param name="manualscale" value="false" />
+            </paramlist>
+            <Curve classid="Curve" name="" link="119875904" color="8388608" bold="0" show="255" mode="0" id="121211275" />
+            <paramlist link="457221214" name="">
+              <param name="ymin" value="-1.000000" />
+              <param name="ymax" value="1.000000" />
+            </paramlist>
+          </Graph>
+          <Graph classid="OverlayGraph" id="859084054" link="-1">
+            <paramlist link="-1" name="">
+              <param name="title" value="y" />
+              <param name="units" value="" />
+              <param name="gridvalue" value="0.100000" />
+              <param name="yintervalue" value="0.000000" />
+              <param name="grid" value="true" />
+              <param name="ticks" value="false" />
+              <param name="glyphs" value="false" />
+              <param name="yinter" value="true" />
+              <param name="xinter" value="true" />
+              <param name="marker" value="false" />
+              <param name="trigger" value="false" />
+              <param name="autocolor" value="false" />
+              <param name="invertcolor" value="false" />
+              <param name="crosshair" value="false" />
+              <param name="manualscale" value="false" />
+            </paramlist>
+            <Curve classid="Curve" name="" link="18415192" color="8388608" bold="0" show="255" mode="0" id="453638515" />
+            <Curve classid="Curve" name="" link="119880392" color="32768" bold="0" show="255" mode="0" id="355014115" />
+            <paramlist link="859084054" name="">
+              <param name="ymin" value="-1.000000" />
+              <param name="ymax" value="1.000000" />
+            </paramlist>
+          </Graph>
+          <Graph classid="OverlayGraph" id="1083356116" link="-1">
+            <paramlist link="-1" name="">
+              <param name="title" value="y" />
+              <param name="units" value="" />
+              <param name="gridvalue" value="0.100000" />
+              <param name="yintervalue" value="0.000000" />
+              <param name="grid" value="true" />
+              <param name="ticks" value="false" />
+              <param name="glyphs" value="false" />
+              <param name="yinter" value="true" />
+              <param name="xinter" value="true" />
+              <param name="marker" value="false" />
+              <param name="trigger" value="false" />
+              <param name="autocolor" value="false" />
+              <param name="invertcolor" value="false" />
+              <param name="crosshair" value="false" />
+              <param name="manualscale" value="false" />
+            </paramlist>
+            <Curve classid="Curve" name="" link="18464144" color="8388608" bold="0" show="255" mode="0" id="1595347826" />
+            <paramlist link="1083356116" name="">
+              <param name="ymin" value="-1.000000" />
+              <param name="ymax" value="1.000000" />
+            </paramlist>
+          </Graph>
+          <Graph classid="OverlayGraph" id="1762829964" link="-1">
+            <paramlist link="-1" name="">
+              <param name="title" value="y" />
+              <param name="units" value="" />
+              <param name="gridvalue" value="0.100000" />
+              <param name="yintervalue" value="0.000000" />
+              <param name="grid" value="true" />
+              <param name="ticks" value="false" />
+              <param name="glyphs" value="false" />
+              <param name="yinter" value="true" />
+              <param name="xinter" value="true" />
+              <param name="marker" value="false" />
+              <param name="trigger" value="false" />
+              <param name="autocolor" value="false" />
+              <param name="invertcolor" value="false" />
+              <param name="crosshair" value="false" />
+              <param name="manualscale" value="false" />
+            </paramlist>
+            <Curve classid="Curve" name="" link="119894264" color="8388608" bold="0" show="255" mode="0" id="95638078" />
+            <paramlist link="1762829964" name="">
+              <param name="ymin" value="-1.000000" />
+              <param name="ymax" value="1.000000" />
+            </paramlist>
+          </Graph>
+        </Frame>
+      </schematic>
+    </Definition>
+    <Definition classid="UserCmpDefn" name="Gain_Sch" group="" url="" version="" build="" crc="18299923" instances="0" key="" view="false" date="0" id="1552111881">
+      <paramlist>
+        <param name="Description" value="" />
+      </paramlist>
+      <form name="" w="320" h="400" splitter="60" />
+      <svg viewBox="-200 -200 200 200">
+        <port model="Transfer" name="RNUM" x="-54" y="0" dim="1" mode="Input" type="Integer" internal=""><![CDATA[true]]></port>
+        <port model="Transfer" name="OP" x="54" y="0" dim="1" mode="Output" type="Real" internal=""><![CDATA[true]]></port>
+        <rect x="-39" y="-39" width="78" height="78" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Black" fill-bg="" port="" />
+        <line x1="-54" y1="0" x2="-39" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="RNUM" />
+        <line x1="-39" y1="0" x2="-44" y2="-5" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="RNUM" />
+        <line x1="-39" y1="0" x2="-44" y2="5" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="RNUM" />
+        <line x1="54" y1="0" x2="39" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="OP" />
+        <text x="0" y="-13" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[Gain]]></text>
+        <text x="0" y="6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[Schedueler]]></text>
+      </svg>
+      <script>
+        <segment name="Fortran"><![CDATA[		IF ( MOD( $RNUM, 3) .EQ. 1) THEN
+			$OP = 10.0
+		ELSEIF ( MOD( $RNUM, 3) .EQ. 2) THEN
+			$OP = 30.0
+		ELSE
+			$OP = 50.0
+		ENDIF]]></segment>
+        <segment name="Branch"><![CDATA[]]></segment>
+        <segment name="Computations"><![CDATA[]]></segment>
+      </script>
+    </Definition>
+    <Definition classid="UserCmpDefn" name="Objective" group="" url="" version="" build="" crc="94150058" instances="0" key="" view="false" date="0" id="1173595438">
+      <paramlist>
+        <param name="Description" value="" />
+      </paramlist>
+      <form name="" w="320" h="400" splitter="60">
+        <category name="Main">
+          <parameter type="Real" name="Rise_Time" desc="Rise time of the target signal" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="Settle_Time" desc="Settling time of the target signal" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="Mp" desc="Percent overshoot of the signal" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="Steady" desc="Steady state value of the signal" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="Steady_Err" desc="Steady state error band (%)" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+        </category>
+      </form>
+      <svg viewBox="-200 -200 200 200">
+        <port model="Transfer" name="SHASIG" x="54" y="0" dim="1" mode="Output" type="Real" internal=""><![CDATA[true]]></port>
+        <port model="Transfer" name="TARSIG" x="-54" y="0" dim="1" mode="Input" type="Real" internal=""><![CDATA[true]]></port>
+        <line x1="-54" y1="0" x2="-39" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="TARSIG" />
+        <line x1="-39" y1="0" x2="-44" y2="-5" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="TARSIG" />
+        <line x1="-39" y1="0" x2="-44" y2="5" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="TARSIG" />
+        <line x1="54" y1="0" x2="39" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="SHASIG" />
+        <rect x="-39" y="-27" width="78" height="48" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Black" fill-bg="" port="" />
+        <text x="1" y="-15" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[Objective]]></text>
+        <text x="1" y="2" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[Function]]></text>
+        <text x="1" y="17" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[Shaper]]></text>
+      </svg>
+      <script>
+        <segment name="Fortran"><![CDATA[	IF ( TIME .LE. $Rise_Time) THEN
+		$SHASIG = ( $TARSIG - $Steady) ** 2.0
+	ELSEIF ( TIME .GT. $Rise_Time .AND. TIME .LE. $Settle_Time) THEN
+		IF ( ABS( $TARSIG - $Steady) .GE. ($Mp/100.0)*$Steady) THEN
+			$SHASIG = ( $TARSIG - $Steady) ** 2.0
+		ELSE
+			$SHASIG = 0.0
+		ENDIF
+	ELSE
+		IF ( ABS( $TARSIG - $Steady) .GE. ($Steady_Err/100.0)*$Steady) THEN
+			$SHASIG = ( $TARSIG - $Steady) ** 2.0
+		ELSE
+			$SHASIG = 0.0
+		ENDIF
+	ENDIF]]></segment>
+        <segment name="Branch"><![CDATA[]]></segment>
+        <segment name="Computations"><![CDATA[]]></segment>
+      </script>
+    </Definition>
+    <Definition classid="UserCmpDefn" name="gsch" group="" url="" version="" build="" crc="88058750" instances="0" key="" view="false" date="0" id="9651466">
+      <paramlist>
+        <param name="Description" value="" />
+      </paramlist>
+      <form name="" w="320" h="400" splitter="60" />
+      <svg viewBox="-200 -200 200 200">
+        <port model="Transfer" name="RUNNUM" x="-54" y="0" dim="1" mode="Input" type="Integer" internal=""><![CDATA[true]]></port>
+        <port model="Transfer" name="ORDER" x="36" y="0" dim="1" mode="Output" type="Real" internal=""><![CDATA[true]]></port>
+        <rect x="-39" y="-13" width="60" height="30" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Black" fill-bg="" port="" />
+        <line x1="-54" y1="0" x2="-39" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="RUNNUM" />
+        <line x1="-39" y1="0" x2="-44" y2="-5" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="RUNNUM" />
+        <line x1="-39" y1="0" x2="-44" y2="5" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="RUNNUM" />
+        <line x1="36" y1="0" x2="21" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="ORDER" />
+        <text x="-10" y="-2" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[order]]></text>
+        <text x="-9" y="13" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[generator]]></text>
+      </svg>
+      <script>
+        <segment name="Fortran"><![CDATA[			IF ( MOD( $RUNNUM, 3)  .EQ. 1) THEN
+				$ORDER = 10
+			ELSEIF ( MOD( $RUNNUM, 3) .EQ. 2) THEN
+				$ORDER = 30
+			ELSE
+				$ORDER = 50
+			ENDIF]]></segment>
+        <segment name="Branch"><![CDATA[]]></segment>
+        <segment name="Computations"><![CDATA[]]></segment>
+      </script>
+    </Definition>
+    <Definition classid="UserCmpDefn" name="scaler" group="" url="" version="" build="" crc="78679111" instances="0" key="" view="false" date="0" id="620900733">
+      <paramlist>
+        <param name="Description" value="" />
+      </paramlist>
+      <form name="" w="320" h="400" splitter="60">
+        <category name="Main">
+          <parameter type="Real" name="OR1" desc="Output for Run 1" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="OR2" desc="Output for Run 2" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="OR3" desc="Output for Run 3" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+        </category>
+      </form>
+      <svg viewBox="-200 -200 200 200">
+        <port model="Transfer" name="RUNNUM" x="-54" y="0" dim="1" mode="Input" type="Integer" internal=""><![CDATA[true]]></port>
+        <port model="Transfer" name="SCALE" x="36" y="0" dim="1" mode="Output" type="Real" internal=""><![CDATA[true]]></port>
+        <rect x="-39" y="-12" width="60" height="25" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Black" fill-bg="" port="" />
+        <line x1="-54" y1="0" x2="-39" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="RUNNUM" />
+        <line x1="-39" y1="0" x2="-44" y2="-5" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="RUNNUM" />
+        <line x1="-39" y1="0" x2="-44" y2="5" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="RUNNUM" />
+        <line x1="36" y1="0" x2="21" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="SCALE" />
+        <text x="-10" y="3" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[Scaling]]></text>
+      </svg>
+      <script>
+        <segment name="Fortran"><![CDATA[		IF ( MOD( $RUNNUM, 3) .EQ. 1) THEN
+			$SCALE = $OR1	
+		ELSEIF ( MOD( $RUNNUM, 3) .EQ. 2) THEN
+			$SCALE = $OR2
+		ELSE
+			$SCALE = $OR3
+		ENDIF]]></segment>
+        <segment name="Branch"><![CDATA[]]></segment>
+        <segment name="Computations"><![CDATA[]]></segment>
+      </script>
+    </Definition>
+    <Definition classid="UserCmpDefn" name="BatchOpt" group="" url="" version="" build="" crc="20567542" instances="0" key="" view="false" date="0" id="852697370">
+      <paramlist>
+        <param name="Description" value="Batch Simplex Optimization" />
+      </paramlist>
+      <form name="" w="320" h="400" splitter="60">
+        <category name="Main">
+          <parameter type="Choice" name="NDIM" desc="Number of Dimensions" group="" helpmode="Append">
+            <value><![CDATA[1]]></value>
+            <choice><![CDATA[1 = 1]]></choice>
+            <choice><![CDATA[2 = 2]]></choice>
+            <choice><![CDATA[3 = 3]]></choice>
+            <choice><![CDATA[4 = 4]]></choice>
+            <choice><![CDATA[5 = 5]]></choice>
+            <choice><![CDATA[6 = 6]]></choice>
+            <choice><![CDATA[7 = 7]]></choice>
+            <choice><![CDATA[8 = 8]]></choice>
+            <choice><![CDATA[9 = 9]]></choice>
+            <choice><![CDATA[10 = 10]]></choice>
+            <choice><![CDATA[11 = 11]]></choice>
+            <choice><![CDATA[12 = 12]]></choice>
+            <choice><![CDATA[13 = 13]]></choice>
+            <choice><![CDATA[14 = 14]]></choice>
+            <choice><![CDATA[15 = 15]]></choice>
+            <choice><![CDATA[16 = 16]]></choice>
+            <choice><![CDATA[17 = 17]]></choice>
+            <choice><![CDATA[18 = 18]]></choice>
+            <choice><![CDATA[19 = 19]]></choice>
+            <choice><![CDATA[20 = 20]]></choice>
+            <regex />
+            <error_msg />
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="RTOL" desc="Relative Tolerance" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="IDIST" desc="Initial Node Distance" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Choice" name="BatchNum" desc="Number of Runs before Function Evaluation" group="" helpmode="Append">
+            <value><![CDATA[2]]></value>
+            <choice><![CDATA[2 = 2]]></choice>
+            <choice><![CDATA[3 = 3]]></choice>
+            <choice><![CDATA[4 = 4]]></choice>
+            <choice><![CDATA[5 = 5]]></choice>
+            <choice><![CDATA[6 = 6]]></choice>
+            <choice><![CDATA[7 = 7]]></choice>
+            <choice><![CDATA[8 = 8]]></choice>
+            <choice><![CDATA[9 = 9]]></choice>
+            <choice><![CDATA[10 = 10]]></choice>
+            <regex />
+            <error_msg />
+            <help><![CDATA[]]></help>
+          </parameter>
+        </category>
+        <category name="Initial Conditions">
+          <parameter type="Real" name="X1" desc="IC for Variable 1" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 1]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X11" desc="IC for Variable 11" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 11]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X2" desc="IC for Variable 2" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 2]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X12" desc="IC for Variable 12" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 12]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X3" desc="IC for Variable 3" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 3]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X13" desc="IC for Variable 13" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 13]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X4" desc="IC for Variable 4" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 4]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X14" desc="IC for Variable 14" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 14]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X5" desc="IC for Variable 5" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 5]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X15" desc="IC for Variable 15" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 15]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X6" desc="IC for Variable 6" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 6]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X16" desc="IC for Variable 16" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 16]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X7" desc="IC for Variable 7" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 7]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X17" desc="IC for Variable 17" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 17]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X8" desc="IC for Variable 8" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 8]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X18" desc="IC for Variable 18" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 18]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X9" desc="IC for Variable 9" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 9]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X19" desc="IC for Variable 19" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 19]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X10" desc="IC for Variable 10" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 10]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X20" desc="IC for Variable 20" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 20]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+        </category>
+      </form>
+      <svg viewBox="-200 -200 200 200">
+        <port model="Transfer" name="U_IN" x="-54" y="0" dim="1" mode="Input" type="Real" internal=""><![CDATA[true]]></port>
+        <port model="Transfer" name="U_OUT" x="54" y="0" dim="20" mode="Output" type="Real" internal=""><![CDATA[true]]></port>
+        <rect x="-29" y="-29" width="58" height="58" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Black" fill-bg="" port="" />
+        <line x1="-54" y1="0" x2="-29" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="" />
+        <line x1="-29" y1="0" x2="-35" y2="6" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="" />
+        <line x1="-29" y1="0" x2="-35" y2="-6" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="" />
+        <line x1="54" y1="0" x2="29" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="" />
+        <line x1="37" y1="3" x2="43" y2="-3" stroke="Black" stroke-dasharray="none" stroke-width="0.2" port="" />
+        <rect x="11" y="-15" width="4" height="11" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Black" fill-bg="" port="" />
+        <rect x="23" y="-15" width="4" height="11" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Black" fill-bg="" port="" />
+        <rect x="-7" y="-25" width="4" height="21" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Black" fill-bg="" port="" />
+        <rect x="-1" y="-25" width="4" height="21" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Black" fill-bg="" port="" />
+        <rect x="-19" y="-19" width="4" height="15" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Black" fill-bg="" port="" />
+        <rect x="-13" y="-19" width="4" height="15" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Black" fill-bg="" port="" />
+        <rect x="-25" y="-19" width="4" height="15" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Black" fill-bg="" port="" />
+        <rect x="17" y="-15" width="4" height="11" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Black" fill-bg="" port="" />
+        <rect x="5" y="-25" width="4" height="21" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Black" fill-bg="" port="" />
+        <text x="40" y="15" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[%NDIM]]></text>
+        <text x="0" y="9" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[SIMPLEX]]></text>
+        <text x="21" y="25" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[%BatchNum]]></text>
+        <text x="-6" y="25" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[Batch =]]></text>
+      </svg>
+      <script>
+        <segment name="Fortran"><![CDATA[	#SUBROUTINE MY_SIMPLEX
+	
+	#FUNCTION INTEGER EMTDC_RUN
+	
+	#LOCAL INTEGER U_RN !Current Run Number
+	#LOCAL REAL US_X0 20
+
+	U_RN = EMTDC_RUN()
+
+	IF ((U_RN .EQ. 1) .AND. (TIMEZERO .OR. FIRSTSTEP)) THEN
+		US_X0( 1) = $X1
+		US_X0( 2) = $X2
+		US_X0( 3) = $X3
+		US_X0( 4) = $X4
+		US_X0( 5) = $X5
+		US_X0( 6) = $X6
+		US_X0( 7) = $X7
+		US_X0( 8) = $X8
+		US_X0( 9) = $X9
+		US_X0( 10) = $X10
+		US_X0( 11) = $X11
+		US_X0( 12) = $X12
+		US_X0( 13) = $X13
+		US_X0( 14) = $X14
+		US_X0( 15) = $X15
+		US_X0( 16) = $X16
+		US_X0( 17) = $X17
+		US_X0( 18) = $X18
+		US_X0( 19) = $X19
+		US_X0( 20) = $X20
+	ENDIF
+	CALL MY_SIMPLEX( $RTOL, $NDIM, US_X0, $IDIST, $U_IN, $U_OUT, U_RN, $BatchNum)]]></segment>
+        <segment name="Branch"><![CDATA[]]></segment>
+        <segment name="Computations"><![CDATA[]]></segment>
+      </script>
+    </Definition>
+    <Definition classid="UserCmpDefn" name="Main" group="" url="" version="" build="" crc="122966829" instances="1" key="" view="false" date="1494950791" id="1280820279">
+      <paramlist>
+        <param name="Description" value="Main Page" />
+      </paramlist>
+      <form name="" w="320" h="400" splitter="60">
+        <category name="Global Substitutions" />
+      </form>
+      <svg viewBox="-200 -200 200 200">
+        <rect x="-18" y="-18" width="36" height="36" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Black" fill-bg="" port="" />
+      </svg>
+      <script />
+      <schematic classid="UserCanvas" zoomlevel="6" scrollx="0" scrolly="0">
+        <paramlist>
+          <param name="show_grid" value="0" />
+          <param name="size" value="0" />
+          <param name="orient" value="0" />
+          <param name="show_border" value="1" />
+          <param name="monitor_bus_voltage" value="0" />
+          <param name="show_signal" value="0" />
+          <param name="show_virtual" value="0" />
+          <param name="show_sequence" value="0" />
+          <param name="auto_sequence" value="1" />
+          <param name="virtual_filter" value="" />
+        </paramlist>
+        <User classid="UserCmp" name="master:radiolink" id="1653917833" x="1008" y="252" w="204" h="20" z="50" orient="4" defn="master:radiolink" link="-1" layer="" q="4">
+          <paramlist link="-1" name="" crc="68005334">
+            <param name="Source" value="SlaveCase:Main" />
+            <param name="Name" value="loop" />
+            <param name="Type" value="0" />
+            <param name="dim" value="1" />
+            <param name="Mode" value="0" />
+            <param name="Min" value="0" />
+            <param name="Max" value="300" />
+            <param name="rank" value="1" />
+            <param name="rccon" value="1" />
+            <param name="caption" value="$(Name) [$(Rank)]" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:radiolink" id="141984189" x="180" y="252" w="140" h="21" z="40" orient="0" defn="master:radiolink" link="-1" layer="" q="4">
+          <paramlist link="-1" name="" crc="68005334">
+            <param name="Source" value="chopper_optimization:Main" />
+            <param name="Name" value="ClosingTime" />
+            <param name="Type" value="0" />
+            <param name="dim" value="1" />
+            <param name="Mode" value="1" />
+            <param name="Min" value="3" />
+            <param name="Max" value="11" />
+            <param name="rank" value="0" />
+            <param name="rccon" value="1" />
+            <param name="caption" value="$(Name) [$(Rank)]" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:radiolink" id="455960469" x="180" y="216" w="105" h="21" z="30" orient="0" defn="master:radiolink" link="-1" layer="" q="4">
+          <paramlist link="-1" name="" crc="68005334">
+            <param name="Source" value="chopper_optimization:Main" />
+            <param name="Name" value="RFlux3" />
+            <param name="Type" value="0" />
+            <param name="dim" value="1" />
+            <param name="Mode" value="1" />
+            <param name="Min" value="100" />
+            <param name="Max" value="800" />
+            <param name="rank" value="0" />
+            <param name="rccon" value="1" />
+            <param name="caption" value="$(Name) [$(Rank)]" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:radiolink" id="393992270" x="180" y="180" w="105" h="21" z="20" orient="0" defn="master:radiolink" link="-1" layer="" q="4">
+          <paramlist link="-1" name="" crc="68005334">
+            <param name="Source" value="chopper_optimization:Main" />
+            <param name="Name" value="RFlux2" />
+            <param name="Type" value="0" />
+            <param name="dim" value="1" />
+            <param name="Mode" value="1" />
+            <param name="Min" value="0.01" />
+            <param name="Max" value="0.08" />
+            <param name="rank" value="0" />
+            <param name="rccon" value="1" />
+            <param name="caption" value="$(Name) [$(Rank)]" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:radiolink" id="360669900" x="180" y="144" w="105" h="21" z="60" orient="0" defn="master:radiolink" link="-1" layer="" q="4">
+          <paramlist link="-1" name="" crc="68005334">
+            <param name="Source" value="chopper_optimization:Main" />
+            <param name="Name" value="RFlux1" />
+            <param name="Type" value="0" />
+            <param name="dim" value="1" />
+            <param name="Mode" value="1" />
+            <param name="Min" value="0" />
+            <param name="Max" value="1800" />
+            <param name="rank" value="0" />
+            <param name="rccon" value="1" />
+            <param name="caption" value="$(Name) [$(Rank)]" />
+          </paramlist>
+        </User>
+        <Sticky classid="Sticky" x="828" y="108" w="270" h="90" colors="0, 15792890" id="410147848" layer="">
+          <paramlist>
+            <param name="font" value="1" />
+            <param name="align" value="0" />
+            <param name="style" value="0" />
+            <param name="fg_color" value="0" />
+            <param name="bg_color" value="49152" />
+            <param name="arrows" value="2" />
+            <param name="full_font" value="Tahoma, 9pt" />
+            <param name="opacity" value="25" />
+          </paramlist><![CDATA[This is to complete the loop of sending and receiving data from Master to Slave and vise versa.]]></Sticky>
+        <Sticky classid="Sticky" x="306" y="162" w="198" h="72" colors="0, 15792890" id="752760170" layer="">
+          <paramlist>
+            <param name="font" value="1" />
+            <param name="align" value="0" />
+            <param name="style" value="0" />
+            <param name="fg_color" value="0" />
+            <param name="bg_color" value="49152" />
+            <param name="arrows" value="4" />
+            <param name="full_font" value="Tahoma, 9pt" />
+            <param name="opacity" value="25" />
+          </paramlist><![CDATA[These parameters are send to Slave Case.]]></Sticky>
+        <Sticky classid="Sticky" x="36" y="18" w="576" h="36" id="328865439" layer="">
+          <paramlist>
+            <param name="font" value="1" />
+            <param name="align" value="0" />
+            <param name="style" value="0" />
+            <param name="arrows" value="0" />
+            <param name="fg_color" value="0" />
+            <param name="bg_color" value="16744576" />
+            <param name="full_font" value="Tahoma, 9pt" />
+            <param name="opacity" value="50" />
+          </paramlist><![CDATA[The master case  send the variables generated in the Multiple Run to the Slave case. ]]></Sticky>
+        <User classid="UserCmp" defn="master:mrun" id="290434505" x="126" y="180" w="87" h="149" z="10" orient="0" link="-1" q="4">
+          <paramlist link="-1" name="" crc="105131833">
+            <param name="NV" value="4" />
+            <param name="ENAB" value="1" />
+            <param name="STDEV" value="2.0" />
+            <param name="SeedMethod" value="0" />
+            <param name="SeedValue" value="23309" />
+            <param name="VType1" value="0" />
+            <param name="IType1" value="1" />
+            <param name="VType2" value="0" />
+            <param name="IType2" value="1" />
+            <param name="VType3" value="0" />
+            <param name="IType3" value="1" />
+            <param name="VType4" value="0" />
+            <param name="IType4" value="1" />
+            <param name="VType5" value="0" />
+            <param name="IType5" value="1" />
+            <param name="VType6" value="0" />
+            <param name="IType6" value="1" />
+            <param name="V1Label" value="Var # 1" />
+            <param name="V2Label" value="Var # 2" />
+            <param name="V3Label" value="Var # 3" />
+            <param name="V4Label" value="Var # 4" />
+            <param name="V5Label" value="Var # 5" />
+            <param name="V6Label" value="Var # 6" />
+            <param name="V1DR" value="0.0" />
+            <param name="V2DR" value="0.0" />
+            <param name="V3DR" value="0.0" />
+            <param name="V4DR" value="0.0" />
+            <param name="V5DR" value="0.0" />
+            <param name="V6DR" value="0.0" />
+            <param name="V1DI" value="0" />
+            <param name="V2DI" value="0" />
+            <param name="V3DI" value="0" />
+            <param name="V4DI" value="0" />
+            <param name="V5DI" value="0" />
+            <param name="V6DI" value="0" />
+            <param name="N1R" value="10" />
+            <param name="Min1R" value="0.0" />
+            <param name="Inc1R" value=".1" />
+            <param name="Max1R" value="0.5" />
+            <param name="V1Run1R" value="1" />
+            <param name="V1Run6R" value="6" />
+            <param name="V1Run2R" value="2" />
+            <param name="V1Run7R" value="7" />
+            <param name="V1Run3R" value="3" />
+            <param name="V1Run8R" value="8" />
+            <param name="V1Run4R" value="4" />
+            <param name="V1Run9R" value="9" />
+            <param name="V1Run5R" value="5" />
+            <param name="V1Run10R" value="10" />
+            <param name="N1I" value="10" />
+            <param name="Min1I" value="0" />
+            <param name="Inc1I" value="1" />
+            <param name="Max1I" value="10" />
+            <param name="V1Run1I" value="1" />
+            <param name="V1Run6I" value="6" />
+            <param name="V1Run2I" value="2" />
+            <param name="V1Run7I" value="7" />
+            <param name="V1Run3I" value="3" />
+            <param name="V1Run8I" value="8" />
+            <param name="V1Run4I" value="4" />
+            <param name="V1Run9I" value="9" />
+            <param name="V1Run5I" value="5" />
+            <param name="V1Run10I" value="10" />
+            <param name="N2R" value="10" />
+            <param name="Min2R" value="0.0" />
+            <param name="Inc2R" value="0.1" />
+            <param name="Max2R" value="0.5" />
+            <param name="V2Run1R" value="1" />
+            <param name="V2Run6R" value="6" />
+            <param name="V2Run2R" value="2" />
+            <param name="V2Run7R" value="7" />
+            <param name="V2Run3R" value="3" />
+            <param name="V2Run8R" value="8" />
+            <param name="V2Run4R" value="4" />
+            <param name="V2Run9R" value="9" />
+            <param name="V2Run5R" value="5" />
+            <param name="V2Run10R" value="10" />
+            <param name="N2I" value="10" />
+            <param name="Min2I" value="0" />
+            <param name="Inc2I" value="1" />
+            <param name="Max2I" value="10" />
+            <param name="V2Run1I" value="1" />
+            <param name="V2Run6I" value="6" />
+            <param name="V2Run2I" value="2" />
+            <param name="V2Run7I" value="7" />
+            <param name="V2Run3I" value="3" />
+            <param name="V2Run8I" value="8" />
+            <param name="V2Run4I" value="4" />
+            <param name="V2Run9I" value="9" />
+            <param name="V2Run5I" value="5" />
+            <param name="V2Run10I" value="10" />
+            <param name="N3R" value="10" />
+            <param name="Min3R" value="0.0" />
+            <param name="Inc3R" value="0.1" />
+            <param name="Max3R" value="0.5" />
+            <param name="V3Run1R" value="1" />
+            <param name="V3Run6R" value="6" />
+            <param name="V3Run2R" value="2" />
+            <param name="V3Run7R" value="7" />
+            <param name="V3Run3R" value="3" />
+            <param name="V3Run8R" value="8" />
+            <param name="V3Run4R" value="4" />
+            <param name="V3Run9R" value="9" />
+            <param name="V3Run5R" value="5" />
+            <param name="V3Run10R" value="10" />
+            <param name="N3I" value="10" />
+            <param name="Min3I" value="0" />
+            <param name="Inc3I" value="1" />
+            <param name="Max3I" value="10" />
+            <param name="V3Run1I" value="1" />
+            <param name="V3Run6I" value="6" />
+            <param name="V3Run2I" value="2" />
+            <param name="V3Run7I" value="7" />
+            <param name="V3Run3I" value="3" />
+            <param name="V3Run8I" value="8" />
+            <param name="V3Run4I" value="4" />
+            <param name="V3Run9I" value="9" />
+            <param name="V3Run5I" value="5" />
+            <param name="V3Run10I" value="10" />
+            <param name="N4R" value="10" />
+            <param name="Min4R" value="0.5" />
+            <param name="Inc4R" value="0.002" />
+            <param name="Max4R" value="0.517" />
+            <param name="V4Run1R" value="1" />
+            <param name="V4Run6R" value="6" />
+            <param name="V4Run2R" value="2" />
+            <param name="V4Run7R" value="7" />
+            <param name="V4Run3R" value="3" />
+            <param name="V4Run8R" value="8" />
+            <param name="V4Run4R" value="4" />
+            <param name="V4Run9R" value="9" />
+            <param name="V4Run5R" value="5" />
+            <param name="V4Run10R" value="10" />
+            <param name="N4I" value="10" />
+            <param name="Min4I" value="0" />
+            <param name="Inc4I" value="1" />
+            <param name="Max4I" value="0" />
+            <param name="V4Run1I" value="1" />
+            <param name="V4Run6I" value="6" />
+            <param name="V4Run2I" value="2" />
+            <param name="V4Run7I" value="7" />
+            <param name="V4Run3I" value="3" />
+            <param name="V4Run8I" value="8" />
+            <param name="V4Run4I" value="4" />
+            <param name="V4Run9I" value="9" />
+            <param name="V4Run5I" value="5" />
+            <param name="V4Run10I" value="10" />
+            <param name="N5R" value="10" />
+            <param name="Min5R" value="0.0" />
+            <param name="Inc5R" value="1.0" />
+            <param name="Max5R" value="1.0" />
+            <param name="V5Run1R" value="1" />
+            <param name="V5Run6R" value="6" />
+            <param name="V5Run2R" value="2" />
+            <param name="V5Run7R" value="7" />
+            <param name="V5Run3R" value="3" />
+            <param name="V5Run8R" value="8" />
+            <param name="V5Run4R" value="4" />
+            <param name="V5Run9R" value="9" />
+            <param name="V5Run5R" value="5" />
+            <param name="V5Run10R" value="10" />
+            <param name="N5I" value="10" />
+            <param name="Min5I" value="0" />
+            <param name="Inc5I" value="1" />
+            <param name="Max5I" value="10" />
+            <param name="V5Run1I" value="1" />
+            <param name="V5Run6I" value="6" />
+            <param name="V5Run2I" value="2" />
+            <param name="V5Run7I" value="7" />
+            <param name="V5Run3I" value="3" />
+            <param name="V5Run8I" value="8" />
+            <param name="V5Run4I" value="4" />
+            <param name="V5Run9I" value="9" />
+            <param name="V5Run5I" value="5" />
+            <param name="V5Run10I" value="10" />
+            <param name="N6R" value="10" />
+            <param name="Min6R" value="0.0" />
+            <param name="Inc6R" value="1.0" />
+            <param name="Max6R" value="1.0" />
+            <param name="V6Run1R" value="1" />
+            <param name="V6Run6R" value="6" />
+            <param name="V6Run2R" value="2" />
+            <param name="V6Run7R" value="7" />
+            <param name="V6Run3R" value="3" />
+            <param name="V6Run8R" value="8" />
+            <param name="V6Run4R" value="4" />
+            <param name="V6Run9R" value="9" />
+            <param name="V6Run5R" value="5" />
+            <param name="V6Run10R" value="10" />
+            <param name="N6I" value="10" />
+            <param name="Min6I" value="0" />
+            <param name="Inc6I" value="1" />
+            <param name="Max6I" value="10" />
+            <param name="V6Run1I" value="1" />
+            <param name="V6Run6I" value="6" />
+            <param name="V6Run2I" value="2" />
+            <param name="V6Run7I" value="7" />
+            <param name="V6Run3I" value="3" />
+            <param name="V6Run8I" value="8" />
+            <param name="V6Run4I" value="4" />
+            <param name="V6Run9I" value="9" />
+            <param name="V6Run5I" value="5" />
+            <param name="V6Run10I" value="10" />
+            <param name="NM" value="0" />
+            <param name="OUTNAM" value="mrunout.out" />
+            <param name="Repeat" value="1" />
+            <param name="Opt" value="1" />
+            <param name="MinMax" value="1" />
+            <param name="NDIV" value="10" />
+            <param name="MType1" value="2" />
+            <param name="MType2" value="2" />
+            <param name="MType3" value="2" />
+            <param name="MType4" value="2" />
+            <param name="MType5" value="2" />
+            <param name="MType6" value="2" />
+            <param name="RType1" value="3" />
+            <param name="O1Label" value="Out # 1" />
+            <param name="RType2" value="3" />
+            <param name="O2Label" value="Out # 2" />
+            <param name="RType3" value="3" />
+            <param name="O3Label" value="Out # 3" />
+            <param name="RType4" value="3" />
+            <param name="O4Label" value="Out # 4" />
+            <param name="RType5" value="3" />
+            <param name="O5Label" value="Out # 5" />
+            <param name="RType6" value="3" />
+            <param name="O6Label" value="Out # 6" />
+          </paramlist>
+        </User>
+      </schematic>
+      <references>
+        <using namespace="master" />
+      </references>
+    </Definition>
+  </definitions>
+  <output name="chopper_optimization" device="EMTDC" version="2010" date="2014/03/10" time="23:38:12.000000">
+    <paramlist />
+    <domain name="Time" unit="s" mult="0.0" skew="0.0">
+      <sample rate="2000.0" end="1" />
+    </domain>
+    <analog>
+      <channel index="0" id="1639522068:0" name="En3" label="" dim="1" unit="" min="0" max="2.0" />
+      <channel index="1" id="730069872:0" name="En2" label="" dim="1" unit="" min="0" max="2.0" />
+      <channel index="2" id="1815103839:0" name="En1" label="" dim="1" unit="" min="0" max="2.0" />
+    </analog>
+    <digital />
+  </output>
+  <paramlist name="Validation">
+    <param name="Main" value="invalid_crc" />
+  </paramlist>
+  <Layers />
+  <List classid="Resource" />
+  <List classid="Settings" />
+  <hierarchy>
+    <call link="1222776652" name="MasterCase:Station" z="-1" view="false" instance="0">
+      <call link="1307510944" name="MasterCase:Main" z="-1" view="true" instance="0" />
+    </call>
+  </hierarchy>
+</project>

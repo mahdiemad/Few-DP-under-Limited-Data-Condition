@@ -1,0 +1,42 @@
+<Meta name="AC_Fault_study_01">
+  <messagelist>
+    <message status="normal" label="build" groupid="400002" scope="AC_Fault_study_01" id="1410078021" classid="MessageObj"><![CDATA[Begin compiling with PSCAD Version 5.0.1]]></message>
+    <message status="normal" label="build" groupid="100006" link="1127834558" id="1127834558" classid="FileNavigator"><![CDATA[Generating 'C:\Users\pedis\Desktop\Papers\Qatar\Pscad\Resources\Cookbook_Chapter_01\AC_Fault_study_01.gf46\AC_Fault_study_01.map'.]]><file scope="AC_Fault_study_01">C:\Users\pedis\Desktop\Papers\Qatar\Pscad\Resources\Cookbook_Chapter_01\AC_Fault_study_01.gf46\AC_Fault_study_01.map</file></message>
+    <message status="normal" label="build" groupid="100015" scope="AC_Fault_study_01" id="443148008" classid="MessageObj"><![CDATA[The total number of live nodes: 15]]></message>
+    <message status="normal" label="build" groupid="0" link="12579010" id="12579010" classid="FileNavigator"><![CDATA[Coding .mak file: 'C:\Users\pedis\Desktop\Papers\Qatar\Pscad\Resources\Cookbook_Chapter_01\AC_Fault_study_01.gf46\\AC_Fault_study_01.mak']]><file scope="AC_Fault_study_01">C:\Users\pedis\Desktop\Papers\Qatar\Pscad\Resources\Cookbook_Chapter_01\AC_Fault_study_01.gf46\\AC_Fault_study_01.mak</file></message>
+    <message status="normal" label="build" groupid="100001" scope="AC_Fault_study_01" id="862883414" classid="MessageObj"><![CDATA[Non-professional licenses are limited to a single, electrical subsystem. Subsystem splitting has been internally disabled for this simulation.]]></message>
+    <message status="normal" label="build" groupid="400000" scope="AC_Fault_study_01" id="778575660" classid="MessageObj"><![CDATA[Time for Compile: 250ms  Make: 0ms]]></message>
+    <message status="normal" label="build" groupid="100011" id="794982591" classid="CmpNavigator">
+      <Wire scope="AC_Fault_study_01" name="TLine1" status="normal" link="134428618" /><![CDATA[Solving transmission segment using 'C:\Users\pedis\Desktop\Papers\Qatar\Pscad\Resources\Cookbook_Chapter_01\AC_Fault_study_01.gf46\TL1.tli'.]]></message>
+    <message status="normal" label="build" groupid="100011" id="198093184" classid="CmpNavigator">
+      <Wire scope="AC_Fault_study_01" name="TLine1" status="normal" link="200353644" /><![CDATA[Solving transmission segment using 'C:\Users\pedis\Desktop\Papers\Qatar\Pscad\Resources\Cookbook_Chapter_01\AC_Fault_study_01.gf46\TL2.tli'.]]></message>
+    <message status="normal" label="build" groupid="400000" scope="AC_Fault_study_01" id="1080718046" classid="MessageObj"><![CDATA[Solve Time = 437ms]]></message>
+    <message status="normal" label="build" groupid="100016" scope="AC_Fault_study_01" id="236985144" classid="MessageObj"><![CDATA[Will execute (1): call C:\Program Files (x86)\GFortran\4.6\bin\gf46vars.bat]]></message>
+    <message status="normal" label="build" groupid="100016" scope="AC_Fault_study_01" id="371885564" classid="MessageObj"><![CDATA[Will execute (1): call "C:\Program Files (x86)\GFortran\4.6\bin\gf46vars.bat"]]></message>
+    <message status="normal" label="build" groupid="100016" scope="AC_Fault_study_01" id="1445389565" classid="MessageObj"><![CDATA[Will execute (2): make -j -f AC_Fault_study_01.mak]]></message>
+    <message status="normal" label="build" groupid="100016" scope="AC_Fault_study_01" id="645269929" classid="MessageObj"><![CDATA[Will execute (2): "C:\Users\pedis\Desktop\Papers\Qatar\Pscad\Resources\Cookbook_Chapter_01\AC_Fault_study_01.gf46\AC_Fault_study_01_mak.bat"]]></message>
+    <message status="normal" label="build" groupid="100005" scope="AC_Fault_study_01" id="269153921" classid="MessageObj"><![CDATA[Creating EMTDC executable...]]></message>
+    <message status="normal" label="build" groupid="0" scope="AC_Fault_study_01" id="163175205" classid="MessageObj"><![CDATA[C:\Users\pedis\Desktop\Papers\Qatar\Pscad\Resources\Cookbook_Chapter_01\AC_Fault_study_01.gf46>call "C:\Program Files (x86)\GFortran\4.6\bin\gf46vars.bat" ]]></message>
+    <message status="normal" label="build" groupid="100013" scope="AC_Fault_study_01" id="1319320760" classid="MessageObj"><![CDATA[Linking objects and libraries into binary 'AC_Fault_study_01.exe']]></message>
+    <message status="normal" label="build" groupid="400003" scope="AC_Fault_study_01" id="487602701" classid="MessageObj"><![CDATA[Finished compiling with PSCAD Version 5.0.1]]></message>
+  </messagelist>
+  <ViewContext>
+    <Window defn="AC_Fault_study_01:TLine1" call="0" />
+  </ViewContext>
+  <List classid="View">
+    <View name="Main" zoomscale="1.2" scrollx="0" scrolly="0" />
+    <View name="TLine1" zoomscale="1.5" scrollx="0" scrolly="0" />
+  </List>
+  <Output device="EMTDC" version="2010" date="2024/10/26" time="10:33:13.000000">
+    <Domain name="Time" unit="s" mult="0.0" skew="0.0">
+      <Sample rate="4000.0" end="4000" />
+    </Domain>
+    <List classid="Analog">
+      <Analog name="Main(0):P" index="1" gindex="100663297" id="1842284429:0" label="" dim="1" unit="MW" min="-50" max="300" />
+      <Analog name="Main(0):Q" index="2" gindex="100663298" id="225560051:0" label="" dim="1" unit="MVAr" min="-50" max="300" />
+      <Analog name="Main(0):Ia" index="3" gindex="100663299" id="1778926734:0" label="" dim="3" unit="kA" min="-2" max="5" />
+      <Analog name="Main(0):V" index="6" gindex="100663302" id="1163110750:0" label="" dim="3" unit="kA" min="-2" max="5" />
+    </List>
+    <List classid="Digital" />
+  </Output>
+</Meta>

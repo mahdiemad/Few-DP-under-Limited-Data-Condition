@@ -1,0 +1,53 @@
+<workspace name="Inrush_E" version="5.0.1" crc="58223411">
+  <projects>
+    <project type="project" name="MasterCase" filepath=".\MasterCase.pscx" />
+    <project type="project" name="TestSystem_Inrush" filepath=".\TestSystem_Inrush.pscx" />
+  </projects>
+  <simulations>
+    <simulation name="Set1" dependson="None" id="1294324113" classid="SimulationSet">
+      <paramlist name="Default">
+        <param name="enabled" value="true" />
+        <param name="before_run" value="" />
+        <param name="before_block" value="true" />
+        <param name="after_run" value="" />
+        <param name="after_block" value="true" />
+      </paramlist>
+      <task namespace="MasterCase" classid="SimulationTask" id="1047607069" order="0" pmr="false" volley="1" ammunition="1" rank_snap="false" clean="false">
+        <paramlist name="Options">
+          <param name="simulationset" value="" />
+          <param name="namespace" value="MasterCase" />
+          <param name="name" value="" />
+          <param name="ammunition" value="1" />
+          <param name="volley" value="1" />
+          <param name="affinity_type" value="1" />
+          <param name="affinity" value="1" />
+          <param name="rank_snap" value="false" />
+          <param name="substitutions" value="" />
+          <param name="clean" value="false" />
+        </paramlist>
+      </task>
+      <task namespace="TestSystem_Inrush" classid="SimulationTask" id="563375896" order="0" pmr="false" volley="1" ammunition="1" rank_snap="false" clean="false">
+        <paramlist name="Options">
+          <param name="simulationset" value="" />
+          <param name="namespace" value="TestSystem_Inrush" />
+          <param name="name" value="" />
+          <param name="ammunition" value="1" />
+          <param name="volley" value="1" />
+          <param name="affinity_type" value="1" />
+          <param name="affinity" value="1" />
+          <param name="rank_snap" value="false" />
+          <param name="substitutions" value="" />
+          <param name="clean" value="false" />
+        </paramlist>
+      </task>
+    </simulation>
+  </simulations>
+  <pmr />
+  <messagegrid expanded="">
+    <column name="Icon" />
+    <column name="Id" />
+    <column name="Component" />
+    <column name="Namespace" />
+    <column name="Description" />
+  </messagegrid>
+</workspace>

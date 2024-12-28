@@ -1,0 +1,39 @@
+<workspace name="01_ACFaults" version="4.5.5" crc="38759216">
+  <paramlist name="options">
+    <param name="display_project_file_name" value="false" />
+    <param name="compile_save_enable" value="false" />
+    <param name="autosave_interval" value="0" />
+    <param name="type_conversion_warn" value="1" />
+    <param name="private_env" value="true" />
+    <param name="unit_system_warn" value="1" />
+    <param name="case_sensitivity" value="true" />
+    <param name="ss_limit" value="256" />
+    <param name="MaxRadioCount" value="256" />
+    <param name="MaxConcurrentSim" value="32" />
+    <param name="SocketPortBase" value="30000" />
+    <param name="memory_notify" value="256" />
+    <param name="output_empty" value="1" />
+    <param name="output_excess" value="1" />
+    <param name="output_density" value="1" />
+    <param name="waveform_overwrite" value="1" />
+    <param name="snapshot_overwrite" value="1" />
+    <param name="duplicate_messages" value="100" />
+    <param name="runtime_canvas_lock" value="0" />
+  </paramlist>
+  <projects>
+    <project type="project" name="AC_Fault_study_01" filepath=".\AC_Fault_study_01.pscx" />
+    <project type="project" name="AC_Fault_study_02" filepath=".\AC_Fault_study_02.pscx" />
+    <project type="project" name="AC_Fault_study_03" filepath=".\AC_Fault_study_03.pscx" />
+    <project type="project" name="AC_Fault_study_04" filepath=".\AC_Fault_study_04.pscx" />
+    <project type="project" name="AC_Fault_study_05" filepath=".\AC_Fault_study_05.pscx" />
+  </projects>
+  <simulations>
+    <simulation name="default" dependson="None">
+      <task namespace="AC_Fault_study_01" />
+      <task namespace="AC_Fault_study_02" />
+      <task namespace="AC_Fault_study_03" />
+      <task namespace="AC_Fault_study_04" />
+      <task namespace="AC_Fault_study_05" />
+    </simulation>
+  </simulations>
+</workspace>

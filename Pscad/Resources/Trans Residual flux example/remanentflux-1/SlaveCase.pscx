@@ -1,0 +1,1563 @@
+<project name="SlaveCase" version="4.6.3" schema="" Target="EMTDC">
+  <paramlist name="Settings">
+    <param name="creator" value="gole, 951967224" />
+    <param name="time_duration" value="0.7" />
+    <param name="time_step" value="10" />
+    <param name="sample_step" value="500" />
+    <param name="chatter_threshold" value="0.001" />
+    <param name="branch_threshold" value="0.0005" />
+    <param name="StartType" value="0" />
+    <param name="PlotType" value="1" />
+    <param name="output_filename" value="$(Namespace).out" />
+    <param name="SnapType" value="0" />
+    <param name="SnapTime" value="0.5" />
+    <param name="snapshot_filename" value="chopper.snp" />
+    <param name="MrunType" value="2" />
+    <param name="Mruns" value="10" />
+    <param name="Scenario" value="" />
+    <param name="Advanced" value="1023" />
+    <param name="Options" value="16" />
+    <param name="Build" value="16" />
+    <param name="Warn" value="0" />
+    <param name="Check" value="0" />
+    <param name="description" value="" />
+    <param name="revisor" value="jayas, 1642805710" />
+    <param name="architecture" value="windows" />
+    <param name="Source" value="" />
+    <param name="latency_count" value="100" />
+    <param name="Debug" value="0" />
+    <param name="startup_filename" value="chopper.snp" />
+    <param name="Layers" value="Disabled" />
+    <param name="DisabledLayers" value="Disabled" />
+    <param name="Preprocessor" value="" />
+  </paramlist>
+  <definitions>
+    <Definition classid="StationDefn" name="Station" group="" url="" version="" build="" crc="72438107" instances="1" key="" view="false" date="1642805656" id="1525679577">
+      <paramlist name="">
+        <param name="Description" value="" />
+      </paramlist>
+      <schematic classid="StationCanvas">
+        <paramlist>
+          <param name="show_grid" value="0" />
+          <param name="size" value="0" />
+          <param name="orient" value="1" />
+          <param name="show_border" value="0" />
+          <param name="bus_expand_x" value="8" />
+          <param name="bus_expand_y" value="8" />
+          <param name="bus_length" value="4" />
+        </paramlist>
+        <Wire classid="WireBranch" name="STUB" x="180" y="180" w="68" h="82" orient="0" defn="(null):STUB" id="1307510944" recv="-1" send="-1" back="-1" layer="">
+          <vertex x="0" y="0" />
+          <vertex x="0" y="18" />
+          <vertex x="54" y="54" />
+          <vertex x="54" y="72" />
+          <User classid="UserCmp" name="SlaveCase:Main" id="1307510944" x="0" y="0" w="0" h="0" z="-1" orient="0" defn="SlaveCase:Main" link="1307510944" q="4">
+            <paramlist link="-1" name="" crc="21933320" />
+            <paramlist link="70709954" name="">
+              <param name="ymin" value="0" />
+              <param name="ymax" value="12" />
+            </paramlist>
+            <paramlist link="40210222" name="">
+              <param name="ymin" value="0" />
+              <param name="ymax" value="450" />
+            </paramlist>
+            <paramlist link="1725320212" name="">
+              <param name="ymin" value="-2" />
+              <param name="ymax" value="12" />
+            </paramlist>
+            <paramlist link="1571710701" name="">
+              <param name="xmin" value="0" />
+              <param name="xmax" value="0.5" />
+            </paramlist>
+            <paramlist link="871981795" name="">
+              <param name="ymin" value="0" />
+              <param name="ymax" value="140" />
+            </paramlist>
+            <paramlist link="483162621" name="">
+              <param name="ymin" value="0" />
+              <param name="ymax" value="12" />
+            </paramlist>
+            <paramlist link="1353347435" name="">
+              <param name="xmax" value="50" />
+              <param name="xmin" value="-50" />
+              <param name="ymax" value="50" />
+              <param name="ymin" value="-50" />
+              <param name="zmax" value="1" />
+              <param name="zmin" value="0" />
+            </paramlist>
+            <paramlist link="519440093" name="">
+              <param name="xmax" value="0.06" />
+              <param name="xmin" value="-0.06" />
+              <param name="ymax" value="0.4" />
+              <param name="ymin" value="-0.4" />
+              <param name="zmax" value="1" />
+              <param name="zmin" value="0" />
+            </paramlist>
+            <paramlist link="1827097757" name="">
+              <param name="xmin" value="0" />
+              <param name="xmax" value="0.7" />
+            </paramlist>
+            <paramlist link="1792688914" name="">
+              <param name="ymin" value="-2" />
+              <param name="ymax" value="2" />
+            </paramlist>
+          </User>
+        </Wire>
+      </schematic>
+    </Definition>
+    <Definition classid="UserCmpDefn" name="optim" group="" url="" version="" build="" crc="54676557" instances="0" key="" view="false" date="0" id="1825952418">
+      <paramlist>
+        <param name="Description" value="" />
+      </paramlist>
+      <form name="" w="320" h="400" splitter="60">
+        <category name="Main">
+          <parameter type="Choice" name="VIS" desc="Name Visible" group="" helpmode="Append">
+            <value><![CDATA[0]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <regex />
+            <error_msg />
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Choice" name="NDIM" desc="Number of Dimensions" group="" helpmode="Append">
+            <value><![CDATA[1]]></value>
+            <choice><![CDATA[1 = 1]]></choice>
+            <choice><![CDATA[2 = 2]]></choice>
+            <choice><![CDATA[3 = 3]]></choice>
+            <choice><![CDATA[4 = 4]]></choice>
+            <choice><![CDATA[5 = 5]]></choice>
+            <choice><![CDATA[6 = 6]]></choice>
+            <choice><![CDATA[7 = 7]]></choice>
+            <choice><![CDATA[8 = 8]]></choice>
+            <choice><![CDATA[9 = 9]]></choice>
+            <choice><![CDATA[10 = 10]]></choice>
+            <choice><![CDATA[11 = 11]]></choice>
+            <choice><![CDATA[12 = 12]]></choice>
+            <choice><![CDATA[13 = 13]]></choice>
+            <choice><![CDATA[14 = 14]]></choice>
+            <choice><![CDATA[15 = 15]]></choice>
+            <choice><![CDATA[16 = 16]]></choice>
+            <choice><![CDATA[17 = 17]]></choice>
+            <choice><![CDATA[18 = 18]]></choice>
+            <choice><![CDATA[19 = 19]]></choice>
+            <choice><![CDATA[20 = 20]]></choice>
+            <regex />
+            <error_msg />
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="FTOL" desc="Relative Tolerance" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[1e-3]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_A" desc="Initial Node Distance" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[1.0]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Choice" name="ShowDim" desc="Show Output Dimension" group="" helpmode="Append">
+            <value><![CDATA[1]]></value>
+            <choice><![CDATA[0 = No]]></choice>
+            <choice><![CDATA[1 = Yes]]></choice>
+            <regex />
+            <error_msg />
+            <help><![CDATA[]]></help>
+          </parameter>
+        </category>
+        <category name="Initial Conditions">
+          <parameter type="Real" name="U_IC1" desc="IC for Variable 1" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 1]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC11" desc="IC for Variable 11" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 11]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC2" desc="IC for Variable 2" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 2]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC12" desc="IC for Variable 12" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 12]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC3" desc="IC for Variable 3" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 3]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC13" desc="IC for Variable 13" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 13]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC4" desc="IC for Variable 4" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 4]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC14" desc="IC for Variable 14" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 14]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC5" desc="IC for Variable 5" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 5]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC15" desc="IC for Variable 15" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 15]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC6" desc="IC for Variable 6" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 6]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC16" desc="IC for Variable 16" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 16]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC7" desc="IC for Variable 7" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 7]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC17" desc="IC for Variable 17" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 17]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC8" desc="IC for Variable 8" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 8]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC18" desc="IC for Variable 18" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 18]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC9" desc="IC for Variable 9" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >=9]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC19" desc="IC for Variable 19" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 19]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC10" desc="IC for Variable 10" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM >= 10]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="U_IC20" desc="IC for Variable 20" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <cond><![CDATA[NDIM = 20]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+        </category>
+      </form>
+      <svg viewBox="-200 -200 200 200">
+        <port model="Transfer" name="U_IN" x="-54" y="0" dim="1" mode="Input" type="Real" internal=""><![CDATA[true]]></port>
+        <port model="Transfer" name="U_X" x="54" y="0" dim="20" mode="Output" type="Real" internal=""><![CDATA[true]]></port>
+        <rect x="-29" y="-29" width="58" height="58" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Black" fill-bg="" port="" />
+        <line x1="-54" y1="0" x2="-29" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="U_IN" />
+        <line x1="-29" y1="0" x2="-35" y2="6" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="U_IN" />
+        <line x1="-29" y1="0" x2="-35" y2="-6" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="U_IN" />
+        <line x1="54" y1="0" x2="29" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="U_X" />
+        <cond><![CDATA[VIS == 1]]></cond>
+        <text x="0" y="4" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[SIMPLEX]]></text>
+        <cond><![CDATA[NDIM ==1]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[1]]></text>
+        <cond><![CDATA[NDIM == 2]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[2]]></text>
+        <cond><![CDATA[NDIM == 3]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[3]]></text>
+        <cond><![CDATA[NDIM ==4]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[4]]></text>
+        <cond><![CDATA[NDIM == 5]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[5]]></text>
+        <cond><![CDATA[NDIM == 6]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[6]]></text>
+        <cond><![CDATA[NDIM == 7]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[7]]></text>
+        <cond><![CDATA[NDIM == 8]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[8]]></text>
+        <cond><![CDATA[NDIM == 9]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[9]]></text>
+        <cond><![CDATA[NDIM == 10]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[10]]></text>
+        <cond><![CDATA[NDIM == 11]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[11]]></text>
+        <cond><![CDATA[NDIM == 12]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[12]]></text>
+        <cond><![CDATA[NDIM ==13]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[13]]></text>
+        <cond><![CDATA[NDIM ==14]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[14]]></text>
+        <cond><![CDATA[NDIM ==15]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[15]]></text>
+        <cond><![CDATA[NDIM == 16]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[16]]></text>
+        <cond><![CDATA[NDIM ==17]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[17]]></text>
+        <cond><![CDATA[NDIM == 18]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[18]]></text>
+        <cond><![CDATA[NDIM == 19]]></cond>
+        <text x="40" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[19]]></text>
+        <cond><![CDATA[NDIM == 20]]></cond>
+        <text x="42" y="-6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[20]]></text>
+        <cond><![CDATA[ShowDim == 1]]></cond>
+        <line x1="36" y1="3" x2="42" y2="-3" stroke="Black" stroke-dasharray="none" stroke-width="0.2" port="" />
+      </svg>
+      <script>
+        <segment name="Fortran"><![CDATA[	#SUBROUTINE MY_SIMPLEX
+	
+	#INCLUDE "fnames.h"
+	#INCLUDE "s1.h"
+
+	#FUNCTION INTEGER EMTDC_RUN
+	
+	#LOCAL INTEGER U_RN !Current Run Number
+	#LOCAL REAL US_X0(20)
+		
+	U_RN = EMTDC_RUN()
+
+	IF ((U_RN .EQ. 1) .AND. TIMEZERO) THEN
+		US_X0( 1) = $U_IC1
+		US_X0( 2) = $U_IC2
+		US_X0( 3) = $U_IC3
+		US_X0( 4) = $U_IC4
+		US_X0( 5) = $U_IC5
+		US_X0( 6) = $U_IC6
+		US_X0( 7) = $U_IC7
+		US_X0( 8) = $U_IC8
+		US_X0( 9) = $U_IC9
+		US_X0( 10) = $U_IC10
+		US_X0( 11) = $U_IC11
+		US_X0( 12) = $U_IC12
+		US_X0( 13) = $U_IC13
+		US_X0( 14) = $U_IC14
+		US_X0( 15) = $U_IC15
+		US_X0( 16) = $U_IC16
+		US_X0( 17) = $U_IC17
+		US_X0( 18) = $U_IC18
+		US_X0( 19) = $U_IC19
+		US_X0( 20) = $U_IC20
+	ENDIF
+	CALL MY_SIMPLEX( $FTOL, $NDIM, US_X0, $U_A, $U_IN, $U_X, U_RN)]]></segment>
+        <segment name="Branch"><![CDATA[]]></segment>
+        <segment name="Computations"><![CDATA[]]></segment>
+      </script>
+    </Definition>
+    <Definition classid="UserCmpDefn" name="RT" group="" url="" version="" build="" crc="8635504" instances="0" key="" view="false" date="0" id="733485447">
+      <paramlist>
+        <param name="Description" value="" />
+      </paramlist>
+      <form name="" w="320" h="400" splitter="60" />
+      <svg viewBox="-200 -200 200 200">
+        <rect x="-100" y="-29" width="205" height="84" stroke="Olive" stroke-dasharray="none" stroke-width="1.4" fill-style="Hollow" fill-fg="Black" fill-bg="" port="" />
+        <text x="0" y="15" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[Runtime (Control Slider for D,]]></text>
+        <text x="-1" y="-10" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[Click on this Block for]]></text>
+        <text x="3" y="37" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[Plots and Meters)]]></text>
+      </svg>
+      <script />
+      <schematic classid="UserCanvas" zoomlevel="6" scrollx="0" scrolly="0">
+        <paramlist>
+          <param name="show_grid" value="0" />
+          <param name="size" value="0" />
+          <param name="orient" value="1" />
+          <param name="show_border" value="0" />
+          <param name="monitor_bus_voltage" value="0" />
+          <param name="show_signal" value="0" />
+          <param name="show_virtual" value="0" />
+          <param name="show_sequence" value="0" />
+          <param name="auto_sequence" value="1" />
+        </paramlist>
+        <Frame classid="GraphFrame" name="frame" x="18" y="90" w="522" h="486" id="686508740" link="-1">
+          <paramlist link="-1" name="">
+            <param name="Icon" value="-1,-1" />
+            <param name="state" value="1" />
+            <param name="title" value="Untitled" />
+            <param name="XLabel" value="x" />
+            <param name="Pan" value="false,75" />
+            <param name="markers" value="false" />
+            <param name="glyphs" value="false" />
+            <param name="ticks" value="false" />
+            <param name="grid" value="false" />
+            <param name="yinter" value="false" />
+            <param name="xinter" value="false" />
+            <param name="snapaperture" value="false" />
+            <param name="dynaperture" value="true" />
+            <param name="minorgrids" value="false" />
+            <param name="lockmarkers" value="false" />
+            <param name="deltareadout" value="false" />
+            <param name="xmarker" value="0" />
+            <param name="omarker" value="0" />
+          </paramlist>
+          <paramlist link="686508740" name="">
+            <param name="xmin" value="0.0" />
+            <param name="xmax" value="1.0" />
+          </paramlist>
+          <Graph classid="OverlayGraph" id="457221214" link="-1">
+            <paramlist link="-1" name="">
+              <param name="title" value="y" />
+              <param name="units" value="" />
+              <param name="gridvalue" value="0.500000" />
+              <param name="yintervalue" value="0.000000" />
+              <param name="grid" value="true" />
+              <param name="ticks" value="false" />
+              <param name="glyphs" value="false" />
+              <param name="yinter" value="true" />
+              <param name="xinter" value="true" />
+              <param name="marker" value="false" />
+              <param name="trigger" value="false" />
+              <param name="autocolor" value="false" />
+              <param name="invertcolor" value="false" />
+              <param name="crosshair" value="false" />
+              <param name="manualscale" value="false" />
+            </paramlist>
+            <Curve classid="Curve" name="IL" link="119875904" color="8388608" bold="0" show="255" mode="0" id="600969746" />
+            <paramlist link="457221214" name="">
+              <param name="ymin" value="-1.000000" />
+              <param name="ymax" value="1.000000" />
+            </paramlist>
+          </Graph>
+          <Graph classid="OverlayGraph" id="859084054" link="-1">
+            <paramlist link="-1" name="">
+              <param name="title" value="y" />
+              <param name="units" value="" />
+              <param name="gridvalue" value="2.000000" />
+              <param name="yintervalue" value="0.000000" />
+              <param name="grid" value="true" />
+              <param name="ticks" value="false" />
+              <param name="glyphs" value="false" />
+              <param name="yinter" value="true" />
+              <param name="xinter" value="true" />
+              <param name="marker" value="false" />
+              <param name="trigger" value="false" />
+              <param name="autocolor" value="false" />
+              <param name="invertcolor" value="false" />
+              <param name="crosshair" value="false" />
+              <param name="manualscale" value="false" />
+            </paramlist>
+            <Curve classid="Curve" name="" link="18415192" color="8388608" bold="0" show="255" mode="0" id="1877926794" />
+            <Curve classid="Curve" name="DC link current" link="119880392" color="32768" bold="0" show="255" mode="0" id="392441343" />
+            <paramlist link="859084054" name="">
+              <param name="ymin" value="-1.000000" />
+              <param name="ymax" value="1.000000" />
+            </paramlist>
+          </Graph>
+          <Graph classid="OverlayGraph" id="1083356116" link="-1">
+            <paramlist link="-1" name="">
+              <param name="title" value="y" />
+              <param name="units" value="" />
+              <param name="gridvalue" value="0.100000" />
+              <param name="yintervalue" value="0.000000" />
+              <param name="grid" value="true" />
+              <param name="ticks" value="false" />
+              <param name="glyphs" value="false" />
+              <param name="yinter" value="true" />
+              <param name="xinter" value="true" />
+              <param name="marker" value="false" />
+              <param name="trigger" value="false" />
+              <param name="autocolor" value="false" />
+              <param name="invertcolor" value="false" />
+              <param name="crosshair" value="false" />
+              <param name="manualscale" value="false" />
+            </paramlist>
+            <Curve classid="Curve" name="" link="18464144" color="8388608" bold="0" show="255" mode="0" id="220014006" />
+            <paramlist link="1083356116" name="">
+              <param name="ymin" value="-1.000000" />
+              <param name="ymax" value="1.000000" />
+            </paramlist>
+          </Graph>
+          <Graph classid="OverlayGraph" id="1762829964" link="-1">
+            <paramlist link="-1" name="">
+              <param name="title" value="y" />
+              <param name="units" value="" />
+              <param name="gridvalue" value="50.000000" />
+              <param name="yintervalue" value="0.000000" />
+              <param name="grid" value="true" />
+              <param name="ticks" value="false" />
+              <param name="glyphs" value="false" />
+              <param name="yinter" value="true" />
+              <param name="xinter" value="true" />
+              <param name="marker" value="false" />
+              <param name="trigger" value="false" />
+              <param name="autocolor" value="false" />
+              <param name="invertcolor" value="false" />
+              <param name="crosshair" value="false" />
+              <param name="manualscale" value="false" />
+            </paramlist>
+            <Curve classid="Curve" name="DC link voltage" link="119894264" color="8388608" bold="0" show="255" mode="0" id="57825663" />
+            <paramlist link="1762829964" name="">
+              <param name="ymin" value="-1.000000" />
+              <param name="ymax" value="1.000000" />
+            </paramlist>
+          </Graph>
+        </Frame>
+      </schematic>
+    </Definition>
+    <Definition classid="UserCmpDefn" name="Gain_Sch" group="" url="" version="" build="" crc="18299923" instances="0" key="" view="false" date="0" id="1943179159">
+      <paramlist>
+        <param name="Description" value="" />
+      </paramlist>
+      <form name="" w="320" h="400" splitter="60" />
+      <svg viewBox="-200 -200 200 200">
+        <port model="Transfer" name="RNUM" x="-54" y="0" dim="1" mode="Input" type="Integer" internal=""><![CDATA[true]]></port>
+        <port model="Transfer" name="OP" x="54" y="0" dim="1" mode="Output" type="Real" internal=""><![CDATA[true]]></port>
+        <rect x="-39" y="-39" width="78" height="78" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Black" fill-bg="" port="" />
+        <line x1="-54" y1="0" x2="-39" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="RNUM" />
+        <line x1="-39" y1="0" x2="-44" y2="-5" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="RNUM" />
+        <line x1="-39" y1="0" x2="-44" y2="5" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="RNUM" />
+        <line x1="54" y1="0" x2="39" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="OP" />
+        <text x="0" y="-13" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[Gain]]></text>
+        <text x="0" y="6" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[Schedueler]]></text>
+      </svg>
+      <script>
+        <segment name="Fortran"><![CDATA[		IF ( MOD( $RNUM, 3) .EQ. 1) THEN
+			$OP = 10.0
+		ELSEIF ( MOD( $RNUM, 3) .EQ. 2) THEN
+			$OP = 30.0
+		ELSE
+			$OP = 50.0
+		ENDIF]]></segment>
+        <segment name="Branch"><![CDATA[]]></segment>
+        <segment name="Computations"><![CDATA[]]></segment>
+      </script>
+    </Definition>
+    <Definition classid="UserCmpDefn" name="Objective" group="" url="" version="" build="" crc="94150058" instances="0" key="" view="false" date="0" id="396306964">
+      <paramlist>
+        <param name="Description" value="" />
+      </paramlist>
+      <form name="" w="320" h="400" splitter="60">
+        <category name="Main">
+          <parameter type="Real" name="Rise_Time" desc="Rise time of the target signal" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="Settle_Time" desc="Settling time of the target signal" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="Mp" desc="Percent overshoot of the signal" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="Steady" desc="Steady state value of the signal" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="Steady_Err" desc="Steady state error band (%)" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+        </category>
+      </form>
+      <svg viewBox="-200 -200 200 200">
+        <port model="Transfer" name="SHASIG" x="54" y="0" dim="1" mode="Output" type="Real" internal=""><![CDATA[true]]></port>
+        <port model="Transfer" name="TARSIG" x="-54" y="0" dim="1" mode="Input" type="Real" internal=""><![CDATA[true]]></port>
+        <line x1="-54" y1="0" x2="-39" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="TARSIG" />
+        <line x1="-39" y1="0" x2="-44" y2="-5" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="TARSIG" />
+        <line x1="-39" y1="0" x2="-44" y2="5" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="TARSIG" />
+        <line x1="54" y1="0" x2="39" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="SHASIG" />
+        <rect x="-39" y="-27" width="78" height="48" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Black" fill-bg="" port="" />
+        <text x="1" y="-15" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[Objective]]></text>
+        <text x="1" y="2" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[Function]]></text>
+        <text x="1" y="17" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[Shaper]]></text>
+      </svg>
+      <script>
+        <segment name="Fortran"><![CDATA[	IF ( TIME .LE. $Rise_Time) THEN
+		$SHASIG = ( $TARSIG - $Steady) ** 2.0
+	ELSEIF ( TIME .GT. $Rise_Time .AND. TIME .LE. $Settle_Time) THEN
+		IF ( ABS( $TARSIG - $Steady) .GE. ($Mp/100.0)*$Steady) THEN
+			$SHASIG = ( $TARSIG - $Steady) ** 2.0
+		ELSE
+			$SHASIG = 0.0
+		ENDIF
+	ELSE
+		IF ( ABS( $TARSIG - $Steady) .GE. ($Steady_Err/100.0)*$Steady) THEN
+			$SHASIG = ( $TARSIG - $Steady) ** 2.0
+		ELSE
+			$SHASIG = 0.0
+		ENDIF
+	ENDIF]]></segment>
+        <segment name="Branch"><![CDATA[]]></segment>
+        <segment name="Computations"><![CDATA[]]></segment>
+      </script>
+    </Definition>
+    <Definition classid="UserCmpDefn" name="gsch" group="" url="" version="" build="" crc="88058750" instances="0" key="" view="false" date="0" id="1892598593">
+      <paramlist>
+        <param name="Description" value="" />
+      </paramlist>
+      <form name="" w="320" h="400" splitter="60" />
+      <svg viewBox="-200 -200 200 200">
+        <port model="Transfer" name="RUNNUM" x="-54" y="0" dim="1" mode="Input" type="Integer" internal=""><![CDATA[true]]></port>
+        <port model="Transfer" name="ORDER" x="36" y="0" dim="1" mode="Output" type="Real" internal=""><![CDATA[true]]></port>
+        <rect x="-39" y="-13" width="60" height="30" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Black" fill-bg="" port="" />
+        <line x1="-54" y1="0" x2="-39" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="RUNNUM" />
+        <line x1="-39" y1="0" x2="-44" y2="-5" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="RUNNUM" />
+        <line x1="-39" y1="0" x2="-44" y2="5" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="RUNNUM" />
+        <line x1="36" y1="0" x2="21" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="ORDER" />
+        <text x="-10" y="-2" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[order]]></text>
+        <text x="-9" y="13" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[generator]]></text>
+      </svg>
+      <script>
+        <segment name="Fortran"><![CDATA[			IF ( MOD( $RUNNUM, 3)  .EQ. 1) THEN
+				$ORDER = 10
+			ELSEIF ( MOD( $RUNNUM, 3) .EQ. 2) THEN
+				$ORDER = 30
+			ELSE
+				$ORDER = 50
+			ENDIF]]></segment>
+        <segment name="Branch"><![CDATA[]]></segment>
+        <segment name="Computations"><![CDATA[]]></segment>
+      </script>
+    </Definition>
+    <Definition classid="UserCmpDefn" name="scaler" group="" url="" version="" build="" crc="78679111" instances="0" key="" view="false" date="0" id="1796344003">
+      <paramlist>
+        <param name="Description" value="" />
+      </paramlist>
+      <form name="" w="320" h="400" splitter="60">
+        <category name="Main">
+          <parameter type="Real" name="OR1" desc="Output for Run 1" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="OR2" desc="Output for Run 2" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="OR3" desc="Output for Run 3" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+        </category>
+      </form>
+      <svg viewBox="-200 -200 200 200">
+        <port model="Transfer" name="RUNNUM" x="-54" y="0" dim="1" mode="Input" type="Integer" internal=""><![CDATA[true]]></port>
+        <port model="Transfer" name="SCALE" x="36" y="0" dim="1" mode="Output" type="Real" internal=""><![CDATA[true]]></port>
+        <rect x="-39" y="-12" width="60" height="25" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Black" fill-bg="" port="" />
+        <line x1="-54" y1="0" x2="-39" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="RUNNUM" />
+        <line x1="-39" y1="0" x2="-44" y2="-5" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="RUNNUM" />
+        <line x1="-39" y1="0" x2="-44" y2="5" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="RUNNUM" />
+        <line x1="36" y1="0" x2="21" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="SCALE" />
+        <text x="-10" y="3" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[Scaling]]></text>
+      </svg>
+      <script>
+        <segment name="Fortran"><![CDATA[		IF ( MOD( $RUNNUM, 3) .EQ. 1) THEN
+			$SCALE = $OR1	
+		ELSEIF ( MOD( $RUNNUM, 3) .EQ. 2) THEN
+			$SCALE = $OR2
+		ELSE
+			$SCALE = $OR3
+		ENDIF]]></segment>
+        <segment name="Branch"><![CDATA[]]></segment>
+        <segment name="Computations"><![CDATA[]]></segment>
+      </script>
+    </Definition>
+    <Definition classid="UserCmpDefn" name="BatchOpt" group="" url="" version="" build="" crc="20567542" instances="0" key="" view="false" date="0" id="570982649">
+      <paramlist>
+        <param name="Description" value="Batch Simplex Optimization" />
+      </paramlist>
+      <form name="" w="320" h="400" splitter="60">
+        <category name="Main">
+          <parameter type="Choice" name="NDIM" desc="Number of Dimensions" group="" helpmode="Append">
+            <value><![CDATA[1]]></value>
+            <choice><![CDATA[1 = 1]]></choice>
+            <choice><![CDATA[2 = 2]]></choice>
+            <choice><![CDATA[3 = 3]]></choice>
+            <choice><![CDATA[4 = 4]]></choice>
+            <choice><![CDATA[5 = 5]]></choice>
+            <choice><![CDATA[6 = 6]]></choice>
+            <choice><![CDATA[7 = 7]]></choice>
+            <choice><![CDATA[8 = 8]]></choice>
+            <choice><![CDATA[9 = 9]]></choice>
+            <choice><![CDATA[10 = 10]]></choice>
+            <choice><![CDATA[11 = 11]]></choice>
+            <choice><![CDATA[12 = 12]]></choice>
+            <choice><![CDATA[13 = 13]]></choice>
+            <choice><![CDATA[14 = 14]]></choice>
+            <choice><![CDATA[15 = 15]]></choice>
+            <choice><![CDATA[16 = 16]]></choice>
+            <choice><![CDATA[17 = 17]]></choice>
+            <choice><![CDATA[18 = 18]]></choice>
+            <choice><![CDATA[19 = 19]]></choice>
+            <choice><![CDATA[20 = 20]]></choice>
+            <regex />
+            <error_msg />
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="RTOL" desc="Relative Tolerance" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="IDIST" desc="Initial Node Distance" group="" helpmode="Append" content_type="Literal" intent="Input" min="" max="" unit="">
+            <value><![CDATA[]]></value>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Choice" name="BatchNum" desc="Number of Runs before Function Evaluation" group="" helpmode="Append">
+            <value><![CDATA[2]]></value>
+            <choice><![CDATA[2 = 2]]></choice>
+            <choice><![CDATA[3 = 3]]></choice>
+            <choice><![CDATA[4 = 4]]></choice>
+            <choice><![CDATA[5 = 5]]></choice>
+            <choice><![CDATA[6 = 6]]></choice>
+            <choice><![CDATA[7 = 7]]></choice>
+            <choice><![CDATA[8 = 8]]></choice>
+            <choice><![CDATA[9 = 9]]></choice>
+            <choice><![CDATA[10 = 10]]></choice>
+            <regex />
+            <error_msg />
+            <help><![CDATA[]]></help>
+          </parameter>
+        </category>
+        <category name="Initial Conditions">
+          <parameter type="Real" name="X1" desc="IC for Variable 1" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 1]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X11" desc="IC for Variable 11" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 11]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X2" desc="IC for Variable 2" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 2]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X12" desc="IC for Variable 12" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 12]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X3" desc="IC for Variable 3" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 3]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X13" desc="IC for Variable 13" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 13]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X4" desc="IC for Variable 4" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 4]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X14" desc="IC for Variable 14" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 14]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X5" desc="IC for Variable 5" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 5]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X15" desc="IC for Variable 15" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 15]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X6" desc="IC for Variable 6" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 6]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X16" desc="IC for Variable 16" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 16]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X7" desc="IC for Variable 7" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 7]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X17" desc="IC for Variable 17" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 17]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X8" desc="IC for Variable 8" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 8]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X18" desc="IC for Variable 18" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 18]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X9" desc="IC for Variable 9" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 9]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X19" desc="IC for Variable 19" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 19]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X10" desc="IC for Variable 10" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 10]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+          <parameter type="Real" name="X20" desc="IC for Variable 20" group="" helpmode="Append" content_type="Variable" intent="Input" min="" max="" unit="">
+            <value><![CDATA[0.0]]></value>
+            <cond><![CDATA[NDIM >= 20]]></cond>
+            <help><![CDATA[]]></help>
+          </parameter>
+        </category>
+      </form>
+      <svg viewBox="-200 -200 200 200">
+        <port model="Transfer" name="U_IN" x="-54" y="0" dim="1" mode="Input" type="Real" internal=""><![CDATA[true]]></port>
+        <port model="Transfer" name="U_OUT" x="54" y="0" dim="20" mode="Output" type="Real" internal=""><![CDATA[true]]></port>
+        <rect x="-29" y="-29" width="58" height="58" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Black" fill-bg="" port="" />
+        <line x1="-54" y1="0" x2="-29" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="" />
+        <line x1="-29" y1="0" x2="-35" y2="6" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="" />
+        <line x1="-29" y1="0" x2="-35" y2="-6" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="" />
+        <line x1="54" y1="0" x2="29" y2="0" stroke="Black" stroke-dasharray="none" stroke-width="ByNode" port="" />
+        <line x1="37" y1="3" x2="43" y2="-3" stroke="Black" stroke-dasharray="none" stroke-width="0.2" port="" />
+        <rect x="11" y="-15" width="4" height="11" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Black" fill-bg="" port="" />
+        <rect x="23" y="-15" width="4" height="11" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Black" fill-bg="" port="" />
+        <rect x="-7" y="-25" width="4" height="21" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Black" fill-bg="" port="" />
+        <rect x="-1" y="-25" width="4" height="21" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Black" fill-bg="" port="" />
+        <rect x="-19" y="-19" width="4" height="15" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Black" fill-bg="" port="" />
+        <rect x="-13" y="-19" width="4" height="15" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Black" fill-bg="" port="" />
+        <rect x="-25" y="-19" width="4" height="15" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Black" fill-bg="" port="" />
+        <rect x="17" y="-15" width="4" height="11" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Black" fill-bg="" port="" />
+        <rect x="5" y="-25" width="4" height="21" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Solid" fill-fg="Black" fill-bg="" port="" />
+        <text x="40" y="15" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[%NDIM]]></text>
+        <text x="0" y="9" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[SIMPLEX]]></text>
+        <text x="21" y="25" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[%BatchNum]]></text>
+        <text x="-6" y="25" stroke="Black" fill="Black" font-size="Small" text-anchor="Middle"><![CDATA[Batch =]]></text>
+      </svg>
+      <script>
+        <segment name="Fortran"><![CDATA[	#SUBROUTINE MY_SIMPLEX
+	
+	#FUNCTION INTEGER EMTDC_RUN
+	
+	#LOCAL INTEGER U_RN !Current Run Number
+	#LOCAL REAL US_X0 20
+
+	U_RN = EMTDC_RUN()
+
+	IF ((U_RN .EQ. 1) .AND. (TIMEZERO .OR. FIRSTSTEP)) THEN
+		US_X0( 1) = $X1
+		US_X0( 2) = $X2
+		US_X0( 3) = $X3
+		US_X0( 4) = $X4
+		US_X0( 5) = $X5
+		US_X0( 6) = $X6
+		US_X0( 7) = $X7
+		US_X0( 8) = $X8
+		US_X0( 9) = $X9
+		US_X0( 10) = $X10
+		US_X0( 11) = $X11
+		US_X0( 12) = $X12
+		US_X0( 13) = $X13
+		US_X0( 14) = $X14
+		US_X0( 15) = $X15
+		US_X0( 16) = $X16
+		US_X0( 17) = $X17
+		US_X0( 18) = $X18
+		US_X0( 19) = $X19
+		US_X0( 20) = $X20
+	ENDIF
+	CALL MY_SIMPLEX( $RTOL, $NDIM, US_X0, $IDIST, $U_IN, $U_OUT, U_RN, $BatchNum)]]></segment>
+        <segment name="Branch"><![CDATA[]]></segment>
+        <segment name="Computations"><![CDATA[]]></segment>
+      </script>
+    </Definition>
+    <Definition classid="UserCmpDefn" name="Main" group="" url="" version="" build="" crc="97436384" instances="1" key="" view="false" date="1642805656" id="317703733">
+      <paramlist>
+        <param name="Description" value="Main Page" />
+      </paramlist>
+      <form name="" w="320" h="400" splitter="60">
+        <category name="Global Substitutions" />
+      </form>
+      <svg viewBox="-200 -200 200 200">
+        <rect x="-18" y="-18" width="36" height="36" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="Black" fill-bg="" port="" />
+      </svg>
+      <script />
+      <schematic classid="UserCanvas" zoomlevel="6" scrollx="0" scrolly="0">
+        <paramlist>
+          <param name="show_grid" value="0" />
+          <param name="size" value="0" />
+          <param name="orient" value="0" />
+          <param name="show_border" value="0" />
+          <param name="monitor_bus_voltage" value="0" />
+          <param name="show_signal" value="0" />
+          <param name="show_virtual" value="0" />
+          <param name="show_sequence" value="0" />
+          <param name="auto_sequence" value="1" />
+        </paramlist>
+        <User classid="UserCmp" name="master:radiolink" id="94749587" x="864" y="144" w="91" h="21" z="60" orient="0" defn="master:radiolink" link="-1" layer="" q="4">
+          <paramlist link="-1" name="" crc="68005334">
+            <param name="Source" value="" />
+            <param name="Name" value="loop" />
+            <param name="Type" value="0" />
+            <param name="dim" value="1" />
+            <param name="Mode" value="1" />
+            <param name="Min" value="0" />
+            <param name="Max" value="140" />
+            <param name="rank" value="0" />
+            <param name="rccon" value="1" />
+            <param name="caption" value="$(Name) [$(Rank)]" />
+          </paramlist>
+        </User>
+        <Wire classid="WireOrthogonal" name="" x="648" y="702" w="64" h="10" orient="0" layer="" id="1817159189">
+          <vertex x="0" y="0" />
+          <vertex x="54" y="0" />
+        </Wire>
+        <User classid="UserCmp" name="master:radiolink" id="1805264822" x="270" y="72" w="225" h="20" z="10" orient="4" defn="master:radiolink" link="-1" layer="" q="4">
+          <paramlist link="-1" name="" crc="68005334">
+            <param name="Source" value="MasterCase:Main" />
+            <param name="Name" value="RFlux1" />
+            <param name="Type" value="0" />
+            <param name="dim" value="1" />
+            <param name="Mode" value="0" />
+            <param name="Min" value="-1.0" />
+            <param name="Max" value="1.0" />
+            <param name="rank" value="0" />
+            <param name="rccon" value="1" />
+            <param name="caption" value="$(Name) [$(Rank)]" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:radiolink" id="61291907" x="270" y="108" w="225" h="20" z="20" orient="4" defn="master:radiolink" link="-1" layer="" q="4">
+          <paramlist link="-1" name="" crc="68005334">
+            <param name="Source" value="MasterCase:Main" />
+            <param name="Name" value="RFlux2" />
+            <param name="Type" value="0" />
+            <param name="dim" value="1" />
+            <param name="Mode" value="0" />
+            <param name="Min" value="-1.0" />
+            <param name="Max" value="1.0" />
+            <param name="rank" value="0" />
+            <param name="rccon" value="1" />
+            <param name="caption" value="$(Name) [$(Rank)]" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:radiolink" id="1709181565" x="270" y="144" w="225" h="20" z="30" orient="4" defn="master:radiolink" link="-1" layer="" q="4">
+          <paramlist link="-1" name="" crc="68005334">
+            <param name="Source" value="MasterCase:Main" />
+            <param name="Name" value="RFlux3" />
+            <param name="Type" value="0" />
+            <param name="dim" value="1" />
+            <param name="Mode" value="0" />
+            <param name="Min" value="-1.0" />
+            <param name="Max" value="1.0" />
+            <param name="rank" value="0" />
+            <param name="rccon" value="1" />
+            <param name="caption" value="$(Name) [$(Rank)]" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:radiolink" id="57682690" x="270" y="180" w="260" h="20" z="40" orient="4" defn="master:radiolink" link="-1" layer="" q="4">
+          <paramlist link="-1" name="" crc="68005334">
+            <param name="Source" value="MasterCase:Main" />
+            <param name="Name" value="ClosingTime" />
+            <param name="Type" value="0" />
+            <param name="dim" value="1" />
+            <param name="Mode" value="0" />
+            <param name="Min" value="-1.0" />
+            <param name="Max" value="1.0" />
+            <param name="rank" value="0" />
+            <param name="rccon" value="1" />
+            <param name="caption" value="$(Name) [$(Rank)]" />
+          </paramlist>
+        </User>
+        <Wire classid="WireOrthogonal" name="" x="270" y="72" w="82" h="10" orient="0" layer="" id="1609126427">
+          <vertex x="0" y="0" />
+          <vertex x="72" y="0" />
+        </Wire>
+        <User classid="UserCmp" name="master:datalabel" id="2012786814" x="342" y="72" w="46" h="21" z="1" orient="0" defn="master:datalabel" link="-1" layer="" q="4">
+          <paramlist link="-1" name="" crc="98359112">
+            <param name="Name" value="RFlux1" />
+          </paramlist>
+        </User>
+        <Wire classid="WireOrthogonal" name="" x="270" y="108" w="82" h="10" orient="0" layer="" id="796957600">
+          <vertex x="0" y="0" />
+          <vertex x="72" y="0" />
+        </Wire>
+        <Wire classid="WireOrthogonal" name="" x="270" y="144" w="82" h="10" orient="0" layer="" id="326637185">
+          <vertex x="0" y="0" />
+          <vertex x="72" y="0" />
+        </Wire>
+        <Wire classid="WireOrthogonal" name="" x="270" y="180" w="82" h="10" orient="0" layer="" id="1489067281">
+          <vertex x="0" y="0" />
+          <vertex x="72" y="0" />
+        </Wire>
+        <User classid="UserCmp" name="master:datalabel" id="619316125" x="342" y="180" w="80" h="21" z="1" orient="0" defn="master:datalabel" link="-1" layer="" q="4">
+          <paramlist link="-1" name="" crc="98359112">
+            <param name="Name" value="ClosingTime" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" defn="master:breaker3" id="242780658" x="324" y="342" w="76" h="38" z="100" orient="4" link="-1" q="4">
+          <paramlist link="-1" name="" crc="112439510">
+            <param name="Ctrl" value="0" />
+            <param name="OPCUR" value="0" />
+            <param name="ENAB" value="0" />
+            <param name="CLVL" value="0.0 [kA]" />
+            <param name="View" value="1" />
+            <param name="ViewB" value="1" />
+            <param name="DisPQ" value="0" />
+            <param name="NAME" value="BRK" />
+            <param name="NAMEA" value="BRKA" />
+            <param name="NAMEB" value="BRKB" />
+            <param name="NAMEC" value="BRKC" />
+            <param name="ROFF" value="1.0e6 [ohm]" />
+            <param name="RON" value="0.005 [ohm]" />
+            <param name="PRER" value="0.5 [ohm]" />
+            <param name="TDA" value="0.0 [s]" />
+            <param name="TDB" value="0.0 [s]" />
+            <param name="TDC" value="0.0 [s]" />
+            <param name="TDRA" value="0.05 [s]" />
+            <param name="TDRB" value="0.05 [s]" />
+            <param name="TDRC" value="0.05 [s]" />
+            <param name="PostIns" value="0" />
+            <param name="TDBOA" value="0.005 [s]" />
+            <param name="IBRA" value="" />
+            <param name="IBRB" value="" />
+            <param name="IBRC" value="" />
+            <param name="IBR0" value="" />
+            <param name="SBRA" value="" />
+            <param name="SBRB" value="" />
+            <param name="SBRC" value="" />
+            <param name="BP" value="" />
+            <param name="BQ" value="" />
+            <param name="Vbr" value="" />
+            <param name="BOpen1" value="0" />
+            <param name="BOpen2" value="0" />
+            <param name="BOpen3" value="0" />
+            <param name="P" value="0 [MW]" />
+            <param name="Q" value="0 [MVAR]" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" defn="master:tbreakn" id="119489760" x="324" y="270" w="76" h="56" z="80" orient="0" link="-1" q="4">
+          <paramlist link="-1" name="" crc="27973537">
+            <param name="NUMS" value="1" />
+            <param name="INIT" value="1" />
+            <param name="TO1" value="ClosingTime" />
+            <param name="TO2" value="1.05 [s]" />
+          </paramlist>
+        </User>
+        <Wire classid="WireOrthogonal" name="" id="260193010" x="252" y="270" w="46" h="10" orient="0">
+          <vertex x="0" y="0" />
+          <vertex x="36" y="0" />
+        </Wire>
+        <User classid="UserCmp" defn="master:datalabel" id="1034022701" x="252" y="270" w="24" h="21" z="1" orient="0" link="-1" q="4">
+          <paramlist link="-1" name="" crc="98359112">
+            <param name="Name" value="BRK" />
+          </paramlist>
+        </User>
+        <Wire classid="WireOrthogonal" id="1021272140" name="" x="702" y="630" w="82" h="10" orient="0">
+          <vertex x="0" y="0" />
+          <vertex x="-72" y="0" />
+        </Wire>
+        <Frame classid="PlotFrame" name="PlotFrame" x="774" y="216" w="432" h="414" id="519440093" link="-1">
+          <paramlist link="-1" name="">
+            <param name="mode" value="0" />
+            <param name="Icon" value="-1,0" />
+            <param name="state" value="1" />
+            <param name="title" value="$(GROUP) : XY Plot" />
+            <param name="grid" value="true" />
+            <param name="ticks" value="false" />
+            <param name="yinter" value="true" />
+            <param name="glyphs" value="false" />
+            <param name="xhair" value="false" />
+            <param name="autocolor" value="false" />
+            <param name="invertcolors" value="false" />
+            <param name="snaptogrid" value="false" />
+            <param name="aspect" value="false" />
+            <param name="tracestyle" value="0" />
+            <param name="markers" value="0" />
+            <param name="xmarker" value="0" />
+            <param name="omarker" value="0" />
+          </paramlist>
+          <paramlist link="519440093" name="">
+            <param name="xmax" value="50.0" />
+            <param name="xmin" value="-50.0" />
+            <param name="ymax" value="50.0" />
+            <param name="ymin" value="-50.0" />
+            <param name="zmax" value="1.0" />
+            <param name="zmin" value="0.0" />
+          </paramlist>
+          <Curve classid="Curve" id="1307275349" name="I" link="587219274" color="0" bold="0" show="-1" mode="0" />
+          <Curve classid="Curve" id="1283800161" name="Flux" link="956342115" color="0" bold="0" show="-1" mode="0" />
+          <axis name="x-axis">
+            <ref link="1307275349" />
+          </axis>
+          <axis name="y-axis">
+            <ref link="1283800161" />
+          </axis>
+        </Frame>
+        <User classid="UserCmp" defn="master:pgb" id="956342115" x="702" y="630" w="38" h="26" z="150" orient="0" link="-1" q="4">
+          <paramlist link="-1" name="" crc="25850285">
+            <param name="Name" value="Flux" />
+            <param name="Group" value="" />
+            <param name="Display" value="0" />
+            <param name="Scale" value="1.0" />
+            <param name="Units" value="" />
+            <param name="mrun" value="0" />
+            <param name="Pol" value="0" />
+            <param name="Min" value="-2.0" />
+            <param name="Max" value="2.0" />
+            <param name="UseSignalName" value="0" />
+            <param name="enab" value="1" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:datalabel" id="2032714410" x="630" y="630" w="74" h="21" z="1" orient="0" defn="master:datalabel" link="-1" q="4">
+          <paramlist link="-1" name="" crc="98359112">
+            <param name="Name" value="A_B_Fx_mag" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:datalabel" id="964638451" x="648" y="666" w="38" h="21" z="1" orient="0" defn="master:datalabel" link="-1" q="4">
+          <paramlist link="-1" name="" crc="98359112">
+            <param name="Name" value="Iu_ab" />
+          </paramlist>
+        </User>
+        <Wire classid="WireOrthogonal" id="46020587" name="" x="648" y="666" w="64" h="10" orient="0">
+          <vertex x="0" y="0" />
+          <vertex x="54" y="0" />
+        </Wire>
+        <User classid="UserCmp" defn="master:pgb" id="587219274" x="702" y="666" w="38" h="26" z="160" orient="0" link="-1" q="4">
+          <paramlist link="-1" name="" crc="25850285">
+            <param name="Name" value="I" />
+            <param name="Group" value="" />
+            <param name="Display" value="0" />
+            <param name="Scale" value="-1.0" />
+            <param name="Units" value="" />
+            <param name="mrun" value="0" />
+            <param name="Pol" value="0" />
+            <param name="Min" value="-2.0" />
+            <param name="Max" value="2.0" />
+            <param name="UseSignalName" value="0" />
+            <param name="enab" value="1" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:ammeter" id="232262484" x="252" y="342" w="40" h="26" z="90" orient="6" defn="master:ammeter" link="-1" q="4">
+          <paramlist link="-1" name="" crc="119264497">
+            <param name="Name" value="Iabc" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" defn="master:source_3" id="2000513612" x="216" y="342" w="100" h="26" z="1" orient="0" link="-1" q="4">
+          <paramlist link="-1" name="" crc="50586932">
+            <param name="Name" value="Source 1" />
+            <param name="Type" value="1" />
+            <param name="Grnd" value="1" />
+            <param name="View" value="1" />
+            <param name="Spec" value="0" />
+            <param name="VCtrl" value="0" />
+            <param name="FCtrl" value="0" />
+            <param name="Vm" value="66 [kV]" />
+            <param name="Tc" value="0.05 [s]" />
+            <param name="f" value="60.0 [Hz]" />
+            <param name="Ph" value="0.0 [deg]" />
+            <param name="Vbase" value="230.0 [kV]" />
+            <param name="Sbase" value="100.0 [MVA]" />
+            <param name="Vpu" value="1.0 [pu]" />
+            <param name="PhT" value="0.0 [deg]" />
+            <param name="Pinit" value="0.0 [pu]" />
+            <param name="Qinit" value="0.0 [pu]" />
+            <param name="R" value="1.0 [ohm]" />
+            <param name="Rs" value="1.0 [ohm]" />
+            <param name="Rp" value="1.0 [ohm]" />
+            <param name="Lp" value="0.1 [H]" />
+            <param name="R_" value="1.0 [ohm]" />
+            <param name="L" value="0.1 [H]" />
+            <param name="C" value="1.0 [uF]" />
+            <param name="L_" value="0.1 [H]" />
+            <param name="C_" value="1.0 [uF]" />
+            <param name="IA" value="" />
+            <param name="IB" value="" />
+            <param name="IC" value="" />
+            <param name="Iabc" value="" />
+          </paramlist>
+        </User>
+        <Wire classid="WireOrthogonal" id="460948432" name="" x="432" y="342" w="46" h="10" orient="0">
+          <vertex x="0" y="0" />
+          <vertex x="-36" y="0" />
+        </Wire>
+        <User classid="UserCmp" name="master:voltmetergnd" defn="master:voltmetergnd" id="2073641354" x="414" y="342" w="38" h="31" z="110" orient="0" link="-1" q="4">
+          <paramlist link="-1" name="" crc="116145885">
+            <param name="Name" value="V66HV" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:resistor" defn="master:resistor" id="1026890020" x="486" y="234" w="30" h="80" z="1" orient="3" link="-1" q="4">
+          <paramlist link="-1" name="" crc="10319542">
+            <param name="R" value="1.0e9 [ohm]" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:ground" defn="master:ground" id="1929285482" x="504" y="378" w="22" h="28" z="0" orient="1" link="-1" q="4">
+          <paramlist link="-1" name="" crc="28206164" />
+        </User>
+        <User classid="UserCmp" name="master:ground" defn="master:ground" id="401525945" x="486" y="378" w="22" h="28" z="0" orient="1" link="-1" q="4">
+          <paramlist link="-1" name="" crc="28206164" />
+        </User>
+        <User classid="UserCmp" name="master:ground" defn="master:ground" id="1147435604" x="486" y="198" w="22" h="28" z="0" orient="3" link="-1" q="4">
+          <paramlist link="-1" name="" crc="28206164" />
+        </User>
+        <User classid="UserCmp" name="master:resistor" defn="master:resistor" id="764837437" x="612" y="342" w="80" h="30" z="1" orient="2" link="-1" q="4">
+          <paramlist link="-1" name="" crc="10319542">
+            <param name="R" value="1.0e9 [ohm]" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:ground" defn="master:ground" id="1806033584" x="612" y="342" w="28" h="22" z="0" orient="0" link="-1" q="4">
+          <paramlist link="-1" name="" crc="28206164" />
+        </User>
+        <User classid="UserCmp" name="master:voltmetergnd" defn="master:voltmetergnd" id="1089305602" x="486" y="252" w="31" h="46" z="70" orient="3" link="-1" q="4">
+          <paramlist link="-1" name="" crc="116145885">
+            <param name="Name" value="V66LV1" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:voltmetergnd" defn="master:voltmetergnd" id="1164763243" x="558" y="342" w="46" h="31" z="130" orient="0" link="-1" q="4">
+          <paramlist link="-1" name="" crc="116145885">
+            <param name="Name" value="V66LV2" />
+          </paramlist>
+        </User>
+        <Wire classid="WireOrthogonal" id="654804066" name="" x="540" y="342" w="46" h="10" orient="0">
+          <vertex x="0" y="0" />
+          <vertex x="36" y="0" />
+        </Wire>
+        <User classid="UserCmp" name="master:xfmr-3p3w2" id="1649123277" x="486" y="342" w="192" h="160" z="120" orient="0" defn="master:xfmr-3p3w2" link="-1" q="4">
+          <paramlist link="-1" name="" crc="11288778">
+            <param name="BCA1" value="" />
+            <param name="BBC1" value="" />
+            <param name="BAB1" value="" />
+            <param name="HCA1" value="" />
+            <param name="HBC1" value="" />
+            <param name="HAB1" value="" />
+            <param name="FLXCA" value="C_A_Fx_mag" />
+            <param name="FLXBC" value="B_C_Fx_mag" />
+            <param name="FLXAB" value="A_B_Fx_mag" />
+            <param name="IMCA" value="Iu_ca" />
+            <param name="IMBC" value="Iu_bc" />
+            <param name="IMAB" value="Iu_ab" />
+            <param name="BC1" value="" />
+            <param name="BB1" value="" />
+            <param name="BA1" value="" />
+            <param name="HC1" value="" />
+            <param name="HB1" value="" />
+            <param name="HA1" value="" />
+            <param name="FLXC" value="Iflux_C" />
+            <param name="FLXB" value="Iflux_B" />
+            <param name="FLXA" value="Iflux_A" />
+            <param name="IMC" value="Imagn_C" />
+            <param name="IMB" value="Imagn_B" />
+            <param name="IMA" value="Imagn_A" />
+            <param name="ICA3" value="" />
+            <param name="IBC3" value="" />
+            <param name="IAB3" value="" />
+            <param name="ILC3" value="Iw3_C" />
+            <param name="ILB3" value="Iw3_B" />
+            <param name="ILA3" value="Iw3_A" />
+            <param name="ICA2" value="Iu_ca" />
+            <param name="IBC2" value="Iu_bc" />
+            <param name="IAB2" value="Iu_ab" />
+            <param name="ILC2" value="Iw2_C" />
+            <param name="ILB2" value="Iw2_B" />
+            <param name="ILA2" value="Iw2_A" />
+            <param name="ICA1" value="Iw1_C" />
+            <param name="IBC1" value="Iw1_B" />
+            <param name="IAB1" value="Iw1_A" />
+            <param name="ILC1" value="" />
+            <param name="ILB1" value="" />
+            <param name="ILA1" value="" />
+            <param name="Fb" value="2" />
+            <param name="F3" value="20294" />
+            <param name="F2" value="3209" />
+            <param name="F1" value="2730" />
+            <param name="Msat" value="1.72e6 [A/m]" />
+            <param name="alpha" value="1.325e-5" />
+            <param name="BETA" value="0.96" />
+            <param name="K" value="5.0e-5 [A/m]" />
+            <param name="C" value="0.1" />
+            <param name="material" value="1" />
+            <param name="Bnom" value="1.7 [T]" />
+            <param name="LW2" value="10 [%]" />
+            <param name="Fremn3" value="RFlux3" />
+            <param name="Fremn2" value="RFlux2" />
+            <param name="Fremn1" value="RFlux1" />
+            <param name="Xknee" value="1.25 [pu]" />
+            <param name="Im1" value="1. [%]" />
+            <param name="Xair" value="0.275 [pu]" />
+            <param name="Txk" value="0.0 [s]" />
+            <param name="Tdc" value="0.69 [s]" />
+            <param name="Hys" value="1" />
+            <param name="Sat" value="1" />
+            <param name="Enab" value="1" />
+            <param name="V3" value="0.64 [kV]" />
+            <param name="V2" value="0.64 [kV]" />
+            <param name="V1" value="66 [kV]" />
+            <param name="Dtls" value="1" />
+            <param name="View" value="1" />
+            <param name="Tap" value="0" />
+            <param name="CuL23" value="1e-5 [pu]" />
+            <param name="CuL13" value="5.75e-3 [pu]" />
+            <param name="CuL12" value="5.75e-3 [pu]" />
+            <param name="NLL" value="8.4e-4 [pu]" />
+            <param name="Ideal" value="1" />
+            <param name="Xl23" value="0.008 [pu]" />
+            <param name="Xl13" value="0.095308709 [pu]" />
+            <param name="Xl12" value="0.095308709 [pu]" />
+            <param name="Lead" value="1" />
+            <param name="YD3" value="0" />
+            <param name="YD2" value="0" />
+            <param name="YD1" value="1" />
+            <param name="f" value="60.0 [Hz]" />
+            <param name="Tmva" value="10.0 [MVA]" />
+            <param name="Name" value="T66" />
+          </paramlist>
+        </User>
+        <Wire classid="WireOrthogonal" id="692565552" name="" x="486" y="234" w="10" h="46" orient="0">
+          <vertex x="0" y="0" />
+          <vertex x="0" y="36" />
+        </Wire>
+        <Wire classid="WireOrthogonal" id="830919104" name="" x="396" y="342" w="46" h="10" orient="0">
+          <vertex x="0" y="0" />
+          <vertex x="-36" y="0" />
+        </Wire>
+        <User classid="UserCmp" name="master:datalabel" id="513647041" x="648" y="702" w="32" h="21" z="1" orient="0" defn="master:datalabel" link="-1" q="4">
+          <paramlist link="-1" name="" crc="98359112">
+            <param name="Name" value="Iabc" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:datalabel" id="279489161" x="342" y="108" w="46" h="21" z="1" orient="0" defn="master:datalabel" link="-1" layer="" q="4">
+          <paramlist link="-1" name="" crc="98359112">
+            <param name="Name" value="RFlux2" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:datalabel" id="506730237" x="342" y="144" w="46" h="21" z="1" orient="0" defn="master:datalabel" link="-1" layer="" q="4">
+          <paramlist link="-1" name="" crc="98359112">
+            <param name="Name" value="RFlux3" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" defn="master:mrun_extra" id="79496479" x="504" y="702" w="122" h="135" z="170" orient="0" link="-1" q="4">
+          <paramlist link="-1" name="" crc="28088524">
+            <param name="NM" value="3" />
+            <param name="RU" value="1" />
+            <param name="OUTNAM" value="Results1" />
+            <param name="RType1" value="3" />
+            <param name="RType2" value="3" />
+            <param name="RType3" value="3" />
+            <param name="RType4" value="3" />
+            <param name="RType5" value="3" />
+            <param name="RType6" value="3" />
+            <param name="RType7" value="3" />
+            <param name="RType8" value="3" />
+            <param name="RType9" value="3" />
+            <param name="RType10" value="3" />
+            <param name="O1Label" value="Out#1" />
+            <param name="O2Label" value="Out#2" />
+            <param name="O3Label" value="Out#3" />
+            <param name="O4Label" value="Out#4" />
+            <param name="O5Label" value="Out#5" />
+            <param name="O6Label" value="Out#6" />
+            <param name="O7Label" value="Out#7" />
+            <param name="O8Label" value="Out#8" />
+            <param name="O9Label" value="Out#9" />
+            <param name="O10Label" value="Out#10" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:datalabel" id="1855934711" x="450" y="702" w="32" h="21" z="1" orient="0" defn="master:datalabel" link="-1" q="4">
+          <paramlist link="-1" name="" crc="98359112">
+            <param name="Name" value="Iabc" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:consti" id="1001714675" x="468" y="630" w="69" h="19" z="140" orient="0" defn="master:consti" link="-1" q="4">
+          <paramlist link="-1" name="" crc="89924856">
+            <param name="Name" value="" />
+            <param name="Value" value="1" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:const" id="1842068134" x="828" y="144" w="69" h="19" z="50" orient="0" defn="master:const" link="-1" q="4">
+          <paramlist link="-1" name="" crc="8647988">
+            <param name="Name" value="" />
+            <param name="Value" value="1.0" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" defn="master:pgb" id="486904450" x="702" y="702" w="38" h="26" z="180" orient="0" link="-1" q="4">
+          <paramlist link="-1" name="" crc="25850285">
+            <param name="Name" value="I" />
+            <param name="Group" value="" />
+            <param name="Display" value="0" />
+            <param name="Scale" value="-1.0" />
+            <param name="Units" value="" />
+            <param name="mrun" value="0" />
+            <param name="Pol" value="0" />
+            <param name="Min" value="-2.0" />
+            <param name="Max" value="2.0" />
+            <param name="UseSignalName" value="0" />
+            <param name="enab" value="1" />
+          </paramlist>
+        </User>
+        <Frame classid="GraphFrame" id="1827097757" name="frame" x="540" y="864" w="576" h="288" link="-1">
+          <paramlist link="-1" name="">
+            <param name="Icon" value="-1,0" />
+            <param name="state" value="1" />
+            <param name="title" value="$(GROUP) : Graphs" />
+            <param name="XLabel" value="sec" />
+            <param name="Pan" value="false,75" />
+            <param name="markers" value="false" />
+            <param name="glyphs" value="false" />
+            <param name="ticks" value="false" />
+            <param name="grid" value="false" />
+            <param name="yinter" value="false" />
+            <param name="xinter" value="false" />
+            <param name="snapaperture" value="false" />
+            <param name="dynaperture" value="true" />
+            <param name="minorgrids" value="false" />
+            <param name="lockmarkers" value="false" />
+            <param name="deltareadout" value="false" />
+            <param name="xmarker" value="0" />
+            <param name="omarker" value="0" />
+          </paramlist>
+          <paramlist link="1827097757" name="">
+            <param name="xmin" value="0" />
+            <param name="xmax" value="0.7" />
+          </paramlist>
+          <Graph classid="OverlayGraph" id="1792688914" link="-1">
+            <paramlist link="-1" name="">
+              <param name="title" value="" />
+              <param name="units" value="" />
+              <param name="gridvalue" value="0.500000" />
+              <param name="yintervalue" value="0.000000" />
+              <param name="grid" value="true" />
+              <param name="ticks" value="false" />
+              <param name="glyphs" value="false" />
+              <param name="yinter" value="true" />
+              <param name="xinter" value="true" />
+              <param name="marker" value="false" />
+              <param name="trigger" value="false" />
+              <param name="autocolor" value="false" />
+              <param name="invertcolor" value="false" />
+              <param name="crosshair" value="false" />
+              <param name="manualscale" value="false" />
+            </paramlist>
+            <paramlist link="1792688914" name="">
+              <param name="ymin" value="-1" />
+              <param name="ymax" value="1" />
+            </paramlist>
+            <Curve classid="Curve" id="215963332" name="I" link="486904450" color="0" bold="0" show="-1" mode="0" />
+          </Graph>
+        </Frame>
+        <Sticky classid="Sticky" x="396" y="90" w="198" h="72" colors="0, 15792890" id="1432329389" layer="">
+          <paramlist>
+            <param name="font" value="1" />
+            <param name="align" value="0" />
+            <param name="style" value="0" />
+            <param name="fg_color" value="0" />
+            <param name="bg_color" value="49152" />
+            <param name="arrows" value="0" />
+            <param name="full_font" value="Tahoma, 9pt" />
+            <param name="opacity" value="25" />
+          </paramlist><![CDATA[These parameters are recieved from Master Case.
+These parameters in the Slave case are considered as "Constants"]]></Sticky>
+        <Sticky classid="Sticky" x="720" y="36" w="270" h="72" colors="0, 15792890" id="281704365" layer="">
+          <paramlist>
+            <param name="font" value="1" />
+            <param name="align" value="0" />
+            <param name="style" value="0" />
+            <param name="fg_color" value="0" />
+            <param name="bg_color" value="49152" />
+            <param name="arrows" value="2" />
+            <param name="full_font" value="Tahoma, 9pt" />
+            <param name="opacity" value="25" />
+          </paramlist><![CDATA[This radiolink send a signal back to the Master Case indicating that the simulation is completed in slave Case. Thus Master Case send the new set of parameters to the Slave Case for simulation.]]></Sticky>
+        <Sticky classid="Sticky" x="216" y="666" w="198" h="72" colors="0, 15792890" id="1144788897" layer="">
+          <paramlist>
+            <param name="font" value="1" />
+            <param name="align" value="0" />
+            <param name="style" value="0" />
+            <param name="fg_color" value="0" />
+            <param name="bg_color" value="49152" />
+            <param name="arrows" value="8" />
+            <param name="full_font" value="Tahoma, 9pt" />
+            <param name="opacity" value="25" />
+          </paramlist><![CDATA[This component save the result of simulation however this component does not sort the data.]]></Sticky>
+      </schematic>
+      <references>
+        <using namespace="master" />
+      </references>
+    </Definition>
+  </definitions>
+  <paramlist name="Libs" />
+  <output name="chopper1" device="EMTDC" version="2010" date="2013/04/23" time="08:51:49.000000">
+    <paramlist />
+    <domain name="Time" unit="s" mult="0.0" skew="0.0">
+      <sample rate="2000.0" end="1000" />
+    </domain>
+    <analog>
+      <channel index="0" id="119875904:0" name="IL" label="" dim="1" unit="" min="-2.0" max="2.0" />
+      <channel index="1" id="119880392:0" name="DC link current" label="" dim="1" unit="" min="-2" max="12" />
+      <channel index="2" id="119894264:0" name="DC link voltage" label="" dim="1" unit="" min="0" max="450" />
+      <channel index="3" id="119915480:0" name="Current Order" label="" dim="1" unit="" min="0" max="10" />
+      <channel index="4" id="119882432:0" name="Filtered load current" label="" dim="1" unit="" min="0" max="12" />
+      <channel index="5" id="119886512:0" name="Duty" label="" dim="1" unit="" min="-2.0" max="2.0" />
+      <channel index="6" id="119907728:0" name="Overall Obj." label="" dim="1" unit="" min="0" max="10" />
+      <channel index="7" id="119878352:0" name="ISE_performance" label="" dim="1" unit="" min="0" max="3" />
+      <channel index="8" id="119886104:0" name="VCO" label="" dim="1" unit="" min="-2.0" max="2.0" />
+      <channel index="9" id="119909360:0" name="ISE_dc" label="" dim="1" unit="" min="-2.0" max="2.0" />
+      <channel index="10" id="119893448:0" name="FP" label="" dim="1" unit="" min="-2.0" max="2.0" />
+      <channel index="11" id="119930576:0" name="ISE_Vdc" label="" dim="1" unit="" min="-2.0" max="2.0" />
+      <channel index="12" id="119936696:0" name="Reference Current" label="" dim="1" unit="" min="0" max="12" />
+      <channel index="13" id="119930168:0" name="ISE_Idc" label="" dim="1" unit="" min="-2.0" max="2.0" />
+    </analog>
+    <digital />
+  </output>
+  <paramlist name="Validation" />
+  <Layers />
+  <List classid="Settings">
+    <Settings classid="GraphFrameSettings" id="1266233999" link="1827097757">
+      <path>
+        <ref link="1307510944" />
+      </path>
+      <paramlist>
+        <param name="xmin" value="0" />
+        <param name="xmax" value="0.7" />
+      </paramlist>
+    </Settings>
+    <Settings classid="OverlayGraphSettings" id="71936646" link="1792688914">
+      <path>
+        <ref link="1307510944" />
+      </path>
+      <paramlist>
+        <param name="ymin" value="-2" />
+        <param name="ymax" value="2" />
+      </paramlist>
+    </Settings>
+    <Settings classid="PlotFrameSettings" id="1006917837" link="519440093">
+      <path>
+        <ref link="1307510944" />
+      </path>
+      <paramlist>
+        <param name="xmin" value="-0.004" />
+        <param name="xmax" value="0.01" />
+        <param name="ymin" value="-0.4" />
+        <param name="ymax" value="0.3" />
+        <param name="zmin" value="0.0" />
+        <param name="zmax" value="1.0" />
+      </paramlist>
+    </Settings>
+  </List>
+  <hierarchy>
+    <call link="779167719" name="SlaveCase:Station" z="-1" view="false" instance="0">
+      <call link="1307510944" name="SlaveCase:Main" z="-1" view="true" instance="0" />
+    </call>
+  </hierarchy>
+</project>

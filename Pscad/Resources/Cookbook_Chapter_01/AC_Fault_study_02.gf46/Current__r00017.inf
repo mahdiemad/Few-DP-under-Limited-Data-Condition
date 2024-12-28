@@ -1,0 +1,3 @@
+PGB(1)         Output  Desc="Ia:1"  Group="Main"  Max=5  Min=-5  Units="kA"
+PGB(2)         Output  Desc="Ia:2"  Group="Main"  Max=5  Min=-5  Units="kA"
+PGB(3)         Output  Desc="Ia:3"  Group="Main"  Max=5  Min=-5  Units="kA"

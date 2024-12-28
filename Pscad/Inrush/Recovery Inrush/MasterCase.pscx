@@ -1,0 +1,474 @@
+<project name="MasterCase" version="5.0.1" schema="" Target="EMTDC">
+  <paramlist name="Settings">
+    <param name="creator" value="MAHD!,1730442936" />
+    <param name="time_duration" value="0.5" />
+    <param name="time_step" value="50" />
+    <param name="sample_step" value="250" />
+    <param name="chatter_threshold" value=".001" />
+    <param name="branch_threshold" value=".0005" />
+    <param name="StartType" value="0" />
+    <param name="startup_filename" value="$(Namespace).snp" />
+    <param name="PlotType" value="0" />
+    <param name="output_filename" value="$(Namespace).out" />
+    <param name="SnapType" value="0" />
+    <param name="SnapTime" value="0.3" />
+    <param name="snapshot_filename" value="$(Namespace).snp" />
+    <param name="MrunType" value="1" />
+    <param name="Mruns" value="1" />
+    <param name="Scenario" value="" />
+    <param name="Advanced" value="14335" />
+    <param name="sparsity_threshold" value="200" />
+    <param name="Options" value="16" />
+    <param name="Build" value="18" />
+    <param name="Warn" value="0" />
+    <param name="Check" value="0" />
+    <param name="description" value="" />
+    <param name="revisor" value="MAHD!, 1730443661" />
+  </paramlist>
+  <Layers />
+  <List classid="Settings" />
+  <bookmarks />
+  <GlobalSubstitutions name="Default">
+    <List classid="Sub" />
+    <List classid="ValueSet" />
+    <paramlist>
+      <param name="Current" value="" />
+    </paramlist>
+  </GlobalSubstitutions>
+  <definitions>
+    <Definition classid="StationDefn" name="DS" id="1108327671" group="" url="" version="" build="" crc="52281889" view="false">
+      <paramlist name="">
+        <param name="Description" value="" />
+      </paramlist>
+      <schematic classid="StationCanvas">
+        <paramlist>
+          <param name="show_grid" value="0" />
+          <param name="size" value="0" />
+          <param name="orient" value="1" />
+          <param name="show_border" value="0" />
+          <param name="monitor_bus_voltage" value="0" />
+          <param name="show_signal" value="0" />
+          <param name="show_virtual" value="0" />
+          <param name="show_sequence" value="0" />
+          <param name="auto_sequence" value="1" />
+          <param name="bus_expand_x" value="8" />
+          <param name="bus_expand_y" value="8" />
+          <param name="bus_length" value="4" />
+        </paramlist>
+        <grouping />
+        <Wire classid="Branch" id="845690976" name="Main" x="180" y="180" w="66" h="82" orient="0" disable="false" defn="Main" recv="-1" send="-1" back="-1">
+          <vertex x="0" y="0" />
+          <vertex x="0" y="18" />
+          <vertex x="54" y="54" />
+          <vertex x="54" y="72" />
+          <User classid="UserCmp" id="2105428897" name="MasterCase:Main" x="0" y="0" w="0" h="0" z="-1" orient="0" defn="MasterCase:Main" link="-1" q="4" disable="false">
+            <paramlist name="" link="-1" crc="4361682" />
+          </User>
+        </Wire>
+      </schematic>
+    </Definition>
+    <Definition classid="UserCmpDefn" name="Main" id="368862691" group="" url="" version="" build="" crc="64392378" view="false" date="0">
+      <paramlist name="">
+        <param name="Description" value="" />
+      </paramlist>
+      <form name="" w="320" h="400" splitter="60" />
+      <graphics viewBox="-200 -200 200 200" size="2">
+        <Gfx classid="Graphics.Rectangle" id="1236434517" x="-36" y="-36" w="72" h="72">
+          <paramlist>
+            <param name="color" value="Black" />
+            <param name="dasharray" value="0" />
+            <param name="thickness" value="0" />
+            <param name="port" value="" />
+            <param name="fill_style" value="0" />
+            <param name="fill_fg" value="Black" />
+            <param name="fill_bg" value="Black" />
+            <param name="cond" value="true" />
+          </paramlist>
+        </Gfx>
+        <Gfx classid="Graphics.Text" id="258524416" x="0" y="0">
+          <paramlist>
+            <param name="text" value="%:Name" />
+            <param name="anchor" value="0" />
+            <param name="full_font" value="Tahoma, 13world" />
+            <param name="angle" value="0" />
+            <param name="color" value="Black" />
+            <param name="cond" value="true" />
+          </paramlist>
+        </Gfx>
+      </graphics>
+      <schematic classid="UserCanvas">
+        <paramlist>
+          <param name="show_grid" value="0" />
+          <param name="size" value="0" />
+          <param name="orient" value="1" />
+          <param name="show_border" value="0" />
+          <param name="monitor_bus_voltage" value="0" />
+          <param name="show_signal" value="0" />
+          <param name="show_virtual" value="0" />
+          <param name="show_sequence" value="0" />
+          <param name="auto_sequence" value="1" />
+          <param name="bus_expand_x" value="8" />
+          <param name="bus_expand_y" value="8" />
+          <param name="bus_length" value="4" />
+          <param name="show_terminals" value="0" />
+          <param name="virtual_filter" value="" />
+          <param name="animation_freq" value="500" />
+        </paramlist>
+        <grouping />
+        <User classid="UserCmp" name="master:radiolink" id="1000605916" x="1350" y="432" w="226" h="23" z="50" orient="4" defn="master:radiolink" link="-1" layer="" q="4" disable="false">
+          <paramlist link="-1" name="" crc="40367046">
+            <param name="Source" value="TestSystem_Inrush:Main" />
+            <param name="Name" value="loop" />
+            <param name="Type" value="0" />
+            <param name="dim" value="1" />
+            <param name="Mode" value="0" />
+            <param name="Min" value="0" />
+            <param name="Max" value="300" />
+            <param name="rank" value="1" />
+            <param name="rccon" value="1" />
+            <param name="caption" value="$(Name) [$(Rank)]" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:radiolink" id="1557525" x="522" y="432" w="125" h="24" z="40" orient="0" defn="master:radiolink" link="-1" layer="" q="4" disable="false">
+          <paramlist link="-1" name="" crc="40367046">
+            <param name="Source" value="chopper_optimization:Main" />
+            <param name="Name" value="ClosingTime" />
+            <param name="Type" value="0" />
+            <param name="dim" value="1" />
+            <param name="Mode" value="1" />
+            <param name="Min" value="3" />
+            <param name="Max" value="11" />
+            <param name="rank" value="0" />
+            <param name="rccon" value="1" />
+            <param name="caption" value="$(Name) [$(Rank)]" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:radiolink" id="1690496590" x="522" y="396" w="96" h="24" z="30" orient="0" defn="master:radiolink" link="-1" layer="" q="4" disable="false">
+          <paramlist link="-1" name="" crc="40367046">
+            <param name="Source" value="chopper_optimization:Main" />
+            <param name="Name" value="RFlux3" />
+            <param name="Type" value="0" />
+            <param name="dim" value="1" />
+            <param name="Mode" value="1" />
+            <param name="Min" value="100" />
+            <param name="Max" value="800" />
+            <param name="rank" value="0" />
+            <param name="rccon" value="1" />
+            <param name="caption" value="$(Name) [$(Rank)]" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:radiolink" id="502608898" x="522" y="360" w="96" h="24" z="20" orient="0" defn="master:radiolink" link="-1" layer="" q="4" disable="false">
+          <paramlist link="-1" name="" crc="40367046">
+            <param name="Source" value="chopper_optimization:Main" />
+            <param name="Name" value="RFlux2" />
+            <param name="Type" value="0" />
+            <param name="dim" value="1" />
+            <param name="Mode" value="1" />
+            <param name="Min" value="0.01" />
+            <param name="Max" value="0.08" />
+            <param name="rank" value="0" />
+            <param name="rccon" value="1" />
+            <param name="caption" value="$(Name) [$(Rank)]" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:radiolink" id="2014479428" x="522" y="324" w="96" h="24" z="60" orient="0" defn="master:radiolink" link="-1" layer="" q="4" disable="false">
+          <paramlist link="-1" name="" crc="40367046">
+            <param name="Source" value="chopper_optimization:Main" />
+            <param name="Name" value="RFlux1" />
+            <param name="Type" value="0" />
+            <param name="dim" value="1" />
+            <param name="Mode" value="1" />
+            <param name="Min" value="0" />
+            <param name="Max" value="1800" />
+            <param name="rank" value="0" />
+            <param name="rccon" value="1" />
+            <param name="caption" value="$(Name) [$(Rank)]" />
+          </paramlist>
+        </User>
+        <Sticky classid="Sticky" x="1170" y="288" w="270" h="90" colors="0, 15792890" id="596374808" layer="">
+          <paramlist>
+            <param name="font" value="1" />
+            <param name="align" value="0" />
+            <param name="style" value="0" />
+            <param name="fg_color" value="0" />
+            <param name="bg_color" value="49152" />
+            <param name="arrows" value="2" />
+            <param name="full_font" value="Tahoma, 9pt" />
+            <param name="opacity" value="25" />
+            <param name="fg_color_adv" value="#FF000000" />
+            <param name="bg_color_adv" value="#1900C000" />
+            <param name="hl_color_adv" value="#FFFFFF00" />
+            <param name="bdr_color_adv" value="#1995918C" />
+          </paramlist><![CDATA[This is to complete the loop of sending and receiving data from Master to Slave and vise versa.]]></Sticky>
+        <Sticky classid="Sticky" x="648" y="342" w="198" h="72" colors="0, 15792890" id="1341420563" layer="">
+          <paramlist>
+            <param name="font" value="1" />
+            <param name="align" value="0" />
+            <param name="style" value="0" />
+            <param name="fg_color" value="0" />
+            <param name="bg_color" value="49152" />
+            <param name="arrows" value="4" />
+            <param name="full_font" value="Tahoma, 9pt" />
+            <param name="opacity" value="25" />
+            <param name="fg_color_adv" value="#FF000000" />
+            <param name="bg_color_adv" value="#1900C000" />
+            <param name="hl_color_adv" value="#FFFFFF00" />
+            <param name="bdr_color_adv" value="#1995918C" />
+          </paramlist><![CDATA[These parameters are send to Slave Case.]]></Sticky>
+        <Sticky classid="Sticky" x="378" y="180" w="576" h="36" id="1566761956" layer="">
+          <paramlist>
+            <param name="font" value="1" />
+            <param name="align" value="0" />
+            <param name="style" value="0" />
+            <param name="arrows" value="0" />
+            <param name="fg_color" value="0" />
+            <param name="bg_color" value="16744576" />
+            <param name="full_font" value="Tahoma, 9pt" />
+            <param name="opacity" value="50" />
+            <param name="fg_color_adv" value="#FF000000" />
+            <param name="bg_color_adv" value="#328080FF" />
+            <param name="hl_color_adv" value="#FFFFFF00" />
+            <param name="bdr_color_adv" value="#3295918C" />
+          </paramlist><![CDATA[The master case  send the variables generated in the Multiple Run to the Slave case. ]]></Sticky>
+        <User classid="UserCmp" defn="master:mrun" id="943860074" x="468" y="360" w="90" h="150" z="10" orient="0" link="-1" q="4" disable="false">
+          <paramlist link="-1" name="" crc="43452455">
+            <param name="NV" value="4" />
+            <param name="ENAB" value="1" />
+            <param name="STDEV" value="2.0" />
+            <param name="SeedMethod" value="0" />
+            <param name="SeedValue" value="23309" />
+            <param name="VType1" value="0" />
+            <param name="IType1" value="1" />
+            <param name="VType2" value="0" />
+            <param name="IType2" value="1" />
+            <param name="VType3" value="0" />
+            <param name="IType3" value="1" />
+            <param name="VType4" value="0" />
+            <param name="IType4" value="1" />
+            <param name="VType5" value="0" />
+            <param name="IType5" value="1" />
+            <param name="VType6" value="0" />
+            <param name="IType6" value="1" />
+            <param name="V1Label" value="RF_1" />
+            <param name="V2Label" value="RF_2" />
+            <param name="V3Label" value="RF_3" />
+            <param name="V4Label" value="Time" />
+            <param name="V5Label" value="Var # 5" />
+            <param name="V6Label" value="Var # 6" />
+            <param name="V1DR" value="0.0" />
+            <param name="V2DR" value="0.0" />
+            <param name="V3DR" value="0.0" />
+            <param name="V4DR" value="0.0" />
+            <param name="V5DR" value="0.0" />
+            <param name="V6DR" value="0.0" />
+            <param name="V1DI" value="0" />
+            <param name="V2DI" value="0" />
+            <param name="V3DI" value="0" />
+            <param name="V4DI" value="0" />
+            <param name="V5DI" value="0" />
+            <param name="V6DI" value="0" />
+            <param name="N1R" value="10" />
+            <param name="Min1R" value="0.0" />
+            <param name="Inc1R" value=".1" />
+            <param name="Max1R" value="0.3" />
+            <param name="V1Run1R" value="1" />
+            <param name="V1Run6R" value="6" />
+            <param name="V1Run2R" value="2" />
+            <param name="V1Run7R" value="7" />
+            <param name="V1Run3R" value="3" />
+            <param name="V1Run8R" value="8" />
+            <param name="V1Run4R" value="4" />
+            <param name="V1Run9R" value="9" />
+            <param name="V1Run5R" value="5" />
+            <param name="V1Run10R" value="10" />
+            <param name="N1I" value="10" />
+            <param name="Min1I" value="0" />
+            <param name="Inc1I" value="1" />
+            <param name="Max1I" value="10" />
+            <param name="V1Run1I" value="1" />
+            <param name="V1Run6I" value="6" />
+            <param name="V1Run2I" value="2" />
+            <param name="V1Run7I" value="7" />
+            <param name="V1Run3I" value="3" />
+            <param name="V1Run8I" value="8" />
+            <param name="V1Run4I" value="4" />
+            <param name="V1Run9I" value="9" />
+            <param name="V1Run5I" value="5" />
+            <param name="V1Run10I" value="10" />
+            <param name="N2R" value="10" />
+            <param name="Min2R" value="0.0" />
+            <param name="Inc2R" value="0.1" />
+            <param name="Max2R" value="0.2" />
+            <param name="V2Run1R" value="1" />
+            <param name="V2Run6R" value="6" />
+            <param name="V2Run2R" value="2" />
+            <param name="V2Run7R" value="7" />
+            <param name="V2Run3R" value="3" />
+            <param name="V2Run8R" value="8" />
+            <param name="V2Run4R" value="4" />
+            <param name="V2Run9R" value="9" />
+            <param name="V2Run5R" value="5" />
+            <param name="V2Run10R" value="10" />
+            <param name="N2I" value="10" />
+            <param name="Min2I" value="0" />
+            <param name="Inc2I" value="1" />
+            <param name="Max2I" value="10" />
+            <param name="V2Run1I" value="1" />
+            <param name="V2Run6I" value="6" />
+            <param name="V2Run2I" value="2" />
+            <param name="V2Run7I" value="7" />
+            <param name="V2Run3I" value="3" />
+            <param name="V2Run8I" value="8" />
+            <param name="V2Run4I" value="4" />
+            <param name="V2Run9I" value="9" />
+            <param name="V2Run5I" value="5" />
+            <param name="V2Run10I" value="10" />
+            <param name="N3R" value="10" />
+            <param name="Min3R" value="0.0" />
+            <param name="Inc3R" value="0.1" />
+            <param name="Max3R" value="0.2" />
+            <param name="V3Run1R" value="1" />
+            <param name="V3Run6R" value="6" />
+            <param name="V3Run2R" value="2" />
+            <param name="V3Run7R" value="7" />
+            <param name="V3Run3R" value="3" />
+            <param name="V3Run8R" value="8" />
+            <param name="V3Run4R" value="4" />
+            <param name="V3Run9R" value="9" />
+            <param name="V3Run5R" value="5" />
+            <param name="V3Run10R" value="10" />
+            <param name="N3I" value="10" />
+            <param name="Min3I" value="0" />
+            <param name="Inc3I" value="1" />
+            <param name="Max3I" value="10" />
+            <param name="V3Run1I" value="1" />
+            <param name="V3Run6I" value="6" />
+            <param name="V3Run2I" value="2" />
+            <param name="V3Run7I" value="7" />
+            <param name="V3Run3I" value="3" />
+            <param name="V3Run8I" value="8" />
+            <param name="V3Run4I" value="4" />
+            <param name="V3Run9I" value="9" />
+            <param name="V3Run5I" value="5" />
+            <param name="V3Run10I" value="10" />
+            <param name="N4R" value="10" />
+            <param name="Min4R" value="0.2" />
+            <param name="Inc4R" value="3.333e-3" />
+            <param name="Max4R" value="0.213333" />
+            <param name="V4Run1R" value="1" />
+            <param name="V4Run6R" value="6" />
+            <param name="V4Run2R" value="2" />
+            <param name="V4Run7R" value="7" />
+            <param name="V4Run3R" value="3" />
+            <param name="V4Run8R" value="8" />
+            <param name="V4Run4R" value="4" />
+            <param name="V4Run9R" value="9" />
+            <param name="V4Run5R" value="5" />
+            <param name="V4Run10R" value="10" />
+            <param name="N4I" value="10" />
+            <param name="Min4I" value="0" />
+            <param name="Inc4I" value="1" />
+            <param name="Max4I" value="0" />
+            <param name="V4Run1I" value="1" />
+            <param name="V4Run6I" value="6" />
+            <param name="V4Run2I" value="2" />
+            <param name="V4Run7I" value="7" />
+            <param name="V4Run3I" value="3" />
+            <param name="V4Run8I" value="8" />
+            <param name="V4Run4I" value="4" />
+            <param name="V4Run9I" value="9" />
+            <param name="V4Run5I" value="5" />
+            <param name="V4Run10I" value="10" />
+            <param name="N5R" value="10" />
+            <param name="Min5R" value="0.0" />
+            <param name="Inc5R" value="1.0" />
+            <param name="Max5R" value="1.0" />
+            <param name="V5Run1R" value="1" />
+            <param name="V5Run6R" value="6" />
+            <param name="V5Run2R" value="2" />
+            <param name="V5Run7R" value="7" />
+            <param name="V5Run3R" value="3" />
+            <param name="V5Run8R" value="8" />
+            <param name="V5Run4R" value="4" />
+            <param name="V5Run9R" value="9" />
+            <param name="V5Run5R" value="5" />
+            <param name="V5Run10R" value="10" />
+            <param name="N5I" value="10" />
+            <param name="Min5I" value="0" />
+            <param name="Inc5I" value="1" />
+            <param name="Max5I" value="10" />
+            <param name="V5Run1I" value="1" />
+            <param name="V5Run6I" value="6" />
+            <param name="V5Run2I" value="2" />
+            <param name="V5Run7I" value="7" />
+            <param name="V5Run3I" value="3" />
+            <param name="V5Run8I" value="8" />
+            <param name="V5Run4I" value="4" />
+            <param name="V5Run9I" value="9" />
+            <param name="V5Run5I" value="5" />
+            <param name="V5Run10I" value="10" />
+            <param name="N6R" value="10" />
+            <param name="Min6R" value="0.0" />
+            <param name="Inc6R" value="1.0" />
+            <param name="Max6R" value="1.0" />
+            <param name="V6Run1R" value="1" />
+            <param name="V6Run6R" value="6" />
+            <param name="V6Run2R" value="2" />
+            <param name="V6Run7R" value="7" />
+            <param name="V6Run3R" value="3" />
+            <param name="V6Run8R" value="8" />
+            <param name="V6Run4R" value="4" />
+            <param name="V6Run9R" value="9" />
+            <param name="V6Run5R" value="5" />
+            <param name="V6Run10R" value="10" />
+            <param name="N6I" value="10" />
+            <param name="Min6I" value="0" />
+            <param name="Inc6I" value="1" />
+            <param name="Max6I" value="10" />
+            <param name="V6Run1I" value="1" />
+            <param name="V6Run6I" value="6" />
+            <param name="V6Run2I" value="2" />
+            <param name="V6Run7I" value="7" />
+            <param name="V6Run3I" value="3" />
+            <param name="V6Run8I" value="8" />
+            <param name="V6Run4I" value="4" />
+            <param name="V6Run9I" value="9" />
+            <param name="V6Run5I" value="5" />
+            <param name="V6Run10I" value="10" />
+            <param name="NM" value="0" />
+            <param name="OUTNAM" value="mrunout.out" />
+            <param name="Repeat" value="1" />
+            <param name="Opt" value="1" />
+            <param name="MinMax" value="1" />
+            <param name="NDIV" value="10" />
+            <param name="MType1" value="2" />
+            <param name="MType2" value="2" />
+            <param name="MType3" value="2" />
+            <param name="MType4" value="2" />
+            <param name="MType5" value="2" />
+            <param name="MType6" value="2" />
+            <param name="RType1" value="3" />
+            <param name="O1Label" value="Out # 1" />
+            <param name="RType2" value="3" />
+            <param name="O2Label" value="Out # 2" />
+            <param name="RType3" value="3" />
+            <param name="O3Label" value="Out # 3" />
+            <param name="RType4" value="3" />
+            <param name="O4Label" value="Out # 4" />
+            <param name="RType5" value="3" />
+            <param name="O5Label" value="Out # 5" />
+            <param name="RType6" value="3" />
+            <param name="O6Label" value="Out # 6" />
+            <param name="Name" value="" />
+          </paramlist>
+        </User>
+      </schematic>
+    </Definition>
+  </definitions>
+  <List classid="Resource" />
+  <hierarchy>
+    <call link="1530452830" name="MasterCase:DS" z="-1" view="false" instance="0">
+      <call link="2105428897" name="MasterCase:Main" z="-1" view="true" instance="0" />
+    </call>
+  </hierarchy>
+</project>
